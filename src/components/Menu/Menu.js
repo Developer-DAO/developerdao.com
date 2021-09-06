@@ -4,7 +4,7 @@ import Nav from './Nav'
 
 const Menu = (props) => {
     return (
-    <div className="w-screen">
+    <div className="bg-gray p-2 mt-0 w-screen">
         <div className="text-center" >
         <Nav changeRouteHandler={props.changeRouteHandler}/>
         </div>

@@ -97,27 +97,29 @@ function App() {
   return (
     <>
     <section className="text-gray-600 body-font bg-gray">
-    <div className="container">
-      <div className="relative min-h-screen w-screen flex flex-col items-center justify-top"> 
+    <div className="container flex flex-col h-screen w-screen">
       <Router>
         <Menu changeRouteHandler={changeRouteHandler}/>
-        <Switch>
-        <Route path="/search"><Search/></Route>
-              <Route path="/profile">
-                <Profile
-                  connect={connect}
-                  readProfile={readProfile}
-                  setLocalProfileData={setLocalProfileData}
-                  updateProfile={updateProfile}
-                  setName={setName}
-                  setBio={setBio}
-                  profile={profile}
-                  loaded={loaded}
-                  showGreeting={showGreeting}
-                  /></Route>
-              <Route path="/"><Search ethersConfig={ethersConfig}/></Route>
-        </Switch>
       </Router>
+      <div className="flex-1 overflow-y-auto w-screen flex flex-col items-center justify-top"> 
+        <Router>
+          <Switch>
+            <Route path="/search"><Search/></Route>
+            <Route path="/profile">
+              <Profile
+                connect={connect}
+                readProfile={readProfile}
+                setLocalProfileData={setLocalProfileData}
+                updateProfile={updateProfile}
+                setName={setName}
+                setBio={setBio}
+                profile={profile}
+                loaded={loaded}
+                showGreeting={showGreeting}
+                /></Route>
+            <Route path="/"><Search ethersConfig={ethersConfig}/></Route>
+          </Switch>
+        </Router>
       </div>
     </div>
     </section>
