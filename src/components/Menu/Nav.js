@@ -10,9 +10,9 @@ const Nav = (props) => {
                     <nav>
                     <ul className="md:flex items-center justify-between text-base pt-2 md:pt-0">
                     <li><div className="inline-block no-underline hover:text-black font-medium text-lg py-0 px-4 lg:-ml-2">
-                        <Link to="/" onClick={(props.changeRouteHandler)}>Search</Link></div></li>
+                        <Link to="/">Search</Link></div></li>
                     <li><div className="inline-block no-underline hover:text-black font-medium text-lg py-0 px-4 lg:-ml-2">
-                        <Link to="/profile" onClick={(props.changeRouteHandler)}>Profile</Link></div></li>
+                        <Link to="/profile">Profile</Link></div></li>
                     </ul>
                     </nav>
                 </div>

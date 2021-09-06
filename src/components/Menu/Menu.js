@@ -6,7 +6,7 @@ const Menu = (props) => {
     return (
     <div className="bg-gray p-2 mt-0 w-screen">
         <div className="text-center" >
-        <Nav changeRouteHandler={props.changeRouteHandler}/>
+        <Nav/>
         </div>
     </div>
     );

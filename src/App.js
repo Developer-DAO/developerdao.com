@@ -14,9 +14,6 @@ import {
 } from "./components/utils/identity";
 
 function App() {
-  let changeRouteHandler = (e) => {
-    let path = window.location.pathname;
-  };
 
   const ethersConfig = {
     ethers: { Contract },
@@ -99,7 +96,7 @@ function App() {
     <section className="text-gray-600 body-font bg-gray">
     <div className="container flex flex-col h-screen w-screen">
       <Router>
-        <Menu changeRouteHandler={changeRouteHandler}/>
+        <Menu/>
       </Router>
       <div className="flex-1 overflow-y-auto w-screen flex flex-col items-center justify-top"> 
         <Router>
