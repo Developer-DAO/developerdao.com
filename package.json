@@ -49,12 +49,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
-      "eslint": "^7.32.0",
-      "eslint-config-prettier": "^8.3.0",
-      "eslint-plugin-prettier": "^4.0.0",
-      "eslint-plugin-react": "^7.25.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
     "postcss": "^7",
-      "prettier": "^2.3.2",
+    "prettier": "^2.3.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
