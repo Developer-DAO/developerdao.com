@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@3id/connect": "^0.1.5",
+    "@ceramicnetwork/3id-did-resolver": "^1.2.6",
+    "@ceramicnetwork/http-client": "^1.0.5",
+    "@ceramicstudio/idx": "^0.12.1",
+    "dids": "^2.1.0",
     "@craco/craco": "^6.2.0",
     "@ethersproject/abi": "^5.4.1",
+    "key-did-resolver": "^1.2.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -42,13 +48,13 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "postcss": "^8.3.6",
-    "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.9"
+    "autoprefixer": "^9",
+      "eslint": "^7.32.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-react": "^7.25.1",
+    "postcss": "^7",
+      "prettier": "^2.3.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

@@ -1,6 +1,5 @@
 import React, { Component, useCallback, useState }  from "react";
 
-import { getDefaultProvider, Contract } from "ethers";
 import { NftProvider, useNft } from "use-nft";
 import logo from "../../images/ddao_logo.jpeg";
 
@@ -9,11 +8,6 @@ const Search = (props) => {
   
     const [developerId, setDeveloperId] = useState(1);
 
-    const ethersConfig = {
-      ethers: { Contract },
-      provider: getDefaultProvider("homestead"),
-    };
-    
     const updateDeveloperId = useCallback((e) => {
       if (e <= 8000) {
         setDeveloperId(e);
@@ -21,9 +15,7 @@ const Search = (props) => {
     }, []);
 
     return(
-        <>
-        <section className="text-gray-600 body-font bg-gray-50">
-          <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <div className="container mx-auto flex px-5 py-4 items-center justify-center flex-col">
             <img
               src={logo}
               alt="hero"
@@ -43,17 +35,16 @@ const Search = (props) => {
                     type="text"
                     id="hero-field"
                     name="hero-field"
-                    className="w-full mb-6 bg-white bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full mb-6 bg-white bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-med focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
             </div>
-            <NftProvider fetcher={["ethers", ethersConfig]}>
+            <NftProvider fetcher={["ethers", props.ethersConfig]}>
               <Nft developerId={developerId} />
             </NftProvider>
           </div>
-        </section>
-      </>    )
+    )
 }
     
 const Nft = (developerId) => {
