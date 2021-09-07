@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
 
+    let btnTxt = props.loaded ? "Connected!" : "Connect Web3"
+
     return (
         <nav id="header" className="w-full z-30 top-10 py-1 shadow-lg border-b border-gray flex items-center justify-center">
             <div className="w-8/12 flex items-center justify-between mt-0 px-6 py-2">                
@@ -22,7 +24,9 @@ const Nav = (props) => {
                 <div className="order-3 md:order-4 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
                     <div className="auth flex items-center w-full md:w-full">
                         <button className="bg-transparent text-gray-dark  p-2 rounded border 
-                            border-gray-med mr-4 hover:bg-gray-med hover:text-gray-dark">Connect Web3</button>
+                            border-gray-med mr-4 hover:bg-gray-med hover:text-gray-dark"
+                            onClick={props.onAuthenticate}
+                            >{btnTxt}</button>
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@ const Profile = (props) => {
               className="pt-4 shadow-md bg-purple-800 mt-4 mb-2 text-white font-bold py-2 px-4 rounded"
             >Authenticate</button>
             
-            <button className="pt-4 shadow-md bg-blue-500 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.readProfile}>Read Profile</button>
+            <button className="pt-4 shadow-md bg-blue-500 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.onProfileRead}>Read Profile</button>
             </>
             )
           }
@@ -41,11 +41,11 @@ const Profile = (props) => {
           {
             props.loaded && (
               <>
-                <input className="pt-4 rounded bg-gray-100 px-3 py-2" placeholder="Name" onChange={e => props.setName(e.target.value)} />
-                <input className="pt-4 rounded bg-gray-100 px-3 py-2 my-2" placeholder="Bio" onChange={e => props.setBio(e.target.value)} />
+                <input className="pt-4 rounded bg-gray-100 px-3 py-2" placeholder="Name" onChange={e => props.onNameChange(e.target.value)} />
+                <input className="pt-4 rounded bg-gray-100 px-3 py-2 my-2" placeholder="Bio" onChange={e => props.onBioChange(e.target.value)} />
                 <input className="pt-4 rounded bg-gray-100 px-3 py-2" placeholder="Twitter username" onChange={e => props.setTwitter(e.target.value)} />
-                <button className="pt-4 shadow-md bg-green-500 mt-2 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.updateProfile}>Update Profile</button>
-                <button className="pt-4 shadow-md bg-blue-500 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.readProfile}>Read Profile</button>
+                <button className="pt-4 shadow-md bg-green-500 mt-2 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.onProfileSave}>Update Profile</button>
+                <button className="pt-4 shadow-md bg-blue-500 mb-2 text-white font-bold py-2 px-4 rounded" onClick={props.onProfileRead}>Read Profile</button>
               </>
             )
           }

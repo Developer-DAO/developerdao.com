@@ -6,7 +6,9 @@ const Menu = (props) => {
     return (
     <div className="bg-gray p-2 mt-0 w-screen">
         <div className="text-center" >
-        <Nav/>
+        <Nav onAuthenticate={props.onAuthenticate}
+            loaded={props.loaded}
+            />
         </div>
     </div>
     );
