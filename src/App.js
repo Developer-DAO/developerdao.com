@@ -6,7 +6,7 @@ import { getDefaultProvider, Contract } from "ethers";
 
 import Menu from "./components/Menu/Menu";
 import Profile from "./components/Profile/Profile";
-import Search from "./components/Search/Search.js";
+import Search from "./components/Search/Search";
 
 import {
   client,
@@ -101,7 +101,6 @@ function App() {
       <div className="flex-1 overflow-y-auto w-screen flex flex-col items-center justify-top"> 
         <Router>
           <Switch>
-            <Route path="/search"><Search/></Route>
             <Route path="/profile">
               <Profile
                 connect={connect}

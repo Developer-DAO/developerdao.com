@@ -8,11 +8,11 @@ const Search = (props) => {
   
     const [developerId, setDeveloperId] = useState(1);
 
-    const updateDeveloperId = useCallback((e) => {
+    const updateDeveloperId = (e) => {
       if (e <= 8000) {
         setDeveloperId(e);
       }
-    }, []);
+    };
 
     return(
           <div className="container mx-auto flex px-5 py-4 items-center justify-center flex-col">
@@ -47,10 +47,10 @@ const Search = (props) => {
     )
 }
     
-const Nft = (developerId) => {
+const Nft = (props) => {
     const { loading, error, nft } = useNft(
       "0x25ed58c027921E14D86380eA2646E3a1B5C55A8b",
-      developerId.developerId
+      props.developerId
     );
   
     if (loading) return <>Loading…</>;
