@@ -110,6 +110,7 @@ function App() {
                 onProfileSave={updateProfile}
                 onNameChange={setName}
                 onBioChange={setBio}
+                onSetTwitter={setTwitter}
                 profile={profile}
                 loaded={loaded}
                 showGreeting={showGreeting}
