@@ -25,7 +25,7 @@ const Profile = (props) => {
             !props.loaded && (
               <>
               <button
-              onClick={props.connect}
+              onClick={props.onAuthenticate}
               className="pt-4 shadow-md bg-purple-800 mt-4 mb-2 text-white font-bold py-2 px-4 rounded"
             >Authenticate</button>
             
