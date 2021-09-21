@@ -46,7 +46,13 @@ function App() {
   function getSearchID() {
     if (process.browser) {
       const search = window.location.search;
-      return new URLSearchParams(search).get('id') || 1;
+      const val = new URLSearchParams(search).get('id') || 1;
+      if (val > 8000) {
+        // alert(t('invalidToken'))
+        return 1;
+      } else {
+        return val;
+      }
     }
     return 1;
   }

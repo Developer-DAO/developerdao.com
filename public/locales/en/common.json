@@ -10,5 +10,6 @@
   "enterDeveloperId": "Please enter a Developer DAO id",
   "hosting": "Hosting by:",
   "copyLinkToNFT": "Copy link to NFT",
-  "linkCopied": "Link copied to clipboard"
+  "linkCopied": "Link copied to clipboard",
+  "invalidToken": "Invalid token ID"
 }
