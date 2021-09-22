@@ -48,8 +48,8 @@ function App() {
       const search = window.location.search;
       const val = new URLSearchParams(search).get('id') || 1;
       if (isQueryInvalid(val)) {
-        router.replace({ query: { id: 1 } });
-        return 1;
+        router.replace({ query: { id: -1 } });
+        return -1;
       } else {
         return val;
       }
