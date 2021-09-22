@@ -47,14 +47,19 @@ function App() {
     if (process.browser) {
       const search = window.location.search;
       const val = new URLSearchParams(search).get('id') || 1;
-      if (val > 8000) {
-        // alert(t('invalidToken'))
+      if (isQueryInvalid(val)) {
+        router.replace({ query: { id: 1 } });
         return 1;
       } else {
         return val;
       }
     }
     return 1;
+  }
+
+  function isQueryInvalid(query) {
+    if (isNaN(query) || query > 8000) return true;
+    return false;
   }
 
   return (
@@ -108,7 +113,7 @@ function Nft(props) {
 
   if (!props.developerId) return <Text>{t('enterDeveloperId')}</Text>;
 
-  if (error || !nft) return <Text>{t('error')}.</Text>;
+  if (error || !nft) return <Text>{t('invalidToken')}.</Text>;
 
   return (
     <VStack w="full" spacing={5}>
