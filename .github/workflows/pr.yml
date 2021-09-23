@@ -34,3 +34,12 @@ jobs:
 
       - name: Lint code
         run: yarn lint
+
+      - name: Build app
+        run: yarn build
+
+      - name: E2E tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          wait-on: http://localhost:3000

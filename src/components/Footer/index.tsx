@@ -85,7 +85,7 @@ function Footer() {
             target="_blank"
             title="Vercel"
             rel="noopener noreferrer"
-            href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
+            href="https://vercel.com/?utm_source=developerdao&utm_campaign=oss"
           >
             <img
               alt="Powered by Vercel"

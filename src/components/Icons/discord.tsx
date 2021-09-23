@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function IconDiscord({ className = '' }) {
+function IconDiscord({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -19,9 +18,5 @@ function IconDiscord({ className = '' }) {
     </svg>
   );
 }
-
-IconDiscord.propTypes = {
-  className: PropTypes.string,
-};
 
 export default IconDiscord;

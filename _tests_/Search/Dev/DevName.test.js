@@ -11,7 +11,10 @@ import {
 describe('Dev Name button with Owner', () => {
   it('Renders the button with link', () => {
     render(<DevName nft={ownedDeveloperNFT} developerId={'2669'} />);
-    const devName = screen.getByTitle(`${ownedDeveloperNFT.owner}`);
+
+    const devName = screen.getByRole('link', { name: 'viewNftOpenSea' });
+    expect(devName).toBeInTheDocument();
+    expect(devName).toHaveTextContent(ownedDeveloperNFT.name);
 
     fireEvent.click(devName);
 
@@ -24,8 +27,9 @@ describe('Dev Name button without Owner', () => {
   it('Renders the button with no link', () => {
     render(<DevName nft={unownedDeveloperNFT} developerId={'7899'} />);
 
-    const devName = screen.getByTitle(`${unownedDeveloperNFT.owner}`);
-
+    const devName = screen.getByRole('button', {
+      name: unownedDeveloperNFT.name,
+    });
     expect(devName).toBeInTheDocument();
     expect(devName).toBeDisabled();
   });

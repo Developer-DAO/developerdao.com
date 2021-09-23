@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function IconEtherscan({ className = '' }) {
+function IconEtherscan({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -26,9 +25,5 @@ function IconEtherscan({ className = '' }) {
     </svg>
   );
 }
-
-IconEtherscan.propTypes = {
-  className: PropTypes.string,
-};
 
 export default IconEtherscan;

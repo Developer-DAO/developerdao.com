@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
+import { AppProps } from 'next/app';
 
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';
@@ -130,7 +131,7 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
   );
 }
 
-const App = ({ Component, pageProps }) => (
+const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
     <ChakraProvider theme={theme}>

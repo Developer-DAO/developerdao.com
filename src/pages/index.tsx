@@ -21,6 +21,7 @@ import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
+import { useNftImageContent } from '../utils/useNftImageContent';
 
 function App() {
   const { t } = useTranslation();
@@ -81,7 +82,7 @@ function App() {
           </VStack>
           {typeof window !== 'undefined' ? (
             <NftProvider fetcher={['ethers', ethersConfig]}>
-              <Nft developerId={developerId} />
+              <Nft developerId={developerId.toString()} />
             </NftProvider>
           ) : (
             <Text>{t('loading')}</Text>
@@ -92,34 +93,33 @@ function App() {
   );
 }
 
-function Nft(props) {
+function Nft({ developerId }: { developerId: string }) {
   const { t } = useTranslation();
   const toast = useToast();
 
   const copyLinkToNFT = useCallback(() => {
-    navigator.clipboard.writeText(`${SITE_URL}/?id=${props.developerId}`);
+    navigator.clipboard.writeText(`${SITE_URL}/?id=${developerId}`);
     toast({
       title: t('linkCopied'),
       isClosable: true,
     });
-  }, [toast, t, props.developerId]);
+  }, [toast, t, developerId]);
 
-  const { loading, error, nft } = useNft(
-    DEVELOPER_DAO_CONTRACT,
-    props.developerId,
-  );
+  const { loading, error, nft } = useNft(DEVELOPER_DAO_CONTRACT, developerId);
+
+  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
 
   if (loading) return <Text>{t('loading')}</Text>;
 
-  if (!props.developerId) return <Text>{t('enterDeveloperId')}</Text>;
+  if (!developerId) return <Text>{t('enterDeveloperId')}</Text>;
 
   if (error || !nft) return <Text>{t('invalidToken')}.</Text>;
 
   return (
     <VStack w="full" spacing={5}>
       <chakra.img
-        alt="hero"
-        src={processBase64Img(nft.image)}
+        alt={nftAltText!}
+        src={nftImage!}
         border={4}
         borderStyle="solid"
         borderColor="gray.200"
@@ -129,14 +129,14 @@ function Nft(props) {
         rounded="md"
       />
       <VStack>
-        <DevName nft={nft} developerId={props.developerId} />
+        <DevName nft={nft} developerId={developerId} />
         {nft.owner ? (
           <Button
             as="a"
             href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
             target="_blank"
             rel="noreferrer"
-            title={nft.owner || t('unclaimed')}
+            title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
             {t('owner')}:&nbsp;
@@ -156,7 +156,7 @@ function Nft(props) {
   );
 }
 
-const processBase64Img = (imgStr) => {
+const processBase64Img = (imgStr: string) => {
   const [formatInfo, base64Str] = imgStr.split(',');
 
   // The smart contract includes items with unescaped "&", which breaks SVG rendering
@@ -165,7 +165,7 @@ const processBase64Img = (imgStr) => {
   return formatInfo + ',' + btoa(processedStr);
 };
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
   },

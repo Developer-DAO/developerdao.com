@@ -1,11 +1,11 @@
 {
   "title": "Developer DAO",
-  "searchId": "Rechercher id DAO du développeur",
+  "searchId": "Rechercher id du $t(title)",
   "loading": "Chargement...",
   "error": "Erreur",
-  "madeBy": "Réalisé par la communauté des développeurs DAO: ",
+  "madeBy": "Fait par la communauté $t(title): ",
   "unclaimed": "Non réclamés",
   "owner": "Propriétaire",
-  "enterDeveloperId": "Veuillez remplir le champ avec un id DAO du développeur",
+  "enterDeveloperId": "Veuillez remplir le champ avec un id du $t(title)",
   "hosting": "Hébergé par:"
 }

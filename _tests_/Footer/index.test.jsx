@@ -2,10 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Footer from '../../src/components/Footer/index';
 
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
-}));
-
 describe('Footer', () => {
   it('Renders the github link', () => {
     render(<Footer />);

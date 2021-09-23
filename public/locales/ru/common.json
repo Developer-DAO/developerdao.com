@@ -1,11 +1,11 @@
 {
   "title": "Developer DAO",
-  "searchId": "Поиск Developer DAO id",
+  "searchId": "Поиск $t(title) id",
   "loading": "Загрузка...",
   "error": "Ошибка",
-  "madeBy": "Создано сообществом разработчиков DAO: ",
+  "madeBy": "Создано сообществом $t(title): ",
   "unclaimed": "Незарезервированный",
   "owner": "Владелец",
-  "enterDeveloperId": "Введите DAO id разработчика",
+  "enterDeveloperId": "Введите идентификатор $t(title)",
   "hosting": "Задеплоено на"
 }

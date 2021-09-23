@@ -3,10 +3,6 @@ import { render, screen } from '@testing-library/react';
 import Nav from '../../src/components/Nav/index';
 import testCommonLink from '../utils/testCommons';
 
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
-}));
-
 describe('Nav', () => {
   it('Renders the github link', () => {
     render(<Nav />);

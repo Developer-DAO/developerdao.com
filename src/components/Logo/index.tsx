@@ -1,11 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Box, css } from '@chakra-ui/react';
+import { Box, ChakraProps, css } from '@chakra-ui/react';
 
-/**
- * @param {import('@chakra-ui/react').BoxProps} props
- */
-function Logo(props) {
+function Logo(props: ChakraProps) {
   return (
     <Box
       rounded="full"
@@ -40,9 +36,5 @@ function Logo(props) {
     </Box>
   );
 }
-
-Logo.propTypes = {
-  className: PropTypes.string,
-};
 
 export default Logo;

@@ -168,6 +168,36 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Nazeeh21",
+      "name": "Nazeeh Vahora",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56908732?v=4",
+      "profile": "https://www.linkedin.com/in/nazeeh-vahora-a48abb196/",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "miralsuthar",
+      "name": "Miral Suthar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57826091?v=4",
+      "profile": "https://github.com/miralsuthar",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "TrevorFrench",
+      "name": "Trevor French",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42419234?v=4",
+      "profile": "http://trevorfrench.com",
+      "contributions": [
+        "translation",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function IconTwitter({ className = '' }) {
+function IconTwitter({ className = '' }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -19,9 +18,5 @@ function IconTwitter({ className = '' }) {
     </svg>
   );
 }
-
-IconTwitter.propTypes = {
-  className: PropTypes.string,
-};
 
 export default IconTwitter;
