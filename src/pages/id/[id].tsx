@@ -24,7 +24,7 @@ import PageLayout from '../../layout/Page';
 import DevName from '../../components/Search/Dev/DevName';
 import { useNftImageContent } from '../../utils/useNftImageContent';
 
-const developerPage = () => {
+const DeveloperPage = () => {
   const { t } = useTranslation();
   const router = useRouter();
   const id = router.query.id;
@@ -133,4 +133,4 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   };
 };
 
-export default developerPage;
+export default DeveloperPage;
