@@ -60,7 +60,7 @@ function Nft({ developerId }: { developerId: string }) {
   const toast = useToast();
 
   const copyLinkToNFT = useCallback(() => {
-    navigator.clipboard.writeText(`${SITE_URL}/?id=${developerId}`);
+    navigator.clipboard.writeText(`${SITE_URL}/id/${developerId}`);
     toast({
       title: t('linkCopied'),
       isClosable: true,
