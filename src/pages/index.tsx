@@ -17,7 +17,7 @@ import {
   VStack,
   useToast,
 } from '@chakra-ui/react';
-import { LinkIcon } from '@chakra-ui/icons';
+import { LinkIcon, SearchIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
@@ -38,7 +38,6 @@ function App() {
     (e) => {
       if (e <= 8000) {
         setDeveloperId(e);
-        router.replace({ query: { id: e } });
       }
     },
     [router],
@@ -48,19 +47,9 @@ function App() {
     if (process.browser) {
       const search = window.location.search;
       const val = new URLSearchParams(search).get('id') || 1;
-      if (isQueryInvalid(val)) {
-        router.replace({ query: { id: -1 } });
-        return -1;
-      } else {
-        return val;
-      }
+      return val;
     }
     return 1;
-  }
-
-  function isQueryInvalid(query) {
-    if (isNaN(query) || query > 8000) return true;
-    return false;
   }
 
   return (
@@ -79,80 +68,17 @@ function App() {
               name="hero-field"
               bg="white"
             />
+            <Button
+              as="a"
+              href={`/id/${developerId}`}
+              leftIcon={<SearchIcon />}
+            >
+              Search
+            </Button>
           </VStack>
-          {typeof window !== 'undefined' ? (
-            <NftProvider fetcher={['ethers', ethersConfig]}>
-              <Nft developerId={developerId.toString()} />
-            </NftProvider>
-          ) : (
-            <Text>{t('loading')}</Text>
-          )}
         </VStack>
       </chakra.main>
     </PageLayout>
-  );
-}
-
-function Nft({ developerId }: { developerId: string }) {
-  const { t } = useTranslation();
-  const toast = useToast();
-
-  const copyLinkToNFT = useCallback(() => {
-    navigator.clipboard.writeText(`${SITE_URL}/?id=${developerId}`);
-    toast({
-      title: t('linkCopied'),
-      isClosable: true,
-    });
-  }, [toast, t, developerId]);
-
-  const { loading, error, nft } = useNft(DEVELOPER_DAO_CONTRACT, developerId);
-
-  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
-
-  if (loading) return <Text>{t('loading')}</Text>;
-
-  if (!developerId) return <Text>{t('enterDeveloperId')}</Text>;
-
-  if (error || !nft) return <Text>{t('invalidToken')}.</Text>;
-
-  return (
-    <VStack w="full" spacing={5}>
-      <chakra.img
-        alt={nftAltText!}
-        src={nftImage!}
-        border={4}
-        borderStyle="solid"
-        borderColor="gray.200"
-        w="full"
-        objectFit="cover"
-        objectPosition="center"
-        rounded="md"
-      />
-      <VStack>
-        <DevName nft={nft} developerId={developerId} />
-        {nft.owner ? (
-          <Button
-            as="a"
-            href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
-            target="_blank"
-            rel="noreferrer"
-            title={t('viewOwnerEtherscan')}
-            fontSize={{ base: 'xs', sm: 'md' }}
-          >
-            {t('owner')}:&nbsp;
-            <chakra.span maxW="xs">{nft.owner.slice(0, 30)}</chakra.span>...
-            {nft.owner.slice(-4)}
-          </Button>
-        ) : (
-          <Button isDisabled>
-            {t('owner')}:&nbsp;{t('unclaimed')}
-          </Button>
-        )}
-        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
-          {t('copyLinkToNFT')}
-        </Button>
-      </VStack>
-    </VStack>
   );
 }
 
