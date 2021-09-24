@@ -8,7 +8,7 @@ import {
   DEVELOPER_DAO_CONTRACT,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
-} from '../utils/DeveloperDaoConstants';
+} from '../../utils/DeveloperDaoConstants';
 import {
   chakra,
   Input,
@@ -18,17 +18,17 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { LinkIcon } from '@chakra-ui/icons';
-import Logo from '../components/Logo';
-import PageLayout from '../layout/Page';
-import DevName from '../components/Search/Dev/DevName';
-import { useNftImageContent } from '../utils/useNftImageContent';
+import Logo from '../../components/Logo';
+import PageLayout from '../../layout/Page';
+import DevName from '../../components/Search/Dev/DevName';
+import { useNftImageContent } from '../../utils/useNftImageContent';
+import { GetStaticPaths } from 'next';
 
 function App() {
   const { t } = useTranslation();
   const router = useRouter();
   const id = getSearchID();
   const [developerId, setDeveloperId] = useState(id);
-
   const ethersConfig = {
     ethers: { Contract },
     provider: getDefaultProvider('homestead'),
@@ -42,8 +42,7 @@ function App() {
 
   function getSearchID() {
     if (process.browser) {
-      const search = window.location.search;
-      return new URLSearchParams(search).get('id') || 1;
+      return router.query.id || 1;
     }
     return 1;
   }
@@ -157,5 +156,12 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
     ...(await serverSideTranslations(locale, ['common'])),
   },
 });
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: 'blocking', //indicates the type of fallback
+  };
+};
 
 export default App;
