@@ -158,8 +158,9 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // ids should be be 1 to 8000 - hence the `i + 1`
-  const arr = Array.from(Array(7999).keys()).map(i => ({ params: { id: `${i+1}` }}));
+  const arr = Array.from(Array(7999).keys()).map((i) => ({
+    params: { id: `${i + 1}` },
+  }));
   return {
     paths: arr,
     fallback: 'blocking',

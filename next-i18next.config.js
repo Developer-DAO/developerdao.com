@@ -15,4 +15,5 @@ module.exports = {
       'zh-TW',
     ],
   },
+  react: { useSuspense: false },
 };
