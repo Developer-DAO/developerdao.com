@@ -158,8 +158,13 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  var arr = [];
+  for (let i = 0; i < 8001; i++) {
+    var dic = { params: { id: i.toString() } };
+    arr.push(dic);
+  }
   return {
-    paths: [{ params: { id: '1' } }],
+    paths: arr,
     fallback: 'blocking',
   };
 };
