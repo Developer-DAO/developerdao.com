@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -120,12 +120,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/narbs91"><img src="https://avatars.githubusercontent.com/u/29411347?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Narb</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=narbs91" title="Code">💻</a></td>
     <td align="center"><a href="https://bandism.net/"><img src="https://avatars.githubusercontent.com/u/22633385?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ikko Ashimine</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=eltociear" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/moiz-lakkadkutta"><img src="https://avatars.githubusercontent.com/u/59568435?v=4?s=100" width="100px;" alt=""/><br /><sub><b>moiz-lakkadkutta</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=moiz-lakkadkutta" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Nazeeh21"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=Nazeeh21" title="Code">💻</a> <a href="#maintenance-Nazeeh21" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/nazeeh-vahora-a48abb196/"><img src="https://avatars.githubusercontent.com/u/56908732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nazeeh Vahora</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=Nazeeh21" title="Code">💻</a> <a href="#maintenance-Nazeeh21" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/miralsuthar"><img src="https://avatars.githubusercontent.com/u/57826091?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Miral Suthar</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=miralsuthar" title="Code">💻</a> <a href="#maintenance-miralsuthar" title="Maintenance">🚧</a></td>
     <td align="center"><a href="http://trevorfrench.com"><img src="https://avatars.githubusercontent.com/u/42419234?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Trevor French</b></sub></a><br /><a href="#translation-TrevorFrench" title="Translation">🌍</a> <a href="https://github.com/Developer-DAO/developer-dao/commits?author=TrevorFrench" title="Code">💻</a></td>
   </tr>
   <tr>
     <td align="center"><a href="http://marbiano.com"><img src="https://avatars.githubusercontent.com/u/5664?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Bavio</b></sub></a><br /><a href="#design-marbiano" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/for"><img src="https://avatars.githubusercontent.com/u/7262123?v=4?s=100" width="100px;" alt=""/><br /><sub><b>for</b></sub></a><br /><a href="#translation-for" title="Translation">🌍</a></td>
   </tr>
 </table>
 
