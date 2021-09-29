@@ -158,9 +158,31 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const arr = Array.from(Array(7999).keys()).map((i) => ({
-    params: { id: `${i + 1}` },
-  }));
+  const locales = [
+    'en',
+    'es',
+    'fr',
+    'pt',
+    'pt-BR',
+    'pt-PT',
+    'ru',
+    'zh',
+    'zh-CN',
+    'zh-HK',
+    'zh-TW',
+  ];
+
+  const arr = [];
+  for (let i = 0; i < locales.length; i++) {
+    for (let j = 0; j < 8000; j++) {
+      arr.push({
+        params: {
+          id: `${j + 1}`,
+          locale: locales[i],
+        },
+      });
+    }
+  }
   return {
     paths: arr,
     fallback: 'blocking',
