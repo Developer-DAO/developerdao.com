@@ -44,7 +44,8 @@
     "test": "jest",
     "test:watch": "jest --watch --detectOpenHandles",
     "generate-types": "typechain --target ethers-v5 src/artifacts/*.json && prettier --write \"types/ethers-contracts/**/*.ts\"",
-    "postinstall": "yarn generate-types"
+    "postinstall": "yarn generate-types",
+    "scan-i18n": "node scan_i18n.js ./src ./public/locales"
   },
   "eslintConfig": {
     "extends": [
