@@ -172,20 +172,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
     'zh-TW',
   ];
 
-  const arr = [];
-  for (let i = 0; i < locales.length; i++) {
-    for (let j = 0; j < 8000; j++) {
-      arr.push({
+  const paths = [];
+  for (let i = 0; i < 8000; i++) {
+    for (let j = 0; j < locales.length; j++) {
+      paths.push({
         params: {
-          id: `${j + 1}`,
-          locale: locales[i],
+          id: `${i + 1}`,
         },
+        locale: locales[j],
       });
     }
   }
+
   return {
-    paths: arr,
-    fallback: 'blocking',
+    paths,
+    fallback: false,
   };
 };
 
