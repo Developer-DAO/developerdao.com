@@ -166,28 +166,10 @@ const processBase64Img = (imgStr: string) => {
   return formatInfo + ',' + btoa(processedStr);
 };
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
   },
 });
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [];
-  try {
-    for (let i = 0; i < 8000; i++) {
-      paths.push({
-        params: {
-          id: `${i + 1}`,
-        },
-        locale: 'en',
-      });
-    }
-  } catch (err) {}
-  return {
-    paths,
-    fallback: true,
-  };
-};
 
 export default App;
