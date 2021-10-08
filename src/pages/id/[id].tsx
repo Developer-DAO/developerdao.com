@@ -23,6 +23,7 @@ import Logo from '../../components/Logo';
 import PageLayout from '../../layout/Page';
 import DevName from '../../components/Search/Dev/DevName';
 import { useNftImageContent } from '../../utils/useNftImageContent';
+import nexti18nextConfig from '../../../next-i18next.config';
 import { GetStaticPaths } from 'next';
 
 function App() {
@@ -168,7 +169,7 @@ const processBase64Img = (imgStr: string) => {
 
 export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common'])),
+    ...(await serverSideTranslations(locale, ['common'], nexti18nextConfig)),
   },
 });
 
