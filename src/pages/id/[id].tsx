@@ -16,6 +16,7 @@ import {
   Button,
   VStack,
   useToast,
+  CircularProgress,
 } from '@chakra-ui/react';
 import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../../components/Logo';
@@ -45,6 +46,20 @@ function App() {
       return router.query.id || 1;
     }
     return 1;
+  }
+
+  if (router.isFallback) {
+    return (
+      <PageLayout>
+        <chakra.main>
+          <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
+            <Logo w={32} h={32} />
+            <Text>{t('loading')}</Text>
+            <CircularProgress isIndeterminate color="green.300" />
+          </VStack>
+        </chakra.main>
+      </PageLayout>
+    );
   }
 
   return (
@@ -158,35 +173,19 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const locales = [
-    'en',
-    'es',
-    'fr',
-    'pt',
-    'pt-BR',
-    'pt-PT',
-    'ru',
-    'zh',
-    'zh-CN',
-    'zh-HK',
-    'zh-TW',
-  ];
-
   const paths = [];
   for (let i = 0; i < 8000; i++) {
-    for (let j = 0; j < locales.length; j++) {
-      paths.push({
-        params: {
-          id: `${i + 1}`,
-        },
-        locale: locales[j],
-      });
-    }
+    paths.push({
+      params: {
+        id: `${i + 1}`,
+      },
+      locale: 'en',
+    });
   }
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
