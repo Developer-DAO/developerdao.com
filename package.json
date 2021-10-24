@@ -15,6 +15,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@walletconnect/web3-provider": "^1.6.5",
+    "airtable": "^0.11.1",
     "ethers": "^5.4.6",
     "framer-motion": "^4",
     "jest": "^27.2.0",
