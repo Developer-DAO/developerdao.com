@@ -28,5 +28,8 @@
   "ddaoTokenVisualizer": "$t(title) Token Betrachter",
   "by": "von",
   "otherTokensOwnedByThisAddress":"Andere Token, die dieser Adresse gehören",
-  "noOtherTokens":"Keine anderen Token im Besitz dieser Adresse"
+  "noOtherTokens":"Keine anderen Token im Besitz dieser Adresse",
+  "noTokensAvailable": "Sorry, alle Tokens wurden schon geclaimed!",
+  "mintPagePickToken": "Wähle einen Token aus",
+  "backTokenList": "Zurück zur Tokenliste"
 }

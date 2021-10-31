@@ -11,11 +11,19 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
+import { ArrowBackIcon } from '@chakra-ui/icons';
 import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
 
+interface DirectMintBoxProps {
+  setSelectedToken: (token?: string) => void;
+  selectedToken?: string;
+}
 // Layout for the Direct Mint Box
 // used on the minting page
-const DirectMintBox = () => {
+const DirectMintBox = ({
+  setSelectedToken,
+  selectedToken,
+}: DirectMintBoxProps) => {
   const { t } = useTranslation();
   return (
     <>
@@ -37,7 +45,18 @@ const DirectMintBox = () => {
                 {t('here')}
               </Link>
             </Text>
-            <DirectMint />
+            <DirectMint selectedToken={selectedToken} />
+            <Flex align="center">
+              <ArrowBackIcon w={5} h={5} mr={1} />
+              <Box
+                as="a"
+                href="#"
+                fontWeight="bold"
+                onClick={() => setSelectedToken()}
+              >
+                {t('backTokenList')}
+              </Box>
+            </Flex>
           </Stack>
         </Box>
       </Container>

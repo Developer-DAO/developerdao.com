@@ -29,8 +29,10 @@
   "mintTokenText" : "Mint your Token",
   "connectWalletText": "Connect Wallet",
   "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
-  "availableTokensText": "View the available Token IDs",
+  "availableTokensText": "View additional token info",
   "mintPageHeader": "DEVS Token Minter",
+  "mintPagePickToken": "Pick a Token to mint",
+  "backTokenList": "Back to token list",
   "projectsList": "A list of community projects created by the Developer DAO community.",
   "ddaoTokenSearch": "DDAO Token Search",
   "ddaoUnofficalFrontend": "Developer DAO Unofficial Frontend",
@@ -43,5 +45,6 @@
   "here": "here",
   "errorMinting": "Unable to Mint NFT",
   "disconnectWallet": "Disconnect Wallet",
-  "etherscanMessage": "View your TX on Etherscan"
+  "etherscanMessage": "View your TX on Etherscan",
+  "noTokensAvailable": "Sorry, all tokens have been claimed already!"
 }

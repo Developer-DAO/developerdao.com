@@ -39,6 +39,7 @@ let mint_contract: Partial<ethers.Contract>;
 
 interface DirectMintProps {
   developerId?: string;
+  selectedToken?: string;
 }
 
 const providerOptions = {
@@ -50,10 +51,12 @@ const providerOptions = {
   },
 };
 
-const DirectMint = ({ developerId }: DirectMintProps) => {
+const DirectMint = ({ developerId, selectedToken }: DirectMintProps) => {
   const { t } = useTranslation();
   const [userWallet, setUserWallet] = useState('');
-  const [tokenID, setTokenID] = useState(developerId ? developerId : '');
+  const [tokenID, setTokenID] = useState(
+    selectedToken ? selectedToken : developerId || '',
+  );
   const [networkError, setNetworkError] = useState(false);
   const [web3Modal, setWeb3Modal] = useState<Web3Modal>();
   const [txInProgress, setTxInProgress] = useState(false);
