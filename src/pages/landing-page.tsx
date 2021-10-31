@@ -7,6 +7,7 @@ import PageLayout from '../layout/Page';
 import { Button, Text } from '@chakra-ui/react';
 import { FaEthereum, FaDiscord } from 'react-icons/fa';
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
+import Tweet from '../components/Tweet';
 
 function LandingPage() {
   const { t } = useTranslation();
@@ -87,6 +88,13 @@ function LandingPage() {
               </Button>
             </Box>
           </Stack>
+
+          <Tweet
+            tweet="I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*."
+            name="miralsuthar"
+            userName="miral182000"
+            profileSrc="https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg"
+          />
 
           <Button size="sm" onClick={toggleColorMode}>
             Toggle Mode
