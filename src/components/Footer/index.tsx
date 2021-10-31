@@ -1,6 +1,7 @@
+import { useColorModeValue } from '@chakra-ui/color-mode';
+import { chakra, HStack, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, HStack, chakra, VStack } from '@chakra-ui/react';
 import {
   IconOpenSea,
   IconEtherscan,
@@ -13,12 +14,12 @@ import {
 function Footer() {
   const { t } = useTranslation();
 
+  const color = useColorModeValue('gray.600', '#fff');
+
   return (
     <chakra.footer borderTop="1px solid" borderColor="gray.200" py={10}>
-      <VStack mx="auto" maxW="6xl" px={4} spacing={5}>
-        <Text fontSize="sm" color="gray.600">
-          {t('madeBy')}
-        </Text>
+      <VStack color={color} mx="auto" maxW="6xl" px={4} spacing={5}>
+        <Text fontSize="sm">{t('madeBy')}</Text>
         <HStack as="ul" direction="row" spacing={4} listStyleType="none">
           <li>
             <a
@@ -88,7 +89,7 @@ function Footer() {
           </li>
         </HStack>
         <VStack>
-          <Text color="gray.600" fontSize="sm">
+          <Text color={color} fontSize="sm">
             {t('hosting')}
           </Text>
           <chakra.a

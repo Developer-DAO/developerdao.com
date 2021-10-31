@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -6,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
 import { AppProps } from 'next/app';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';
@@ -131,13 +133,15 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
   );
 }
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <SEO />
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  </>
-);
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <SEO />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
+  );
+};
 
 export default appWithTranslation(App);

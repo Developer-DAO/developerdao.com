@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ChakraProps, css } from '@chakra-ui/react';
+import { Box, ChakraProps, useColorModeValue } from '@chakra-ui/react';
 
 function Logo(props: ChakraProps) {
   return (

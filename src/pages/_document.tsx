@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-document-import-in-page */
+import { ColorModeScript } from '@chakra-ui/color-mode';
 import Document, {
   DocumentContext,
   Head,
@@ -6,6 +7,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+import theme from '../theme';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -18,6 +20,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

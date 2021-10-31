@@ -1,6 +1,13 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+
+// 2. Add your color mode config
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: true,
+};
 
 export const theme = extendTheme({
+  colors: {},
   fonts: {
     heading:
       'InterVariable, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
@@ -14,4 +21,13 @@ export const theme = extendTheme({
       },
     },
   },
+  config,
 });
+
+// theme.ts
+
+// 1. import `extendTheme` function
+
+// 3. extend the theme
+
+export default theme;

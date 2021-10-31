@@ -1,6 +1,9 @@
 {
   "title": "Developer DAO",
+  "heading": "Developers meet web3.",
+  "subHeading": "A place to explore what can be achieved when we bring together talented and like-minded people who are interested in learning about and building on Web3.",
   "home": "Home",
+  "developers": "Developers",
   "projects": "Projects",
   "searchId": "Search $t(title) id",
   "description": "A $t(community) of builders who believe in collective ownership of the internet.",

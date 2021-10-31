@@ -1,5 +1,6 @@
 import React from 'react';
 import { chakra, Flex, HStack } from '@chakra-ui/react';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { IconGitHub } from '../Icons';
@@ -7,6 +8,7 @@ import Logo from '../Logo';
 
 function Nav() {
   const { t } = useTranslation();
+  const color = useColorModeValue('#000', '#fff');
 
   return (
     <chakra.nav borderBottom="1px solid" borderColor="gray.200">
@@ -21,21 +23,12 @@ function Nav() {
       >
         <Link href="/" passHref>
           <HStack as="a" title={t('title')} display="flex" alignItems="center">
-            <Logo h={7} w={7} />
-            <chakra.span
-              fontWeight="bold"
-              fontSize="sm"
-              color="gray.600"
-              transition="color 300ms ease-in-out"
-              _hover={{ color: 'black' }}
-            >
-              {t('title')}
-            </chakra.span>
+            <Logo h={10} w={10} />
           </HStack>
         </Link>
-        <HStack spacing={{ base: 3, sm: 10 }}>
-          <Link href="/" passHref>
-            {t('home')}
+        <HStack color={color} spacing={{ base: 3, sm: 10 }}>
+          <Link href="/developers" passHref>
+            {t('developers')}
           </Link>
           <Link href="/mint" passHref>
             {t('mintTokenText')}
@@ -43,20 +36,6 @@ function Nav() {
           <Link href="/projects" passHref>
             {t('projects')}
           </Link>
-          <chakra.a
-            href="https://github.com/Developer-DAO/developer-dao"
-            target="_blank"
-            rel="noreferrer"
-            title={t('daoGithubRepo')}
-          >
-            <IconGitHub
-              h={7}
-              w={7}
-              opacity={0.6}
-              transition="opacity 300ms ease-in-out"
-              _hover={{ opacity: 1 }}
-            />
-          </chakra.a>
         </HStack>
       </Flex>
     </chakra.nav>
