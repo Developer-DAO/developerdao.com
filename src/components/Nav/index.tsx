@@ -16,10 +16,9 @@ function Nav() {
         justify="space-between"
         align="center"
         mx="auto"
-        maxW="7xl"
-        minW="xl"
+        maxW="6xl"
         py={3}
-        px={5}
+        px={4}
       >
         <Link href="/" passHref>
           <HStack as="a" title={t('title')} display="flex" alignItems="center">
