@@ -9,6 +9,7 @@
     "@emotion/styled": "^11",
     "@ethersproject/abi": "^5.4.1",
     "@fontsource/inter": "^4.5.0",
+    "@fontsource/poppins": "^4.5.0",
     "@fontsource/source-code-pro": "^4.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

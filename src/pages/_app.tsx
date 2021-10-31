@@ -6,8 +6,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
+import '@fontsource/poppins';
 import { AppProps } from 'next/app';
-import { useColorModeValue } from '@chakra-ui/color-mode';
 
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';

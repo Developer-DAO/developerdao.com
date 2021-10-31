@@ -24,7 +24,7 @@ function Tweet({
     <Box
       width={{ base: '90%', sm: 'md', md: 'lg' }}
       textAlign="left"
-      boxShadow="dark-lg"
+      boxShadow="md"
       p="6"
       rounded="md"
       bg={bgColor}

@@ -13,6 +13,7 @@ export const theme = extendTheme({
       'InterVariable, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
     body: 'InterVariable, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
     code: '"Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace',
+    poppins: 'Poppins',
   },
   styles: {
     global: {

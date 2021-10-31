@@ -27,16 +27,21 @@ function LandingPage() {
           textAlign="center"
           mt={12}
           w="full"
-          maxW="2xl"
+          maxW="3xl"
         >
-          <Text mb={2} fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}>
+          <Text
+            fontFamily="poppins"
+            fontWeight="light"
+            mb={2}
+            fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
+          >
             {t('heading')}
           </Text>
           <Text
             px={4}
             fontWeight="400"
             fontSize={{ base: '14px', md: '18px', lg: '18px' }}
-            maxW="2xl"
+            maxW={{ base: '90%', sm: '80%', md: '2xl' }}
           >
             {t('subHeading')}
           </Text>
