@@ -27,10 +27,11 @@ function Tweet({
       boxShadow="md"
       p="6"
       rounded="md"
+      marginLeft={4}
       bg={bgColor}
     >
       <Text color={color}>{tweet}</Text>
-      <Flex mt={2} alignItems="center">
+      <Flex mt={4} alignItems="center">
         <Box
           rounded="full"
           width={12}
