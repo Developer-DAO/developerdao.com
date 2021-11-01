@@ -30,8 +30,7 @@ function Tweet({
       marginLeft={4}
       bg={bgColor}
     >
-      <Text color={color}>{tweet}</Text>
-      <Flex mt={4} alignItems="center">
+      <Flex mb={4} alignItems="center">
         <Box
           rounded="full"
           width={12}
@@ -54,6 +53,7 @@ function Tweet({
           </Flex>
         </Box>
       </Flex>
+      <Text color={color}>{tweet}</Text>
     </Box>
   );
 }
