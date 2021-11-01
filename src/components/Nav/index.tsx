@@ -56,6 +56,9 @@ export default function Nav() {
             <Link href="/mint" passHref>
               <a>{t('mintTokenText')}</a>
             </Link>
+            <Link href="/resources" passHref>
+              {t('resourcesNav')}
+            </Link>
             <Link href="/projects" passHref>
               <a>{t('projects')}</a>
             </Link>

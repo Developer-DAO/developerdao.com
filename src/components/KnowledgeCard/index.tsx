@@ -12,12 +12,14 @@ import {
   Icon,
   Link,
   Tag,
+  Button,
 } from '@chakra-ui/react';
 import {
   FaLockOpen,
   FaMoneyBill,
   FaRegNewspaper,
   FaVideo,
+  FaQuestion,
 } from 'react-icons/fa';
 
 function KnowledgeCard(props) {
@@ -55,6 +57,8 @@ function KnowledgeCard(props) {
         return <Icon as={FaLockOpen} />;
       case 'Paid Course':
         return <Icon as={FaMoneyBill} />;
+      default:
+        return <Icon as={FaQuestion} />;
     }
   };
 
@@ -68,7 +72,13 @@ function KnowledgeCard(props) {
         return t('checkFreeCourse');
       case 'Paid Course':
         return t('checkPaidCourse');
+      default:
+        return t('unknownMediaText');
     }
+  };
+
+  const printFullRecord = () => {
+    console.log(kbRecord);
   };
 
   return (
@@ -94,6 +104,9 @@ function KnowledgeCard(props) {
           {t('blockchain')}: {kbRecord.Blockchain}
         </Text>
         <Text>{kbRecord['Date Added']}</Text>
+        {!process.env.production ? (
+          <Button onClick={printFullRecord}>Console Print Full Record</Button>
+        ) : null}
       </VStack>
     </WrapItem>
   );
