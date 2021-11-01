@@ -65,10 +65,12 @@ function LandingPage() {
     <PageLayout>
       <chakra.main>
         <Button
+          zIndex={10}
+          borderWidth={2}
           bottom="15"
           right="10"
           position="fixed"
-          size="sm"
+          size="md"
           onClick={toggleColorMode}
         >
           {color === '#000' ? <FaMoon /> : <FaSun />}
