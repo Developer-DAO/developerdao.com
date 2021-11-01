@@ -21,8 +21,8 @@ import {
   FaVideo,
   FaQuestion,
 } from 'react-icons/fa';
-
-function KnowledgeCard(props) {
+import { Resource } from '../../utils/AirtableResourceClasses';
+function KnowledgeCard(props: { data: Resource }) {
   const { t } = useTranslation();
 
   const kbRecord = props.data.fields;
@@ -40,10 +40,8 @@ function KnowledgeCard(props) {
     }
   };
 
-  const getAuthorName = (author: String) => {
-    // TODO
-    console.log('implement getAuthorName');
-    return author;
+  const getAuthor = (author: String[]) => {
+    return author?.join(', ');
   };
 
   const renderMediaType = (mediaType: String) => {
@@ -85,7 +83,7 @@ function KnowledgeCard(props) {
     <WrapItem>
       <VStack>
         <Text>{kbRecord.Title}</Text>
-        <Text>{getAuthorName(kbRecord.Author)}</Text>
+        <Text>{getAuthor(kbRecord.Author)}</Text>
         {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
         {getLevelBadge(kbRecord.Level)}
         <Text>{t('tags')}</Text>

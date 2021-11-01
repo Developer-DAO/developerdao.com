@@ -17,56 +17,18 @@ import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import Airtable from 'airtable';
-import KnowledgeCard from '../components/KnowledgeCard';
+import KnowledgeCard from '../components/ResourceCard';
 import {
   AIRTABLE_READONLY_KEY,
   AIRTABLE_RESOURCE_BASE,
 } from '../utils/DeveloperDaoConstants';
-
-// simplified airtable objects that work for our purposes
-interface AirtableResponse {
-  _rawJson: string;
-}
-interface Author {
-  id: string;
-  fields: {
-    Name: string;
-  };
-}
-interface Blockchain {
-  id: string;
-  fields: {
-    Name: string;
-  };
-}
-interface Category {
-  id: string;
-  fields: {
-    Name: string;
-  };
-}
-interface Tag {
-  id: string;
-  fields: {
-    Name: string;
-  };
-}
-interface Resource {
-  id: string;
-  fields: {
-    Curated: boolean;
-    Source: string;
-    Summary: string;
-    Level: string;
-    Blockchain: string[];
-    Category: string[];
-    Tags: string[];
-    'Media Type': string;
-    Author: string[];
-    'Date Added': string;
-    Contributor: string[];
-  };
-}
+import {
+  Author,
+  Blockchain,
+  Category,
+  Resource,
+  Tag,
+} from '../utils/AirtableResourceClasses';
 
 function KnowledgeBase(props: { airtable: Airtable }) {
   const { t } = useTranslation();
@@ -209,24 +171,20 @@ function KnowledgeBase(props: { airtable: Airtable }) {
     resourceList: Resource[],
     tagList: Tag[],
   ) => {
+    // bails out if loading has not yet completed (uncontrolled async operations)
     if (authorList.length == 0) {
-      console.log('empty authors');
       return;
     }
     if (blockchainList.length == 0) {
-      console.log('empty blockchains');
       return;
     }
     if (categoryList.length == 0) {
-      console.log('empty categories');
       return;
     }
     if (resourceList === undefined || resourceList.length === 0) {
-      console.log('empty resources');
       return;
     }
     if (tagList.length == 0) {
-      console.log('empty tags');
       return;
     }
 
