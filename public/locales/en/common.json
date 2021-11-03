@@ -50,5 +50,19 @@
   "testnet": "Testnet",
   "glitterConfetti": "A man throwing glitter in a fabulous manner",
   "soldOut": "DEV Tokens are now sold out to our {{count}} community members",
-  "resourcesNav": "Resources"
+  "resourcesNav": "Resources",
+  "daoMember": "$t(title) Member",
+  "watchVideo": "Watch the Video",
+  "readArticle": "Read the Article",
+  "checkCourse": "Check out the Course",
+  "checkBook": "Check out the Book",
+  "tags": "Tags",
+  "blockchain": "Blockchain",
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advanced": "Advanced",
+  "curatedResources": "Curated Resources",
+  "allResources": "All Resources",
+  "airtableError": "Unable to configure $t(title) Airtable",
+  "hydrationError": "$t(error) preparing Resources for display"
 }

@@ -1,27 +1,30 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Box,
-  Text,
-  HStack,
-  chakra,
-  VStack,
-  WrapItem,
-  Stack,
   Badge,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  HStack,
   Icon,
   Link,
+  Stack,
   Tag,
-  Button,
+  Text,
+  VStack,
+  WrapItem,
 } from '@chakra-ui/react';
 import {
-  FaLockOpen,
-  FaMoneyBill,
+  FaChalkboard,
+  FaBook,
   FaRegNewspaper,
   FaVideo,
   FaQuestion,
 } from 'react-icons/fa';
 import { Resource } from '../../utils/AirtableResourceClasses';
+import Logo from '../../components/Logo';
+
 function KnowledgeCard(props: { data: Resource }) {
   const { t } = useTranslation();
 
@@ -40,21 +43,34 @@ function KnowledgeCard(props: { data: Resource }) {
     }
   };
 
-  const getAuthor = (author: String[]) => {
-    return author?.join(', ');
+  const getAuthor = (authors: undefined | { name: string; dev: boolean }[]) => {
+    if (!authors || authors.length === 0) return;
+    return (
+      <VStack>
+        {authors.map((author) => (
+          <Flex key={author.name} align="center" justify="space-between">
+            {author.name}
+            {author.dev ? (
+              <Box title={t('daoMember')}>
+                <Logo ml={1} h={7} w={7} />
+              </Box>
+            ) : null}
+          </Flex>
+        ))}
+      </VStack>
+    );
   };
 
   const renderMediaType = (mediaType: String) => {
-    // article video free course paid course
     switch (mediaType) {
       case 'Video':
         return <Icon as={FaVideo} />;
       case 'Article':
         return <Icon as={FaRegNewspaper} />;
-      case 'Free Course':
-        return <Icon as={FaLockOpen} />;
-      case 'Paid Course':
-        return <Icon as={FaMoneyBill} />;
+      case 'Course':
+        return <Icon as={FaChalkboard} />;
+      case 'Book':
+        return <Icon as={FaBook} />;
       default:
         return <Icon as={FaQuestion} />;
     }
@@ -66,26 +82,24 @@ function KnowledgeCard(props: { data: Resource }) {
         return t('watchVideo');
       case 'Article':
         return t('readArticle');
-      case 'Free Course':
-        return t('checkFreeCourse');
-      case 'Paid Course':
-        return t('checkPaidCourse');
+      case 'Course':
+        return t('checkCourse');
+      case 'Book':
+        return t('checkBook');
       default:
         return t('unknownMediaText');
     }
   };
 
-  const printFullRecord = () => {
-    console.log(kbRecord);
-  };
-
   return (
-    <WrapItem>
+    <WrapItem maxW={{ base: '100%', md: '800px' }}>
       <VStack>
-        <Text>{kbRecord.Title}</Text>
-        <Text>{getAuthor(kbRecord.Author)}</Text>
-        {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
-        {getLevelBadge(kbRecord.Level)}
+        <Heading>{kbRecord.Title}</Heading>
+        <Box>{getAuthor(kbRecord.extendedAuthors)}</Box>
+        <HStack>
+          {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
+          {getLevelBadge(kbRecord.Level)}
+        </HStack>
         <Text>{t('tags')}</Text>
         <Stack direction="row">
           {kbRecord.Tags?.map((tag: string, index: number) => (
@@ -93,18 +107,19 @@ function KnowledgeCard(props: { data: Resource }) {
           ))}
         </Stack>
         <HStack>
-          {renderMediaType(kbRecord['Media Type'])}
-          <Link href={kbRecord.Source}>
-            {getAppropriateText(kbRecord['Media Type'])}
+          <Link href={kbRecord.Source} _hover={undefined}>
+            <Button
+              variant="solid"
+              leftIcon={renderMediaType(kbRecord['Media Type'])}
+            >
+              {getAppropriateText(kbRecord['Media Type'])}
+            </Button>
           </Link>
         </HStack>
         <Text>
           {t('blockchain')}: {kbRecord.Blockchain}
         </Text>
         <Text>{kbRecord['Date Added']}</Text>
-        {!process.env.production ? (
-          <Button onClick={printFullRecord}>Console Print Full Record</Button>
-        ) : null}
       </VStack>
     </WrapItem>
   );

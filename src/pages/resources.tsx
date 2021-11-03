@@ -45,16 +45,19 @@ function KnowledgeBase(props: { airtable: Airtable }) {
     ) {
       setAirtable(new Airtable({ apiKey: AIRTABLE_READONLY_KEY }));
       setAirbase(AIRTABLE_RESOURCE_BASE);
-      listQuery();
     } else {
-      // give some kind of failure-to-launch
-      console.error('airtable configuration failed');
       toast({
         title: t('airtableError'),
         isClosable: true,
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (airtable && airbase) {
+      listQuery();
+    }
+  }, [airtable, airbase]);
 
   const listQuery = () => {
     if (!airtable) return;
@@ -74,7 +77,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           fetchNextPage();
         },
         (err) => {
-          if (err) console.error('error', err);
+          if (err) console.error(t('error'), err);
           hydrateResourceRecords(
             authorList,
             blockchainList,
@@ -94,7 +97,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           fetchNextPage();
         },
         (err) => {
-          if (err) console.error('error', err);
+          if (err) console.error(t('error'), err);
           hydrateResourceRecords(
             authorList,
             blockchainList,
@@ -114,7 +117,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           fetchNextPage();
         },
         (err) => {
-          if (err) console.error('error', err);
+          if (err) console.error(t('error'), err);
           hydrateResourceRecords(
             authorList,
             blockchainList,
@@ -134,7 +137,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           fetchNextPage();
         },
         (err) => {
-          if (err) console.error('error', err);
+          if (err) console.error(t('error'), err);
           hydrateResourceRecords(
             authorList,
             blockchainList,
@@ -152,7 +155,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           fetchNextPage();
         },
         (err) => {
-          if (err) console.error('error', err);
+          if (err) console.error(t('error'), err);
           hydrateResourceRecords(
             authorList,
             blockchainList,
@@ -188,13 +191,16 @@ function KnowledgeBase(props: { airtable: Airtable }) {
       return;
     }
 
-    const authorMap: { [key: string]: string } = {};
+    const authorMap: { [key: string]: { name: string; dev: boolean } } = {};
     const blockchainMap: { [key: string]: string } = {};
     const categoryMap: { [key: string]: string } = {};
     const tagMap: { [key: string]: string } = {};
 
     authorList.forEach((item) => {
-      authorMap[item.id] = item.fields.Name;
+      authorMap[item.id] = {
+        name: item.fields.Name,
+        dev: item.fields['Developer DAO Member'],
+      };
     });
     blockchainList.forEach((item) => {
       blockchainMap[item.id] = item.fields.Name;
@@ -211,7 +217,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
       const hydratedList = resourceList.map((resource: Resource) => {
         const newFields = {
           ...resource.fields,
-          Author: resource.fields.Author?.map(
+          extendedAuthors: resource.fields.Author?.map(
             (item: string) => authorMap[item],
           ),
           Blockchain: resource.fields.Blockchain?.map(
@@ -230,7 +236,7 @@ function KnowledgeBase(props: { airtable: Airtable }) {
 
       setResourceBaseList(hydratedList);
     } catch (e) {
-      console.error('hydration error', e);
+      console.error(t('hydrationError'), e);
     }
   };
 
@@ -244,20 +250,23 @@ function KnowledgeBase(props: { airtable: Airtable }) {
       return resourceBaseList.filter((item) => item.fields.Curated);
     }
   };
+  const getViewLength = () => {
+    return getViewList().length;
+  };
 
   return (
     <PageLayout>
       <chakra.main>
-        <Button onClick={listQuery}>Load Resources</Button>
         <HStack>
+          <Text>{t('curatedResources')}</Text>
           <Switch isChecked={showAll} onChange={updateListFilter} />
-          <Text>Show All Resources (filtered by default)</Text>
+          <Text>{t('allResources')}</Text>
         </HStack>
         <Box>
           {getViewList().length === 0 ? (
             <Text>No Records</Text>
           ) : (
-            <Wrap>
+            <Wrap spacing={8} justify="center">
               {getViewList().map((item, index) => (
                 <KnowledgeCard key={index} data={item} />
               ))}

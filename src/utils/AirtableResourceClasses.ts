@@ -6,6 +6,7 @@ export interface Author {
   id: string;
   fields: {
     Name: string;
+    'Developer DAO Member': boolean;
   };
 }
 export interface Blockchain {
@@ -41,5 +42,7 @@ export interface Resource {
     Author: string[];
     'Date Added': string;
     Contributor: string[];
+    // for use with the view
+    extendedAuthors?: { name: string; dev: boolean }[];
   };
 }
