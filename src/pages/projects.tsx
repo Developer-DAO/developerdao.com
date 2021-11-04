@@ -7,7 +7,7 @@ import {
   chakra,
 } from '@chakra-ui/react';
 
-import PageLayout from '../layout/Page';
+import PageLayout from '@/layout/Page';
 import React from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';

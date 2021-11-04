@@ -9,7 +9,7 @@ import {
   DEVELOPER_DAO_CONTRACT_ABI,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
-} from '../utils/DeveloperDaoConstants';
+} from '@/utils/DeveloperDaoConstants';
 import {
   chakra,
   Input,
@@ -19,11 +19,11 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { LinkIcon } from '@chakra-ui/icons';
-import Logo from '../components/Logo';
-import PageLayout from '../layout/Page';
-import DevName from '../components/Search/Dev/DevName';
-import { useNftImageContent } from '../utils/useNftImageContent';
-import OtherDevsByOwnerContainer from '../components/Search/OtherDevsByOwner/OtherDevsByOwner';
+import Logo from '@/components/Logo';
+import PageLayout from '@/layout/Page';
+import DevName from '@/components/Search/Dev/DevName';
+import { useNftImageContent } from '@/utils/useNftImageContent';
+import OtherDevsByOwnerContainer from '@/components/Search/OtherDevsByOwner/OtherDevsByOwner';
 
 function App() {
   const { t } = useTranslation();

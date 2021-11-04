@@ -30,9 +30,9 @@ import {
   ERROR_CODE_TX_REJECTED_BY_USER,
   MAINNET_NETWORK_ID,
   ETHERSCAN_TX_URL,
-} from '../../utils/DeveloperDaoConstants';
+} from '@/utils/DeveloperDaoConstants';
 
-import MINT_CONTRACT from '../../artifacts/ddao.json';
+import MINT_CONTRACT from '@/artifacts/ddao.json';
 let _provider: any = null;
 let _signer: any = null;
 let mint_contract: Partial<ethers.Contract>;

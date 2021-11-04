@@ -1,6 +1,6 @@
 import React from 'react';
-import DirectMint from './DirectMint';
-import Logo from '../../components/Logo';
+import DirectMint from '@/components/DirectMint/DirectMint';
+import Logo from '@/components/Logo';
 import {
   Box,
   Container,
@@ -11,7 +11,7 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
-import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
+import { TOKEN_FINDER_URL } from '@/utils/DeveloperDaoConstants';
 
 // Layout for the Direct Mint Box
 // used on the minting page

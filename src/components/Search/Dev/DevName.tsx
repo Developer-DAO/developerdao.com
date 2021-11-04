@@ -3,8 +3,8 @@ import { NftMetadata } from 'use-nft';
 import { useTranslation } from 'react-i18next';
 import { Button, VStack } from '@chakra-ui/react';
 
-import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoConstants';
-import IconOpenSea from '../../Icons/opensea';
+import { OPENSEA_DIRECT_LINK_PREFIX } from '@/utils/DeveloperDaoConstants';
+import IconOpenSea from '@/components/Icons/opensea';
 
 function DevName({
   nft,

@@ -5,8 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { Global } from '@emotion/react';
 import { AppProps } from 'next/app';
-import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
-import { theme } from '../theme';
+import { DEVELOPER_DAO_WEBSITE } from '@/utils/DeveloperDaoConstants';
+import { theme } from '@/theme';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 

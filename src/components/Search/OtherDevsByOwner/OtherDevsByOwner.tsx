@@ -5,7 +5,7 @@ import { Flex, Link, Text } from '@chakra-ui/react';
 
 import { Contract } from 'ethers';
 import { useEffect } from 'react';
-import { SITE_URL } from '../../../utils/DeveloperDaoConstants';
+import { SITE_URL } from '@/utils/DeveloperDaoConstants';
 
 const cache: { [key: string]: number[] } = {};
 
