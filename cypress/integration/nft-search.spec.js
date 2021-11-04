@@ -11,7 +11,7 @@ describe('NFT Search', () => {
 
     // search for another token and display NFT
     cy.findByRole('textbox', { name: /search/i })
-      .clear()
+      .clear({ force: true })
       .type('5555');
     cy.location('search').should('eq', '?id=5555');
     cy.findDeveloperNft(
