@@ -1,14 +1,4 @@
-import {
-  Box,
-  Link,
-  ListItem,
-  Text,
-  UnorderedList,
-  chakra,
-} from '@chakra-ui/react';
-
-import PageLayout from '@/layout/Page';
-import React from 'react';
+import { Box, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 
@@ -16,8 +6,8 @@ function Projects() {
   const { t } = useTranslation();
 
   return (
-    <PageLayout>
-      <chakra.main>
+    <Box mb={20}>
+      <Box as="section" pt={40} pb={{ base: 20, md: 36 }}>
         <Box mx="auto" maxW="6xl" py={3} px={4}>
           <Text fontSize="xl">{t('projects')}</Text>
           <Text my={2} color="gray.600">
@@ -83,8 +73,8 @@ function Projects() {
             </ListItem>
           </UnorderedList>
         </Box>
-      </chakra.main>
-    </PageLayout>
+      </Box>
+    </Box>
   );
 }
 
