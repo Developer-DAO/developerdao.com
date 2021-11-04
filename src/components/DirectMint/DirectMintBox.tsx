@@ -11,8 +11,8 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
-import { TOKEN_FINDER_URL } from '@/utils/DeveloperDaoConstants';
-
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
+const { TOKEN_FINDER_URL } = DEVELOPER_DAO_CONSTANTS;
 // Layout for the Direct Mint Box
 // used on the minting page
 const DirectMintBox = () => {

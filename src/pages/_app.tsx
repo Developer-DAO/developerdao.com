@@ -7,8 +7,8 @@ import { Global } from '@emotion/react';
 import { AppProps } from 'next/app';
 import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import { theme } from '@/theme';
-
-const socialBanner = `${DEVELOPER_DAO_CONSTANTS.DEVELOPER_DAO_WEBSITE}/social-banner.png`;
+const { DEVELOPER_DAO_WEBSITE } = DEVELOPER_DAO_CONSTANTS;
+const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
 function SEO() {
   const { t } = useTranslation();

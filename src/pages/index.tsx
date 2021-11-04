@@ -4,12 +4,7 @@ import { NftProvider, useNft } from 'use-nft';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import {
-  DEVELOPER_DAO_CONTRACT,
-  DEVELOPER_DAO_CONTRACT_ABI,
-  ETHER_SCAN_LINK_PREFIX,
-  SITE_URL,
-} from '@/utils/DeveloperDaoConstants';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import {
   chakra,
   Input,
@@ -24,6 +19,13 @@ import PageLayout from '@/layout/Page';
 import DevName from '@/components/Search/Dev/DevName';
 import { useNftImageContent } from '@/utils/useNftImageContent';
 import OtherDevsByOwnerContainer from '@/components/Search/OtherDevsByOwner/OtherDevsByOwner';
+
+const {
+  DEVELOPER_DAO_CONTRACT,
+  DEVELOPER_DAO_CONTRACT_ABI,
+  ETHER_SCAN_LINK_PREFIX,
+  SITE_URL,
+} = DEVELOPER_DAO_CONSTANTS;
 
 function App() {
   const { t } = useTranslation();
@@ -86,6 +88,7 @@ function App() {
 
 function Nft({ developerId }: { developerId: string }) {
   const { t } = useTranslation();
+
   const toast = useToast();
 
   const copyLinkToNFT = useCallback(() => {

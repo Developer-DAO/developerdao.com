@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NftMetadata } from 'use-nft';
 import { useTranslation } from 'react-i18next';
 import { Flex, Link, Text } from '@chakra-ui/react';
 
 import { Contract } from 'ethers';
 import { useEffect } from 'react';
-import { SITE_URL } from '@/utils/DeveloperDaoConstants';
-
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
+const { SITE_URL } = DEVELOPER_DAO_CONSTANTS;
 const cache: { [key: string]: number[] } = {};
 
 function OtherDevsByOwnerContainer({

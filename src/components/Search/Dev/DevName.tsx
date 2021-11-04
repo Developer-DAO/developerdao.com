@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
 import { NftMetadata } from 'use-nft';
 import { useTranslation } from 'react-i18next';
-import { Button, VStack } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
-import { OPENSEA_DIRECT_LINK_PREFIX } from '@/utils/DeveloperDaoConstants';
-import IconOpenSea from '@/components/Icons/opensea';
-
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
+import IconOpenSea from '@/components/icons/opensea';
+const { OPENSEA_DIRECT_LINK_PREFIX } = DEVELOPER_DAO_CONSTANTS;
 function DevName({
   nft,
   developerId,

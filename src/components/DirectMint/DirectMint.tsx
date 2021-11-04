@@ -25,12 +25,7 @@ import { ethers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
-import {
-  DEVELOPER_DAO_CONTRACT,
-  ERROR_CODE_TX_REJECTED_BY_USER,
-  MAINNET_NETWORK_ID,
-  ETHERSCAN_TX_URL,
-} from '@/utils/DeveloperDaoConstants';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 
 import MINT_CONTRACT from '@/artifacts/ddao.json';
 let _provider: any = null;
@@ -49,9 +44,15 @@ const providerOptions = {
     },
   },
 };
-
+const {
+  DEVELOPER_DAO_CONTRACT,
+  ERROR_CODE_TX_REJECTED_BY_USER,
+  MAINNET_NETWORK_ID,
+  ETHERSCAN_TX_URL,
+} = DEVELOPER_DAO_CONSTANTS;
 const DirectMint = ({ developerId }: DirectMintProps) => {
   const { t } = useTranslation();
+
   const [userWallet, setUserWallet] = useState('');
   const [tokenID, setTokenID] = useState(developerId ? developerId : '');
   const [networkError, setNetworkError] = useState(false);
