@@ -1,18 +1,17 @@
 import * as React from 'react';
 import {
   Box,
-  Heading,
   Container,
   Text,
   Button,
   Stack,
   useColorModeValue,
   chakra,
-  Flex,
 } from '@chakra-ui/react';
 import { SiEthereum, SiDiscord } from 'react-icons/si';
 import { TweetCarousel } from '..';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 export interface IHeroProps {}
 
 export default function Hero(props: IHeroProps) {
@@ -57,18 +56,21 @@ export default function Hero(props: IHeroProps) {
               <Text fontSize="1rem" mb="4" color={accentColor}>
                 seats left
               </Text>
-              <Button
-                leftIcon={<SiEthereum />}
-                color="white"
-                bg="#2128ca"
-                _hover={{
-                  bg: '#0409b0',
-                }}
-                w="100%"
-                size="lg"
-              >
-                Become A Member
-              </Button>
+              <Link href="/mint" passHref>
+                <Button
+                  as="a"
+                  leftIcon={<SiEthereum />}
+                  color="white"
+                  bg="#2128ca"
+                  _hover={{
+                    bg: '#0409b0',
+                  }}
+                  w="100%"
+                  size="lg"
+                >
+                  Become A Member
+                </Button>
+              </Link>
             </Box>
             <Box>
               <Text fontSize="4rem">853</Text>
@@ -76,6 +78,7 @@ export default function Hero(props: IHeroProps) {
                 devs building
               </Text>
               <Button
+                as="a"
                 leftIcon={<SiDiscord size={'1.5em'} />}
                 backgroundColor="#3F46F3"
                 _hover={{
@@ -84,6 +87,7 @@ export default function Hero(props: IHeroProps) {
                 color="white"
                 w="100%"
                 size="lg"
+                href="https://discord.gg/devdao"
               >
                 join us at discord
               </Button>
