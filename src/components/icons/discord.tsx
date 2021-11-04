@@ -1,5 +1,3 @@
-import React from 'react';
-
 function IconDiscord({ className }: { className?: string }) {
   return (
     <svg

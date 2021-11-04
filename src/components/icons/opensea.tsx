@@ -1,5 +1,3 @@
-import React from 'react';
-
 function IconOpenSea({
   className = '',
   width = '40',

@@ -1,5 +1,3 @@
-import React from 'react';
-
 function IconEtherscan({ className }: { className?: string }) {
   return (
     <svg

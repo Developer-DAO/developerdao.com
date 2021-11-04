@@ -1,5 +1,3 @@
-import React from 'react';
-
 function IconTwitter({ className = '' }: { className?: string }) {
   return (
     <svg
