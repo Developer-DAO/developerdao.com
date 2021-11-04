@@ -22,61 +22,85 @@ import {
   FaVideo,
   FaQuestion,
 } from 'react-icons/fa';
-import { Resource } from '../../utils/AirtableResourceClasses';
+import { Resource } from '../../types/airtable';
 import Logo from '../../components/Logo';
 
-function KnowledgeCard(props: { data: Resource }) {
+const LevelBadge = ({ levelName }: { levelName: string }) => {
   const { t } = useTranslation();
 
-  const kbRecord = props.data.fields;
+  switch (levelName) {
+    case 'Beginner':
+      return <Badge colorScheme="green">{t('beginner')}</Badge>;
+    case 'Intermediate':
+      return <Badge colorScheme="orange">{t('intermediate')}</Badge>;
+    case 'Advanced':
+      return <Badge colorScheme="red">{t('advanced')}</Badge>;
+    default:
+      return <Badge>{levelName}</Badge>;
+  }
+};
 
-  const getLevelBadge = (levelName: String) => {
-    switch (levelName) {
-      case 'Beginner':
-        return <Badge colorScheme="green">{t('beginner')}</Badge>;
-      case 'Intermediate':
-        return <Badge colorScheme="orange">{t('intermediate')}</Badge>;
-      case 'Advanced':
-        return <Badge colorScheme="red">{t('advanced')}</Badge>;
-      default:
-        return <Badge>{levelName}</Badge>;
-    }
-  };
+const Author = ({
+  authors,
+}: {
+  authors?: { name: string; dev: boolean }[];
+}) => {
+  const { t } = useTranslation();
 
-  const getAuthor = (authors: undefined | { name: string; dev: boolean }[]) => {
-    if (!authors || authors.length === 0) return;
-    return (
-      <VStack>
-        {authors.map((author) => (
-          <Flex key={author.name} align="center" justify="space-between">
-            {author.name}
-            {author.dev ? (
-              <Box title={t('daoMember')}>
-                <Logo ml={1} h={7} w={7} />
-              </Box>
-            ) : null}
-          </Flex>
-        ))}
-      </VStack>
-    );
-  };
+  if (!authors || authors.length === 0) return null;
 
-  const renderMediaType = (mediaType: String) => {
-    switch (mediaType) {
-      case 'Video':
-        return <Icon as={FaVideo} />;
-      case 'Article':
-        return <Icon as={FaRegNewspaper} />;
-      case 'Course':
-        return <Icon as={FaChalkboard} />;
-      case 'Book':
-        return <Icon as={FaBook} />;
-      default:
-        return <Icon as={FaQuestion} />;
-    }
-  };
+  return (
+    <VStack>
+      {authors.map((author) => (
+        <Flex key={author.name} align="center" justify="space-between">
+          {author.name}
+          {author.dev ? (
+            <Box title={t('daoMember')}>
+              <Logo ml={1} h={7} w={7} />
+            </Box>
+          ) : null}
+        </Flex>
+      ))}
+    </VStack>
+  );
+};
 
-  const getAppropriateText = (mediaType: String) => {
+const MediaIcon = ({ mediaType }: { mediaType: string }) => {
+  switch (mediaType) {
+    case 'Video':
+      return <Icon as={FaVideo} />;
+    case 'Article':
+      return <Icon as={FaRegNewspaper} />;
+    case 'Course':
+      return <Icon as={FaChalkboard} />;
+    case 'Book':
+      return <Icon as={FaBook} />;
+    default:
+      return <Icon as={FaQuestion} />;
+  }
+};
+
+// const MediaText = ({mediaType}: {mediaType: string}) => {
+//   const { t } = useTranslation();
+
+//   switch (mediaType) {
+//     case 'Video':
+//       return t('watchVideo');
+//     case 'Article':
+//       return t('readArticle');
+//     case 'Course':
+//       return t('checkCourse');
+//     case 'Book':
+//       return t('checkBook');
+//     default:
+//       return t('unknownMediaText');
+//   }
+// }
+
+const MediaButton = ({ mediaType }: { mediaType: string }) => {
+  const { t } = useTranslation();
+
+  const getMediaText = (mediaType: String) => {
     switch (mediaType) {
       case 'Video':
         return t('watchVideo');
@@ -91,14 +115,30 @@ function KnowledgeCard(props: { data: Resource }) {
     }
   };
 
+  let buttonText = getMediaText(mediaType);
+  const buttonIcon = <MediaIcon mediaType={mediaType} />;
+
+  return (
+    <Button variant="solid" leftIcon={buttonIcon}>
+      {buttonText}
+    </Button>
+  );
+};
+
+function KnowledgeCard(props: { data: Resource }) {
+  const { t } = useTranslation();
+
+  const kbRecord = props.data.fields;
+
   return (
     <WrapItem maxW={{ base: '100%', md: '800px' }}>
       <VStack>
         <Heading>{kbRecord.Title}</Heading>
-        <Box>{getAuthor(kbRecord.extendedAuthors)}</Box>
+        {/* <Box>{getAuthor(kbRecord.extendedAuthors)}</Box> */}
+        <Author authors={kbRecord.extendedAuthors} />
         <HStack>
           {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
-          {getLevelBadge(kbRecord.Level)}
+          <LevelBadge levelName={kbRecord.Level} />
         </HStack>
         <Text>{t('tags')}</Text>
         <Stack direction="row">
@@ -108,12 +148,7 @@ function KnowledgeCard(props: { data: Resource }) {
         </Stack>
         <HStack>
           <Link href={kbRecord.Source} _hover={undefined}>
-            <Button
-              variant="solid"
-              leftIcon={renderMediaType(kbRecord['Media Type'])}
-            >
-              {getAppropriateText(kbRecord['Media Type'])}
-            </Button>
+            <MediaButton mediaType={kbRecord['Media Type']} />
           </Link>
         </HStack>
         <Text>

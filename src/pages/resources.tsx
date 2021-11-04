@@ -22,15 +22,9 @@ import {
   AIRTABLE_READONLY_KEY,
   AIRTABLE_RESOURCE_BASE,
 } from '../utils/DeveloperDaoConstants';
-import {
-  Author,
-  Blockchain,
-  Category,
-  Resource,
-  Tag,
-} from '../utils/AirtableResourceClasses';
+import { Author, Blockchain, Category, Resource, Tag } from '../types/airtable';
 
-function KnowledgeBase(props: { airtable: Airtable }) {
+function ResourceBase() {
   const { t } = useTranslation();
   const [airbase, setAirbase] = useState('Resources');
   const [airtable, setAirtable] = useState<Airtable>();
@@ -175,19 +169,13 @@ function KnowledgeBase(props: { airtable: Airtable }) {
     tagList: Tag[],
   ) => {
     // bails out if loading has not yet completed (uncontrolled async operations)
-    if (authorList.length == 0) {
-      return;
-    }
-    if (blockchainList.length == 0) {
-      return;
-    }
-    if (categoryList.length == 0) {
-      return;
-    }
-    if (resourceList === undefined || resourceList.length === 0) {
-      return;
-    }
-    if (tagList.length == 0) {
+    if (
+      !authorList.length ||
+      !blockchainList.length ||
+      !categoryList.length ||
+      !resourceList?.length ||
+      !tagList.length
+    ) {
       return;
     }
 
@@ -243,16 +231,10 @@ function KnowledgeBase(props: { airtable: Airtable }) {
   const updateListFilter = () => {
     setShowAll(!showAll);
   };
-  const getViewList = () => {
-    if (showAll) {
-      return resourceBaseList;
-    } else {
-      return resourceBaseList.filter((item) => item.fields.Curated);
-    }
-  };
-  const getViewLength = () => {
-    return getViewList().length;
-  };
+
+  const viewList = showAll
+    ? resourceBaseList
+    : resourceBaseList.filter((item) => item.fields.Curated);
 
   return (
     <PageLayout>
@@ -263,11 +245,11 @@ function KnowledgeBase(props: { airtable: Airtable }) {
           <Text>{t('allResources')}</Text>
         </HStack>
         <Box>
-          {getViewList().length === 0 ? (
+          {viewList.length === 0 ? (
             <Text>No Records</Text>
           ) : (
             <Wrap spacing={8} justify="center">
-              {getViewList().map((item, index) => (
+              {viewList.map((item, index) => (
                 <KnowledgeCard key={index} data={item} />
               ))}
             </Wrap>
@@ -284,4 +266,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default KnowledgeBase;
+export default ResourceBase;
