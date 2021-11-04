@@ -5,10 +5,10 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { Global } from '@emotion/react';
 import { AppProps } from 'next/app';
-import { DEVELOPER_DAO_WEBSITE } from '@/utils/DeveloperDaoConstants';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import { theme } from '@/theme';
 
-const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
+const socialBanner = `${DEVELOPER_DAO_CONSTANTS.DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
 function SEO() {
   const { t } = useTranslation();
