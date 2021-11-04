@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
+import { Global } from '@emotion/react';
 import { AppProps } from 'next/app';
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';
@@ -132,6 +133,18 @@ const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
     <ChakraProvider theme={theme}>
+      <Global
+        styles={`
+       @font-face {
+        font-family: 'Inter var';
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: optional;
+        font-named-instance: 'Regular';
+        src: url(/fonts/Inter-roman.var.woff2) format('woff2');
+      }
+      `}
+      />
       <Component {...pageProps} />
     </ChakraProvider>
   </>
