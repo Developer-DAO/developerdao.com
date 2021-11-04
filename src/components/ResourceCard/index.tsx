@@ -80,23 +80,6 @@ const MediaIcon = ({ mediaType }: { mediaType: string }) => {
   }
 };
 
-// const MediaText = ({mediaType}: {mediaType: string}) => {
-//   const { t } = useTranslation();
-
-//   switch (mediaType) {
-//     case 'Video':
-//       return t('watchVideo');
-//     case 'Article':
-//       return t('readArticle');
-//     case 'Course':
-//       return t('checkCourse');
-//     case 'Book':
-//       return t('checkBook');
-//     default:
-//       return t('unknownMediaText');
-//   }
-// }
-
 const MediaButton = ({ mediaType }: { mediaType: string }) => {
   const { t } = useTranslation();
 
@@ -134,7 +117,6 @@ function KnowledgeCard(props: { data: Resource }) {
     <WrapItem maxW={{ base: '100%', md: '800px' }}>
       <VStack>
         <Heading>{kbRecord.Title}</Heading>
-        {/* <Box>{getAuthor(kbRecord.extendedAuthors)}</Box> */}
         <Author authors={kbRecord.extendedAuthors} />
         <HStack>
           {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
@@ -147,7 +129,7 @@ function KnowledgeCard(props: { data: Resource }) {
           ))}
         </Stack>
         <HStack>
-          <Link href={kbRecord.Source} _hover={undefined}>
+          <Link href={kbRecord.Source}>
             <MediaButton mediaType={kbRecord['Media Type']} />
           </Link>
         </HStack>
