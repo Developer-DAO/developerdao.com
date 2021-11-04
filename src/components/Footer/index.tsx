@@ -8,7 +8,7 @@ import {
   IconDiscord,
   IconGitHub,
   IconDiscourse,
-} from '../Icons';
+} from '@/components/icons';
 
 function Footer() {
   const { t } = useTranslation();

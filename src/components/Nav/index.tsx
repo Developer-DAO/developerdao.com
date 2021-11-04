@@ -2,7 +2,7 @@ import React from 'react';
 import { chakra, Flex, HStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { IconGitHub } from '@/components/Icons';
+import { IconGitHub } from '@/components/icons';
 import Logo from '@/components/Logo';
 
 function Nav() {
