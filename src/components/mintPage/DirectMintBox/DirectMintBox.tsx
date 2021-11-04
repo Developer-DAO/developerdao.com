@@ -1,15 +1,6 @@
-import React from 'react';
-import DirectMint from '@/components/DirectMint/DirectMint';
-import Logo from '@/components/Logo';
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Stack,
-  Text,
-  Link,
-} from '@chakra-ui/react';
+import DirectMint from '@/components/mintPage/DirectMintBox/DirectMint';
+import { Logo } from '@/components/common';
+import { Box, Container, Heading, Stack, Text, Link } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 const { TOKEN_FINDER_URL } = DEVELOPER_DAO_CONSTANTS;
@@ -18,7 +9,7 @@ const { TOKEN_FINDER_URL } = DEVELOPER_DAO_CONSTANTS;
 const DirectMintBox = () => {
   const { t } = useTranslation();
   return (
-    <>
+    <Box as="section" pt={40} pb={{ base: 20, md: 36 }}>
       <Container maxW="container.md" centerContent>
         <Box
           borderWidth="4px"
@@ -41,7 +32,7 @@ const DirectMintBox = () => {
           </Stack>
         </Box>
       </Container>
-    </>
+    </Box>
   );
 };
 

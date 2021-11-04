@@ -10,11 +10,11 @@ import {
   Container,
   chakra,
 } from '@chakra-ui/react';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/common';
 import { FOOTERLINKS } from '@/constants';
-export interface IAppProps {}
+export interface IFooterProps {}
 
-const Copyright = (props: TextProps) => (
+const VercelBanner = (props: TextProps) => (
   <Box fontSize="sm" {...props}>
     <chakra.a
       target="_blank"
@@ -39,13 +39,14 @@ const SocialMediaLinks = (props: ButtonGroupProps) => (
         key={data.id}
         href={data.link}
         icon={data.icon}
-        aria-label=""
+        aria-label={data.title}
+        title={data.title}
       />
     ))}
   </ButtonGroup>
 );
 
-export default function App(props: IAppProps) {
+export default function Footer(props: IFooterProps) {
   return (
     <Box as="footer" role="contentinfo" py="12" px={{ base: '4', md: '8' }}>
       <Container maxW={'7xl'}>
@@ -63,7 +64,7 @@ export default function App(props: IAppProps) {
 
             <SocialMediaLinks />
           </Stack>
-          <Copyright alignSelf="center" />
+          <VercelBanner alignSelf="center" />
         </Stack>
       </Container>
     </Box>

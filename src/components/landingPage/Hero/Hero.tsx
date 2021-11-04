@@ -21,7 +21,7 @@ export default function Hero(props: IHeroProps) {
       <Container maxW={'3xl'}>
         <Box
           textAlign={{ base: 'center', md: 'center' }}
-          pt={{ base: 40, md: 40 }}
+          pt={40}
           pb={{ base: 20, md: 36 }}
         >
           <chakra.h1

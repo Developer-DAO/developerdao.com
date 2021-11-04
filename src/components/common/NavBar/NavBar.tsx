@@ -7,9 +7,7 @@ import {
   useDisclosure,
   IconButton,
   useColorModeValue,
-  Icon,
   useColorMode,
-  Heading,
 } from '@chakra-ui/react';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -18,10 +16,12 @@ import { useViewportScroll } from 'framer-motion';
 import DesktopNav from '@/components/common/NavBar/DesktopNav';
 import MobileNav from '@/components/common/NavBar/MobileNav';
 import { Logo } from '@/components/common';
+import { useTranslation } from 'react-i18next';
 export interface INavBarProps {}
 
 export default function NavBar(props: INavBarProps) {
   const { isOpen: isMobileNavOpen, onToggle } = useDisclosure();
+  const { t } = useTranslation();
   const { colorMode, toggleColorMode } = useColorMode();
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
   const ref = React.useRef<HTMLHeadingElement>();
@@ -66,6 +66,7 @@ export default function NavBar(props: INavBarProps) {
                 as={'a'}
                 direction={'row'}
                 alignItems={'center'}
+                title={t('title')}
                 spacing={{ base: 2, sm: 4 }}
               >
                 <Logo h={9} w={9} />

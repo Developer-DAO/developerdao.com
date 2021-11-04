@@ -7,6 +7,7 @@ import { Global } from '@emotion/react';
 import { AppProps } from 'next/app';
 import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import { theme } from '@/theme';
+import { AppLayout } from '@/layouts';
 const { DEVELOPER_DAO_WEBSITE } = DEVELOPER_DAO_CONSTANTS;
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
@@ -145,7 +146,9 @@ const App = ({ Component, pageProps }: AppProps) => (
       }
       `}
       />
-      <Component {...pageProps} />
+      <AppLayout>
+        <Component {...pageProps} />
+      </AppLayout>
     </ChakraProvider>
   </>
 );
