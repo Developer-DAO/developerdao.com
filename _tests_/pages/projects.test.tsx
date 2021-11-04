@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Projects from '../../src/pages/projects';
+import Projects from '@/pages/projects';
 import testCommonLink from '../utils/testCommons';
 
 test('Projects page renders with list of community projects', () => {

@@ -1,15 +1,13 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from '../../src/pages/index';
-import {
-  OPENSEA_DIRECT_LINK_PREFIX,
-  ETHER_SCAN_LINK_PREFIX,
-  SITE_URL,
-} from '../../src/utils/DeveloperDaoConstants';
+import App from '@/pages/developers';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import { ownedDeveloperNFT, unownedDeveloperNFT } from '../mocks/DeveloperNFT';
-
+const { OPENSEA_DIRECT_LINK_PREFIX, ETHER_SCAN_LINK_PREFIX, SITE_URL } =
+  DEVELOPER_DAO_CONSTANTS;
 jest.mock(
-  '../../src/components/Search/OtherDevsByOwner/OtherDevsByOwner',
+  '@/components/developersPage/OtherDevsByOwner/OtherDevsByOwner',
   () => () => <div></div>,
 );
 
@@ -31,7 +29,9 @@ describe('App loads with successful searchs', () => {
 
     render(<App />);
 
-    const searchLabel = screen.getByPlaceholderText('Search developer id');
+    const searchLabel = screen.getByPlaceholderText(
+      'Search developer id',
+    ) as HTMLInputElement;
 
     fireEvent.change(searchLabel, { target: { value: '2' } });
 
@@ -53,14 +53,17 @@ describe('App loads with successful searchs', () => {
 
     render(<App />);
 
-    const searchLabel = screen.getByPlaceholderText('Search developer id');
+    const searchLabel = screen.getByPlaceholderText(
+      'Search developer id',
+    ) as HTMLInputElement;
 
     fireEvent.change(searchLabel, { target: { value: '2669' } });
 
     expect(searchLabel.value).toBe('2669');
     expect(searchLabel).toBeInTheDocument();
 
-    const nftImage = screen.getByAltText(/developerTraits/);
+    const nftImage = screen.getByAltText(/developerTraits/) as HTMLImageElement;
+
     const openSeaDirectLink = screen.getByRole('link', {
       name: /viewNftOpenSea/,
     });
@@ -135,14 +138,18 @@ describe('App loads with successful searchs', () => {
 
     render(<App />);
 
-    const searchLabel = screen.getByPlaceholderText('Search developer id');
+    const searchLabel = screen.getByPlaceholderText(
+      'Search developer id',
+    ) as HTMLInputElement;
 
     fireEvent.change(searchLabel, { target: { value: '7899' } });
 
     expect(searchLabel.value).toBe('7899');
     expect(searchLabel).toBeInTheDocument();
 
-    const nftImage = screen.getByRole('img', { name: /developerTraits/ });
+    const nftImage = screen.getByRole('img', {
+      name: /developerTraits/,
+    }) as HTMLImageElement;
     const devNameButton = screen.getByText(`${unownedDeveloperNFT.name}`);
     const etherScanButton = screen.getByText('owner unclaimed');
 

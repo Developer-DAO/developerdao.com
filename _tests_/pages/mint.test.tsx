@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import testCommonLink from '../utils/testCommons';
 import web3Mock from '../mocks/web3';
 
-import MintPage from '../../src/pages/mint';
+import MintPage from '@/pages/mint';
 
 // Mocks
 

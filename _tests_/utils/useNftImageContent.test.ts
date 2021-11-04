@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useNftImageContent } from '../../src/utils/useNftImageContent';
+import { useNftImageContent } from '@/utils/useNftImageContent';
 import { ownedDeveloperNFT } from '../mocks/DeveloperNFT';
 
 describe('useNftImageContent', () => {

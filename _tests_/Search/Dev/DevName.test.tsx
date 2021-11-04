@@ -1,12 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import DevName from '../../../src/components/Search/Dev/DevName';
-import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../src/utils/DeveloperDaoConstants';
+import { DevName } from '@/components/developersPage';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import testCommonLink from '../../utils/testCommons';
 import {
   ownedDeveloperNFT,
   unownedDeveloperNFT,
 } from '../../mocks/DeveloperNFT';
+
+const { OPENSEA_DIRECT_LINK_PREFIX } = DEVELOPER_DAO_CONSTANTS;
 
 describe('Dev Name button with Owner', () => {
   it('Renders the button with link', () => {

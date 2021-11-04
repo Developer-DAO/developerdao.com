@@ -2,11 +2,11 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import OtherDevsByOwnerContainer, {
   OtherDevsByOwner,
-} from '../../../src/components/Search/OtherDevsByOwner/OtherDevsByOwner';
+} from '@/components/developersPage/OtherDevsByOwner/OtherDevsByOwner';
 import testCommonLink from '../../utils/testCommons';
-import { SITE_URL } from '../../../src/utils/DeveloperDaoConstants';
+import { DEVELOPER_DAO_CONSTANTS } from '@/constants';
 import { ownedDeveloperNFT } from '../../mocks/DeveloperNFT';
-
+const { SITE_URL } = DEVELOPER_DAO_CONSTANTS;
 describe('Other Devs By Owner Container gets ', () => {
   it('Renders owned tokens returned by contract', async () => {
     const contract = {
@@ -19,7 +19,10 @@ describe('Other Devs By Owner Container gets ', () => {
       },
     };
     const { rerender } = render(
-      <OtherDevsByOwnerContainer nft={ownedDeveloperNFT} contract={contract} />,
+      <OtherDevsByOwnerContainer
+        nft={ownedDeveloperNFT}
+        contract={contract as any}
+      />,
     );
 
     const otherDevs = await screen.findAllByRole('link');
@@ -28,7 +31,10 @@ describe('Other Devs By Owner Container gets ', () => {
 
     // rerender and validate that cached values are used
     rerender(
-      <OtherDevsByOwnerContainer nft={ownedDeveloperNFT} contract={contract} />,
+      <OtherDevsByOwnerContainer
+        nft={ownedDeveloperNFT}
+        contract={contract as any}
+      />,
     );
     await screen.findByRole('link');
     expect(contract.functions.tokenOfOwnerByIndex).toHaveBeenCalledTimes(2);
@@ -41,6 +47,7 @@ describe('Address renders other devs', () => {
       <OtherDevsByOwner
         currentDevName={'Dev #1694'}
         otherDevs={[1694, 1950]}
+        loading={false}
       />,
     );
     const devName = await screen.findByText('#1950');

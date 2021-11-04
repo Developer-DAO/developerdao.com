@@ -2,7 +2,7 @@
 
 describe('NFT Search', () => {
   it('Shows first token when loading, can search for another token', () => {
-    cy.visit('/');
+    cy.visit('/developers');
 
     // display NFT of first token
     cy.findDeveloperNft(
@@ -20,7 +20,7 @@ describe('NFT Search', () => {
   });
 
   it('Shows NFT for token from the url', () => {
-    cy.visit('/?id=200');
+    cy.visit('/developers?id=200');
     cy.findDeveloperNft(
       'Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
     ).should('exist');
