@@ -12,10 +12,12 @@ import {
 } from '@chakra-ui/react';
 import { SiEthereum, SiDiscord } from 'react-icons/si';
 import { TweetCarousel } from '..';
+import { useTranslation } from 'react-i18next';
 export interface IHeroProps {}
 
 export default function Hero(props: IHeroProps) {
   const accentColor = useColorModeValue('gray.500', 'gray.400');
+  const { t } = useTranslation();
   return (
     <Box as="section" pt="2rem" pb={{ base: '0', md: '5rem' }}>
       <Container maxW={'3xl'}>
@@ -30,7 +32,7 @@ export default function Hero(props: IHeroProps) {
             lineHeight={{ base: '1.2', md: '1.1' }}
             letterSpacing={{ base: '-0.03em', md: '-0.05em' }}
           >
-            Developers Meet web3
+            {t('heading')}
           </chakra.h1>
 
           <Text
@@ -40,9 +42,7 @@ export default function Hero(props: IHeroProps) {
             fontSize={{ base: 'lg', lg: 'xl' }}
             mt="6"
           >
-            <b>Developer Dao</b> is a place to explore what can be achieved when
-            talent and like-minded people are brought together to build the next
-            web
+            {t('subHeading')}
           </Text>
           <Stack
             mt="10"
