@@ -9,6 +9,7 @@ import { FaEthereum, FaDiscord, FaMoon, FaSun } from 'react-icons/fa';
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
 import Tweet from '../components/Tweet';
 import Marquee from 'react-fast-marquee';
+import JoinFuture from '../components/JoinFuture';
 
 function LandingPage() {
   const { t } = useTranslation();
@@ -169,6 +170,19 @@ function LandingPage() {
             ))}
           </Marquee>
         </HStack>
+        <VStack
+          color={color}
+          mx="auto"
+          px={0}
+          spacing={5}
+          textAlign="center"
+          mt={12}
+          w="full"
+          maxW="3xl"
+          mb={4}
+        >
+          <JoinFuture />
+        </VStack>
       </chakra.main>
     </PageLayout>
   );
