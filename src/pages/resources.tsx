@@ -5,10 +5,10 @@ import { chakra, Text, HStack, Box, Switch, Wrap } from '@chakra-ui/react';
 import PageLayout from '../layout/Page';
 import KnowledgeCard from '../components/ResourceCard';
 import { useAirtableResources } from '../utils/useAirtableResources';
+import { getAirtableResources } from '../lib/airtable';
 
-function ResourceBase() {
+function ResourceBase({ resources }) {
   const { t } = useTranslation();
-  const resources = useAirtableResources();
   const [showAll, setShowAll] = useState(false);
 
   const updateListFilter = () => {
@@ -43,10 +43,16 @@ function ResourceBase() {
   );
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-});
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+  const resources = await getAirtableResources();
+
+  return {
+    props: {
+      resources,
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+    revalidate: 1, // Regenerate the resources at most once per second when a request comes in.
+  };
+};
 
 export default ResourceBase;
