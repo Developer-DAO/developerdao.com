@@ -3,10 +3,16 @@ import { HStack, Image } from '@chakra-ui/react';
 import Feature from '../Feature';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { useTranslation } from 'react-i18next';
+import SuperButton from '../SuperButton';
+import { FaEthereum } from 'react-icons/fa';
 
 function JoinFuture() {
   const { t } = useTranslation();
   const color = useColorModeValue('#000', '#fff');
+  const secondaryColor = useColorModeValue(
+    'rgba(15, 15, 26, 0.48)',
+    'rgba(255, 255, 255, 0.64)',
+  );
 
   const Features = [
     {
@@ -64,6 +70,7 @@ function JoinFuture() {
       <Text
         px={4}
         fontWeight="400"
+        color={secondaryColor}
         fontFamily="inter"
         fontSize={{ base: '14px', md: '18px', lg: '18px' }}
         maxW={{ base: '90%', sm: '80%', md: '2xl' }}
@@ -92,6 +99,11 @@ function JoinFuture() {
           />
         ))}
       </Grid>
+      <SuperButton
+        title={t('becomeMember')}
+        background={'#2128CA'}
+        leftIcon={<FaEthereum />}
+      />
     </VStack>
   );
 }

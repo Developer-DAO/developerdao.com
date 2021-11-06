@@ -1,6 +1,6 @@
 import { chakra, VStack, Box, HStack, Stack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
@@ -9,6 +9,7 @@ import { FaEthereum, FaDiscord, FaMoon, FaSun } from 'react-icons/fa';
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
 import Tweet from '../components/Tweet';
 import Marquee from 'react-fast-marquee';
+import SuperButton from '../components/SuperButton';
 import JoinFuture from '../components/JoinFuture';
 
 function LandingPage() {
@@ -16,8 +17,11 @@ function LandingPage() {
   const { toggleColorMode } = useColorMode();
 
   const color = useColorModeValue('#000', '#fff');
-  const bg = useColorModeValue('#ccc', '#fff');
   const tweetBackground = useColorModeValue('#fff', '#151718');
+  const secondaryColor = useColorModeValue(
+    'rgba(15, 15, 26, 0.48)',
+    'rgba(255, 255, 255, 0.64)',
+  );
 
   const tweetData = [
     {
@@ -108,48 +112,44 @@ function LandingPage() {
             spacing={{ base: 6, sm: 30, md: 40, lg: 60 }}
           >
             <Box>
-              <Box display="flex" flexDirection="column" alignItems="center">
+              <Box
+                display="flex"
+                mb={4}
+                flexDirection="column"
+                alignItems="center"
+              >
                 <Text fontSize="4rem" fontFamily="poppins">
                   120<sup style={{ fontSize: '1rem', top: -30 }}>/800</sup>
                 </Text>
-                <Text fontSize="1rem" color="#6F6F76">
+                <Text fontSize="1rem" color={secondaryColor}>
                   {t('seats')}
                 </Text>
               </Box>
-              <Button
-                borderRadius="2xl"
-                mt={4}
-                py={4}
-                px={4}
-                fontWeight="normal"
-                color="white"
-                backgroundColor="#6066F0"
+              <SuperButton
+                title={t('becomeMember')}
+                background={'#2128CA'}
                 leftIcon={<FaEthereum />}
-              >
-                {t('becomeMember')}
-              </Button>
+              />
             </Box>
             <Box>
-              <Box display="flex" flexDirection="column" alignItems="center">
+              <Box
+                display="flex"
+                mb={4}
+                flexDirection="column"
+                alignItems="center"
+              >
                 <Text fontFamily="poppins" fontSize="4rem">
                   853
                 </Text>
-                <Text fontSize="1rem" color="#6F6F76">
+                <Text fontSize="1rem" color={secondaryColor}>
                   {t('devsBuilding')}
                 </Text>
               </Box>
-              <Button
-                borderRadius="2xl"
-                py={4}
-                px={4}
-                mt={4}
-                color="white"
-                fontWeight="normal"
-                backgroundColor="#3F46F3"
+              <SuperButton
+                title={t('joinDiscord')}
+                background={'#3F46F3'}
                 leftIcon={<FaDiscord />}
-              >
-                Join us at Discord
-              </Button>
+              />
             </Box>
           </Stack>
         </VStack>
