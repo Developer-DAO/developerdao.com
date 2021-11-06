@@ -7,15 +7,18 @@ import {
   Resource,
   Tag,
 } from './../types/airtable';
-import {
-  AIRTABLE_READONLY_KEY,
-  AIRTABLE_RESOURCE_BASE,
-} from '../utils/DeveloperDaoConstants';
 
-const airTable = new Airtable({ apiKey: AIRTABLE_READONLY_KEY });
+// const airTable = new Airtable({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_READONLY_KEY });
 
-export const getAirtableResources = async (): Promise<Resource[]> => {
-  const resourceBaseCall = airTable.base(AIRTABLE_RESOURCE_BASE);
+export const getAirtableResources = async (
+  airtableKey: string | undefined,
+  airtableBase: string | undefined,
+): Promise<Resource[]> => {
+  // return empty if the resource base key is undefined - not expected but satisfies typescript
+  if (!airtableBase || !airtableKey) return [];
+  const airTable = new Airtable({ apiKey: airtableKey });
+
+  const resourceBaseCall = airTable.base(airtableBase);
 
   const authors = (await getResource('Author')) as Author[];
   const blockchains = (await getResource('Blockchain')) as Blockchain[];
@@ -29,9 +32,10 @@ export const getAirtableResources = async (): Promise<Resource[]> => {
   const tagMap: { [key: string]: string } = {};
 
   authors.forEach((item) => {
+    // ensure that we set a true or false value (not undefined)
     authorMap[item.id] = {
       name: item.fields.Name,
-      dev: item.fields['Developer DAO Member'],
+      dev: !!item.fields['Developer DAO Member'],
     };
   });
 
@@ -50,23 +54,23 @@ export const getAirtableResources = async (): Promise<Resource[]> => {
   return resources.map((resource: Resource) => {
     const newFields = {
       ...resource.fields,
-      ...(resource.fields.Author?.length < 0 && {
+      ...(resource.fields.Author?.length > 0 && {
         extendedAuthors: resource.fields.Author?.map(
           (item: string) => authorMap[item],
         ),
       }),
-      ...(resource.fields.Blockchain?.length < 0 && {
+      ...(resource.fields.Blockchain?.length > 0 && {
         Blockchain: resource.fields.Blockchain?.map(
           (item: string) => blockchainMap[item],
         ),
       }),
-      ...(resource.fields.Category?.length < 0 && {
+      ...(resource.fields.Category?.length > 0 && {
         Category: resource.fields.Category?.map(
           (item: string) => categoryMap[item],
         ),
       }),
-      ...(resource.fields.Tags?.length < 0 && {
-        Tag: resource.fields.Tags?.map((item: string) => categoryMap[item]),
+      ...(resource.fields.Tags?.length > 0 && {
+        Tags: resource.fields.Tags?.map((item: string) => tagMap[item]),
       }),
     };
     return {

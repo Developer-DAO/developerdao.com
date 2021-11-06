@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next';
 import { chakra, Text, HStack, Box, Switch, Wrap } from '@chakra-ui/react';
 import PageLayout from '../layout/Page';
 import KnowledgeCard from '../components/ResourceCard';
-import { useAirtableResources } from '../utils/useAirtableResources';
 import { getAirtableResources } from '../lib/airtable';
 
 function ResourceBase({ resources }) {
@@ -44,14 +43,17 @@ function ResourceBase({ resources }) {
 }
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
-  const resources = await getAirtableResources();
+  const resources = await getAirtableResources(
+    process.env.AIRTABLE_KEY,
+    process.env.AIRTABLE_BASE,
+  );
 
   return {
     props: {
       resources,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-    revalidate: 1, // Regenerate the resources at most once per second when a request comes in.
+    revalidate: 15, // Regenerate the resources at most once per 15 seconds when a request comes in. - we can probably go longer, even
   };
 };
 

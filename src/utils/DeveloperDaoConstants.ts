@@ -22,9 +22,6 @@ export const ETHERSCAN_TX_URL = process.env
 
 export const INFURA_ID = process.env.NEXT_PUBLIC_INFURA_ID as string;
 
-// airtable resources managed by @kempsterrrr
-export const AIRTABLE_READONLY_KEY = 'keyDaaDlZelNrerXQ';
-export const AIRTABLE_RESOURCE_BASE = 'appPP6MpO5hrfQwqI';
 export const DEVELOPER_DAO_CONTRACT_ABI = [
   { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },
   {
