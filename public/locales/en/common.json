@@ -63,6 +63,7 @@
   "advanced": "Advanced",
   "curatedResources": "Curated Resources",
   "allResources": "All Resources",
+  "noResources": "No Resources",
   "airtableError": "Unable to configure $t(title) Airtable",
   "hydrationError": "$t(error) preparing Resources for display"
 }

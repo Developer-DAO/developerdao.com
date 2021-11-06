@@ -5,9 +5,12 @@ import { chakra, Text, HStack, Box, Switch, Wrap } from '@chakra-ui/react';
 import PageLayout from '../layout/Page';
 import KnowledgeCard from '../components/ResourceCard';
 import { getAirtableResources } from '../lib/airtable';
+import PropTypes from 'prop-types';
+import { Resource } from '../types/airtable';
 
-function ResourceBase({ resources }) {
+function ResourceBase(props: { resources: Resource[] }) {
   const { t } = useTranslation();
+  const { resources }: { resources: Resource[] } = props;
   const [showAll, setShowAll] = useState(false);
 
   const updateListFilter = () => {
@@ -28,7 +31,7 @@ function ResourceBase({ resources }) {
         </HStack>
         <Box>
           {viewList.length === 0 ? (
-            <Text>No Records</Text>
+            <Text>{t('noResources')}</Text>
           ) : (
             <Wrap spacing={8} justify="center">
               {viewList.map((item, index) => (
@@ -41,6 +44,10 @@ function ResourceBase({ resources }) {
     </PageLayout>
   );
 }
+
+ResourceBase.propTypes = {
+  resources: PropTypes.array.isRequired,
+};
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   const resources = await getAirtableResources(
