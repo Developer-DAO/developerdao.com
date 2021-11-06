@@ -109,11 +109,11 @@ function LandingPage() {
           >
             <Box>
               <Box display="flex" flexDirection="column" alignItems="center">
-                <Text fontSize="4rem">
+                <Text fontSize="4rem" fontFamily="poppins">
                   120<sup style={{ fontSize: '1rem', top: -30 }}>/800</sup>
                 </Text>
                 <Text fontSize="1rem" color="#6F6F76">
-                  seats left
+                  {t('seats')}
                 </Text>
               </Box>
               <Button
@@ -126,14 +126,16 @@ function LandingPage() {
                 backgroundColor="#6066F0"
                 leftIcon={<FaEthereum />}
               >
-                Become a member
+                {t('becomeMember')}
               </Button>
             </Box>
             <Box>
               <Box display="flex" flexDirection="column" alignItems="center">
-                <Text fontSize="4rem">853</Text>
+                <Text fontFamily="poppins" fontSize="4rem">
+                  853
+                </Text>
                 <Text fontSize="1rem" color="#6F6F76">
-                  devs building
+                  {t('devsBuilding')}
                 </Text>
               </Box>
               <Button
@@ -158,7 +160,7 @@ function LandingPage() {
           py={3}
           gridGap="4"
         >
-          <Marquee gradient={false} speed={100} pauseOnHover={true}>
+          <Marquee gradient={false} speed={60} pauseOnHover={true}>
             {tweetData.map((twetter, index) => (
               <Tweet
                 key={index}
@@ -170,19 +172,8 @@ function LandingPage() {
             ))}
           </Marquee>
         </HStack>
-        <VStack
-          color={color}
-          mx="auto"
-          px={0}
-          spacing={5}
-          textAlign="center"
-          mt={12}
-          w="full"
-          maxW="3xl"
-          mb={4}
-        >
-          <JoinFuture />
-        </VStack>
+
+        <JoinFuture />
       </chakra.main>
     </PageLayout>
   );

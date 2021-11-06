@@ -4,6 +4,8 @@
   "subHeading": "A place to explore what can be achieved when we bring together talented and like-minded people who are interested in learning about and building on Web3.",
   "home": "Home",
   "developers": "Developers",
+  "future": "Join the Future.",
+  "member": "Becoming a D_D member comes with benefits.",
   "projects": "Projects",
   "searchId": "Search $t(title) id",
   "description": "A $t(community) of builders who believe in collective ownership of the internet.",
@@ -13,7 +15,7 @@
   "viewOwnerEtherscan": "View owner on Etherscan",
   "developerTraits": "Developer traits",
   "failedLoadTraits": "Failed to load traits",
-  "madeBy": "Made by the $t(title) $t(community): ",
+  "madeBy": "A project of the $t(title) $t(community). ",
   "organization": "organization",
   "repository": "Repository",
   "community": "community",
@@ -46,5 +48,8 @@
   "here": "here",
   "errorMinting": "Unable to Mint NFT",
   "disconnectWallet": "Disconnect Wallet",
-  "etherscanMessage": "View your TX on Etherscan"
+  "etherscanMessage": "View your TX on Etherscan",
+  "seats": "seats left",
+  "becomeMember": "Become a member",
+  "devsBuilding": "devs building"  
 }
