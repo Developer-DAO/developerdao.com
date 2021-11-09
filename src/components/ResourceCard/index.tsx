@@ -24,6 +24,7 @@ import {
 } from 'react-icons/fa';
 import { Resource } from '../../types/airtable';
 import Logo from '../../components/Logo';
+import { LinkPreview } from '@dhaiwat10/react-link-preview';
 
 const LevelBadge = ({ levelName }: { levelName: string }) => {
   const { t } = useTranslation();
@@ -108,7 +109,15 @@ const MediaButton = ({ mediaType }: { mediaType: string }) => {
   );
 };
 
-function KnowledgeCard(props: { data: Resource }) {
+const FallBackImage = () => (
+  <VStack>
+    <Text>Image Unavailable</Text>
+    <Logo />
+    <Text>Please stand by</Text>
+  </VStack>
+);
+
+function ResourceCard(props: { data: Resource }) {
   const { t } = useTranslation();
 
   const kbRecord = props.data.fields;
@@ -116,19 +125,23 @@ function KnowledgeCard(props: { data: Resource }) {
   return (
     <WrapItem maxW={{ base: '100%', md: '800px' }}>
       <VStack>
-        <Heading>{kbRecord.Title}</Heading>
+        <LinkPreview
+          url={kbRecord.Source}
+          width="500px"
+          height="500px"
+          descriptionLength={250}
+          fallback={<Logo />}
+        />
+        {/* <Heading>{kbRecord.Title}</Heading> */}
         <Author authors={kbRecord.extendedAuthors} />
         <HStack>
           {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
-          <LevelBadge levelName={kbRecord.Level} />
-        </HStack>
-        <Text>{t('tags')}</Text>
-        <Stack direction="row">
           {kbRecord.Tags?.map((tag: string, index: number) => (
             <Badge key={`tag-${index}`}>{tag}</Badge>
           ))}
-        </Stack>
-        <HStack>
+          <LevelBadge levelName={kbRecord.Level} />
+        </HStack>
+        {/* <HStack>
           <Link href={kbRecord.Source}>
             <MediaButton mediaType={kbRecord['Media Type']} />
           </Link>
@@ -136,10 +149,10 @@ function KnowledgeCard(props: { data: Resource }) {
         <Text>
           {t('blockchain')}: {kbRecord.Blockchain}
         </Text>
-        <Text>{kbRecord['Date Added']}</Text>
+        <Text>{kbRecord['Date Added']}</Text> */}
       </VStack>
     </WrapItem>
   );
 }
 
-export default KnowledgeCard;
+export default ResourceCard;
