@@ -27,22 +27,24 @@ export interface Tag {
     Name: string;
   };
 }
+
+export interface ResourceFields {
+  Title: string;
+  Curated: boolean;
+  Source: string;
+  Summary: string;
+  Level: string;
+  Blockchain: string[];
+  Category: string[];
+  Tags: string[];
+  'Media Type': string;
+  Author: string[];
+  'Date Added': string;
+  Contributor: string[];
+  // for use with the view
+  extendedAuthors?: { name: string; dev: boolean }[];
+}
 export interface Resource {
   id: string;
-  fields: {
-    Title: string;
-    Curated: boolean;
-    Source: string;
-    Summary: string;
-    Level: string;
-    Blockchain: string[];
-    Category: string[];
-    Tags: string[];
-    'Media Type': string;
-    Author: string[];
-    'Date Added': string;
-    Contributor: string[];
-    // for use with the view
-    extendedAuthors?: { name: string; dev: boolean }[];
-  };
+  fields: ResourceFields;
 }

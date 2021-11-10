@@ -971,10 +971,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@dhaiwat10/react-link-preview@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@dhaiwat10/react-link-preview/-/react-link-preview-1.9.1.tgz#7e9e2f14439fd39a60fe04fad93182eccf62c268"
-  integrity sha512-kj/6Mx8FClhPpEA6u8nguis5pwke3B5pcXw49iTGhb0eAmFgjQIniBsxTgVNhQkWRprv7BXG2hCxATaE1iNk4g==
+"@dhaiwat10/react-link-preview@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@dhaiwat10/react-link-preview/-/react-link-preview-1.10.0.tgz#54326efc874fb16b3df91b9a8bdb9bc2929350d2"
+  integrity sha512-MKyVFOxMplNE0Bz2TB+RkW8GSaMvqaT/NcL3VRvf+sBkWpWW40ypifB8flCgg7Zv5xRys6Lm5nOhk+XWG2I3Lg==
   dependencies:
     react-loading-skeleton "^2.2.0"
 

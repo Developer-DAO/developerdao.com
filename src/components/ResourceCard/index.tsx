@@ -22,7 +22,7 @@ import {
   FaVideo,
   FaQuestion,
 } from 'react-icons/fa';
-import { Resource } from '../../types/airtable';
+import { Resource, ResourceFields } from '../../types/airtable';
 import Logo from '../../components/Logo';
 import { LinkPreview } from '@dhaiwat10/react-link-preview';
 
@@ -117,39 +117,63 @@ const FallBackImage = () => (
   </VStack>
 );
 
+const renderResourceDetails = (kbRecord: ResourceFields) => {
+  // a crude way of seing how much text we're looking to render for all of the details text
+  const renderCount =
+    kbRecord.Category?.join(' ').length +
+    kbRecord.Tags?.join(' ').length +
+    kbRecord.Level?.length;
+  // allot 8px per character -> 500px buys 62.5; round down
+  if (renderCount > 60) {
+    // do it vertically
+    return (
+      <VStack>
+        <HStack>
+          {kbRecord.Category?.map((category: string, index: number) => (
+            <Tag key={`category-${index}`}>{category}</Tag>
+          ))}
+        </HStack>
+        <HStack>
+          {kbRecord.Tags?.map((tag: string, index: number) => (
+            <Badge key={`tag-${index}`}>{tag}</Badge>
+          ))}
+        </HStack>
+        <LevelBadge levelName={kbRecord.Level} />
+      </VStack>
+    );
+  } else {
+    return (
+      <HStack maxW={{ base: '100%', md: '500px' }}>
+        {kbRecord.Category?.map((category: string, index: number) => (
+          <Tag key={`category-${index}`}>{category}</Tag>
+        ))}
+        {kbRecord.Tags?.map((tag: string, index: number) => (
+          <Badge key={`tag-${index}`}>{tag}</Badge>
+        ))}
+        <LevelBadge levelName={kbRecord.Level} />
+      </HStack>
+    );
+  }
+};
+
 function ResourceCard(props: { data: Resource }) {
   const { t } = useTranslation();
 
   const kbRecord = props.data.fields;
+  const kbDetails = renderResourceDetails(kbRecord);
 
   return (
-    <WrapItem maxW={{ base: '100%', md: '800px' }}>
+    <WrapItem maxW={{ base: '100%', md: '500px' }}>
       <VStack>
         <LinkPreview
           url={kbRecord.Source}
           width="500px"
           height="500px"
           descriptionLength={250}
-          fallback={<Logo />}
+          fallbackImageSrc="/logo192.png"
         />
-        {/* <Heading>{kbRecord.Title}</Heading> */}
         <Author authors={kbRecord.extendedAuthors} />
-        <HStack>
-          {kbRecord.Category ? <Tag>{kbRecord.Category}</Tag> : null}
-          {kbRecord.Tags?.map((tag: string, index: number) => (
-            <Badge key={`tag-${index}`}>{tag}</Badge>
-          ))}
-          <LevelBadge levelName={kbRecord.Level} />
-        </HStack>
-        {/* <HStack>
-          <Link href={kbRecord.Source}>
-            <MediaButton mediaType={kbRecord['Media Type']} />
-          </Link>
-        </HStack>
-        <Text>
-          {t('blockchain')}: {kbRecord.Blockchain}
-        </Text>
-        <Text>{kbRecord['Date Added']}</Text> */}
+        {kbDetails}
       </VStack>
     </WrapItem>
   );
