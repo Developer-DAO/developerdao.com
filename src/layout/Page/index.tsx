@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from '@chakra-ui/react';
-import Footer from '../../components/Footer';
-import Nav from '../../components/Nav';
+import Footer from '@components/Footer';
+import Nav from '@components/Nav';
 
 function Page({ children }: { children?: object }) {
   return (
