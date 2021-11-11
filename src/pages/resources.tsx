@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import { chakra, Text, HStack, Box, Switch, Wrap } from '@chakra-ui/react';
+import {
+  chakra,
+  Text,
+  HStack,
+  Box,
+  Switch,
+  Wrap,
+  Heading,
+} from '@chakra-ui/react';
 import PageLayout from '../layout/Page';
 import ResourceCard from '../components/ResourceCard';
 import { getAirtableResources } from '../lib/airtable';
@@ -13,6 +21,13 @@ function ResourceBase(props: { resources: Resource[] }) {
   const { resources }: { resources: Resource[] } = props;
 
   const viewList = resources.filter((item) => item.fields.Curated);
+  const beginnerList = viewList.filter(
+    (item) => item.fields.Level === 'Beginner',
+  );
+  const intermediateList = viewList.filter(
+    (item) => item.fields.Level === 'Intermediate',
+  );
+  const expertList = viewList.filter((item) => item.fields.Level === 'Expert');
 
   return (
     <PageLayout>
@@ -21,11 +36,34 @@ function ResourceBase(props: { resources: Resource[] }) {
           {viewList.length === 0 ? (
             <Text>{t('noResources')}</Text>
           ) : (
-            <Wrap spacing={8} justify="center">
-              {viewList.map((item, index) => (
-                <ResourceCard key={index} data={item} />
-              ))}
-            </Wrap>
+            <>
+              <Heading align="center">
+                {t('beginner') + ' ' + t('resources')}
+              </Heading>
+              <Wrap spacing={8} justify="center">
+                {beginnerList.map((item, index) => (
+                  <ResourceCard key={index} data={item} />
+                ))}
+              </Wrap>
+
+              <Heading align="center">
+                {t('intermediate') + ' ' + t('resources')}
+              </Heading>
+              <Wrap spacing={8} justify="center">
+                {intermediateList.map((item, index) => (
+                  <ResourceCard key={index} data={item} />
+                ))}
+              </Wrap>
+
+              <Heading align="center">
+                {t('expert') + ' ' + t('resources')}
+              </Heading>
+              <Wrap spacing={8} justify="center">
+                {expertList.map((item, index) => (
+                  <ResourceCard key={index} data={item} />
+                ))}
+              </Wrap>
+            </>
           )}
         </Box>
       </chakra.main>

@@ -26,17 +26,39 @@ export const getAirtableResources = async (
   const resources = (await getResource('Resource')) as Resource[];
   const tags = (await getResource('Tags')) as Tag[];
 
-  const authorMap: { [key: string]: { name: string; dev: boolean } } = {};
+  const authorMap: {
+    [key: string]: { name: string; dev: boolean; twitter?: string };
+  } = {};
   const blockchainMap: { [key: string]: string } = {};
   const categoryMap: { [key: string]: string } = {};
   const tagMap: { [key: string]: string } = {};
 
+  const cleanTwitterString = (authorTwitter: string | undefined) => {
+    if (!authorTwitter) return;
+    // prevent casing weirdness and ensure lowercasae for checking
+    const compare = authorTwitter.toLowerCase();
+    // lazy, ifs for the common distortions
+    // either the '.com/' construct or starting with @
+    if (compare.indexOf('twitter.com') > -1) {
+      const comIndex = compare.indexOf('.com/') + 5;
+      return authorTwitter.substring(comIndex, authorTwitter.length);
+    }
+    if (compare.startsWith('@')) {
+      return authorTwitter.substring(1, authorTwitter.length);
+    }
+    return authorTwitter;
+  };
+
   authors.forEach((item) => {
     // ensure that we set a true or false value (not undefined)
-    authorMap[item.id] = {
+    const authorValue: { name: string; dev: boolean; twitter?: string } = {
       name: item.fields.Name,
       dev: !!item.fields['Developer DAO Member'],
     };
+    if (item.fields.Twitter) {
+      authorValue.twitter = cleanTwitterString(item.fields.Twitter);
+    }
+    authorMap[item.id] = authorValue;
   });
 
   blockchains.forEach((item) => {

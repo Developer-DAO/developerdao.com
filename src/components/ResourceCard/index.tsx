@@ -13,6 +13,7 @@ import {
   Tag,
   Text,
   VStack,
+  Wrap,
   WrapItem,
 } from '@chakra-ui/react';
 import {
@@ -21,6 +22,7 @@ import {
   FaRegNewspaper,
   FaVideo,
   FaQuestion,
+  FaTwitter,
 } from 'react-icons/fa';
 import { Resource, ResourceFields } from '../../types/airtable';
 import Logo from '../../components/Logo';
@@ -44,7 +46,7 @@ const LevelBadge = ({ levelName }: { levelName: string }) => {
 const Author = ({
   authors,
 }: {
-  authors?: { name: string; dev: boolean }[];
+  authors?: { name: string; dev: boolean; twitter?: string }[];
 }) => {
   const { t } = useTranslation();
 
@@ -54,7 +56,13 @@ const Author = ({
     <VStack>
       {authors.map((author) => (
         <Flex key={author.name} align="center" justify="space-between">
-          {author.name}
+          {author.twitter ? (
+            <Link href={`https://twitter.com/${author.twitter}`}>
+              {author.name} <Icon as={FaTwitter} />
+            </Link>
+          ) : (
+            author.name
+          )}
           {author.dev ? (
             <Box title={t('daoMember')}>
               <Logo ml={1} h={7} w={7} />
@@ -124,7 +132,7 @@ const renderResourceDetails = (kbRecord: ResourceFields) => {
     kbRecord.Tags?.join(' ').length +
     kbRecord.Level?.length;
   // allot 8px per character -> 500px buys 62.5; round down
-  if (renderCount > 60) {
+  if (renderCount > 40) {
     // do it vertically
     return (
       <VStack>
@@ -133,17 +141,19 @@ const renderResourceDetails = (kbRecord: ResourceFields) => {
             <Tag key={`category-${index}`}>{category}</Tag>
           ))}
         </HStack>
-        <HStack>
+        <Wrap>
           {kbRecord.Tags?.map((tag: string, index: number) => (
-            <Badge key={`tag-${index}`}>{tag}</Badge>
+            <WrapItem key={`tag-${index}`}>
+              <Badge key={`tag-${index}`}>{tag}</Badge>
+            </WrapItem>
           ))}
-        </HStack>
+        </Wrap>
         <LevelBadge levelName={kbRecord.Level} />
       </VStack>
     );
   } else {
     return (
-      <HStack maxW={{ base: '100%', md: '500px' }}>
+      <HStack maxW={{ base: '100%', md: '300px' }}>
         {kbRecord.Category?.map((category: string, index: number) => (
           <Tag key={`category-${index}`}>{category}</Tag>
         ))}
@@ -161,16 +171,18 @@ function ResourceCard(props: { data: Resource }) {
 
   const kbRecord = props.data.fields;
   const kbDetails = renderResourceDetails(kbRecord);
+  const fallbackImage = FallBackImage();
 
   return (
-    <WrapItem maxW={{ base: '100%', md: '500px' }}>
-      <VStack>
+    <WrapItem maxW={{ base: '100%', md: '300px' }}>
+      {/* <VStack minW={{base: '300px'}} maxW={{base: '100%', md: '300px'}}> */}
+      <VStack w={{ base: '100%', sm: '30em', md: '300px' }}>
         <LinkPreview
           url={kbRecord.Source}
-          width="500px"
+          width="inherit"
           height="500px"
           descriptionLength={250}
-          fallbackImageSrc="/logo192.png"
+          fallback={fallbackImage}
         />
         <Author authors={kbRecord.extendedAuthors} />
         {kbDetails}

@@ -5,7 +5,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.7",
-    "@dhaiwat10/react-link-preview": "^1.10.0",
+    "@dhaiwat10/react-link-preview": "^1.10.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@ethersproject/abi": "^5.4.1",

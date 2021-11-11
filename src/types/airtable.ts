@@ -7,6 +7,7 @@ export interface Author {
   fields: {
     Name: string;
     'Developer DAO Member': boolean;
+    Twitter?: string;
   };
 }
 export interface Blockchain {
