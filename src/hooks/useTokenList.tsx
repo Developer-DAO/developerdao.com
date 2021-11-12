@@ -117,7 +117,7 @@ export function useTokenList({ filter, showOnlyAvailable = false }: Props) {
 
         setTokens(tokenList);
       } catch (error) {
-        console.log('Error getting available Tokenlist', error);
+        console.log('Error getting Tokenlist', error);
       } finally {
         setIsFetchingTokens(false);
       }
