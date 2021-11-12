@@ -54,9 +54,7 @@ const providerOptions = {
 const DirectMint = ({ developerId, selectedToken }: DirectMintProps) => {
   const { t } = useTranslation();
   const [userWallet, setUserWallet] = useState('');
-  const [tokenID, setTokenID] = useState(
-    selectedToken ? selectedToken : developerId || '',
-  );
+  const [tokenID, setTokenID] = useState('');
   const [networkError, setNetworkError] = useState(false);
   const [web3Modal, setWeb3Modal] = useState<Web3Modal>();
   const [txInProgress, setTxInProgress] = useState(false);
@@ -65,6 +63,10 @@ const DirectMint = ({ developerId, selectedToken }: DirectMintProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const toast = useToast();
+
+  useEffect(() => {
+    setTokenID(selectedToken ? selectedToken : developerId || '');
+  }, [developerId, selectedToken]);
 
   useEffect(() => {
     const web3Modal = new Web3Modal({

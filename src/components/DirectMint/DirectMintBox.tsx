@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import DirectMint from './DirectMint';
 import Logo from '../../components/Logo';
 import {
@@ -14,16 +15,12 @@ import { useTranslation } from 'next-i18next';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
 
-interface DirectMintBoxProps {
-  setSelectedToken: (token?: string) => void;
-  selectedToken?: string;
-}
 // Layout for the Direct Mint Box
 // used on the minting page
-const DirectMintBox = ({
-  setSelectedToken,
-  selectedToken,
-}: DirectMintBoxProps) => {
+const DirectMintBox = () => {
+  const router = useRouter();
+  const selectedToken = router?.query?.token as string | undefined;
+
   const { t } = useTranslation();
   return (
     <>
@@ -52,7 +49,7 @@ const DirectMintBox = ({
                 as="a"
                 href="#"
                 fontWeight="bold"
-                onClick={() => setSelectedToken()}
+                onClick={() => router.back()}
               >
                 {t('backTokenList')}
               </Box>

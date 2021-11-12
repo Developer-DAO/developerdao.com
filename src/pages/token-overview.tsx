@@ -1,16 +1,15 @@
-import DirectMintBox from '../components/DirectMint/DirectMintBox';
+import React from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 import PageLayout from '../layout/Page';
 import { chakra } from '@chakra-ui/react';
+import { TokenList } from '../components/TokenList';
 
-const Mint = () => {
-  const { t } = useTranslation();
+const TokenOverviewPage = () => {
   return (
     <>
       <PageLayout>
         <chakra.main>
-          <DirectMintBox />
+          <TokenList />
         </chakra.main>
       </PageLayout>
     </>
@@ -23,4 +22,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default Mint;
+export default TokenOverviewPage;

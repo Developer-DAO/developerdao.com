@@ -37,7 +37,7 @@ function Nav() {
           <Link href="/" passHref>
             {t('home')}
           </Link>
-          <Link href="/mint" passHref>
+          <Link href="/token-overview" passHref>
             {t('mintTokenText')}
           </Link>
           <Link href="/projects" passHref>
