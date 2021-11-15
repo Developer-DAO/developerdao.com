@@ -6,13 +6,11 @@ describe('Footer', () => {
   it('Renders the icons', () => {
     render(<Footer />);
 
-    const openSea = screen.getByTitle('OpenSea');
     const etherscan = screen.getByTitle('Etherscan');
     const twitter = screen.getByTitle('Twitter');
     const discord = screen.getByTitle('Discord');
     const github = screen.getByTitle('GitHub');
 
-    expect(openSea).toBeInTheDocument();
     expect(etherscan).toBeInTheDocument();
     expect(twitter).toBeInTheDocument();
     expect(discord).toBeInTheDocument();

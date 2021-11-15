@@ -17,6 +17,7 @@ import {
 
 function Footer() {
   const { t } = useTranslation();
+  const openseaConfigFlag = false;
 
   return (
     <chakra.footer borderTop="1px solid" borderColor="gray.200" py={10}>
@@ -25,17 +26,19 @@ function Footer() {
           {t('madeBy')}
         </Text>
         <HStack as="ul" direction="row" spacing={4} listStyleType="none">
-          <li>
-            <a
-              title="OpenSea"
-              className="mx-2 block"
-              href={OPENSEA_COLLECTION_LINK}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconOpenSea />
-            </a>
-          </li>
+          {openseaConfigFlag ? (
+            <li>
+              <a
+                title="OpenSea"
+                className="mx-2 block"
+                href={OPENSEA_COLLECTION_LINK}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IconOpenSea />
+              </a>
+            </li>
+          ) : null}
           <li>
             <a
               title="Etherscan"
