@@ -5,11 +5,9 @@ import {
   Box,
   Button,
   Flex,
-  Heading,
   HStack,
   Icon,
   Link,
-  Stack,
   Tag,
   Text,
   VStack,
@@ -57,7 +55,10 @@ const Author = ({
       {authors.map((author) => (
         <Flex key={author.name} align="center" justify="space-between">
           {author.twitter ? (
-            <Link href={`https://twitter.com/${author.twitter}`}>
+            <Link
+              href={`https://twitter.com/${author.twitter}`}
+              isExternal={true}
+            >
               {author.name} <Icon as={FaTwitter} />
             </Link>
           ) : (
@@ -121,7 +122,6 @@ const FallBackImage = () => (
   <VStack>
     <Text>Image Unavailable</Text>
     <Logo />
-    <Text>Please stand by</Text>
   </VStack>
 );
 
@@ -131,16 +131,19 @@ const renderResourceDetails = (kbRecord: ResourceFields) => {
     kbRecord.Category?.join(' ').length +
     kbRecord.Tags?.join(' ').length +
     kbRecord.Level?.length;
-  // allot 8px per character -> 500px buys 62.5; round down
-  if (renderCount > 40) {
+  // allot 8px per character -> 300px buys 37.5. lose 2 to padding, round down
+  // trim a few more to look ok
+  if (renderCount > 32) {
     // do it vertically
     return (
       <VStack>
-        <HStack>
+        <Wrap maxW={{ base: '100%', sm: '300px' }} align="center">
           {kbRecord.Category?.map((category: string, index: number) => (
-            <Tag key={`category-${index}`}>{category}</Tag>
+            <WrapItem key={`category-item-${index}`}>
+              <Tag key={`category-${index}`}>{category}</Tag>
+            </WrapItem>
           ))}
-        </HStack>
+        </Wrap>
         <Wrap>
           {kbRecord.Tags?.map((tag: string, index: number) => (
             <WrapItem key={`tag-${index}`}>
@@ -174,9 +177,11 @@ function ResourceCard(props: { data: Resource }) {
   const fallbackImage = FallBackImage();
 
   return (
-    <WrapItem maxW={{ base: '100%', md: '300px' }}>
-      {/* <VStack minW={{base: '300px'}} maxW={{base: '100%', md: '300px'}}> */}
-      <VStack w={{ base: '100%', sm: '30em', md: '300px' }}>
+    <WrapItem
+      maxW={{ base: '100%', sm: '300px' }}
+      paddingInline={{ base: '1em', sm: 0 }}
+    >
+      <VStack w={{ base: '100%', sm: '300px' }}>
         <LinkPreview
           url={kbRecord.Source}
           width="inherit"

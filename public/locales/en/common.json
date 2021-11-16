@@ -65,5 +65,6 @@
   "allResources": "All Resources",
   "noResources": "No Resources",
   "airtableError": "Unable to configure $t(title) Airtable",
-  "hydrationError": "$t(error) preparing Resources for display"
+  "hydrationError": "$t(error) preparing Resources for display",
+  "imageUnavailable": "Image Unavailable"
 }

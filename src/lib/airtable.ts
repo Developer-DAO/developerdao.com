@@ -8,8 +8,6 @@ import {
   Tag,
 } from './../types/airtable';
 
-// const airTable = new Airtable({ apiKey: process.env.NEXT_PUBLIC_AIRTABLE_READONLY_KEY });
-
 export const getAirtableResources = async (
   airtableKey: string | undefined,
   airtableBase: string | undefined,
