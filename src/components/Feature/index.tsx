@@ -1,7 +1,8 @@
-import { Box, Text } from '@chakra-ui/layout';
+import { Box, Text, Heading, Stack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/react';
+import theme from '../../theme';
 
 function Feature({
   imgSrc,
@@ -15,23 +16,25 @@ function Feature({
   const { t } = useTranslation();
   const color = useColorModeValue('#000', '#fff');
 
-  // const bgColor = useColorModeValue('#fff', '#212425');
   return (
-    <Box
+    <Stack
+      spacing={4}
       fontFamily="inter"
       width={{ base: '80%', md: '100%', xl: '17rem' }}
-      textAlign="left"
-      mx="auto"
       p="6"
+      alignItems={{ base: 'center', md: 'flex-start' }}
       rounded="md"
-      // bg={bgColor}
     >
-      <Image mb={4} src={imgSrc} alt={imgSrc} />
-      <Text fontSize="md" mb={4} fontWeight="bold">
+      <Box>
+        <Image src={imgSrc} alt="" />
+      </Box>
+      <Heading fontSize="md" fontWeight="bold">
         {title}
+      </Heading>
+      <Text textAlign={{ base: 'center', md: 'left' }} color={color}>
+        {description}
       </Text>
-      <Text color={color}>{description}</Text>
-    </Box>
+    </Stack>
   );
 }
 

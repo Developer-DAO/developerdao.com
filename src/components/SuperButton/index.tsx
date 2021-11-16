@@ -16,7 +16,7 @@ function SuperButton({ background, leftIcon, title }: SuperButtonProps) {
       fontWeight="normal"
       color="white"
       fontSize="1rem"
-      background={background}
+      colorScheme={background}
       leftIcon={leftIcon}
     >
       {title}

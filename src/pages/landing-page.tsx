@@ -1,4 +1,4 @@
-import { chakra, VStack, Box, HStack, Stack } from '@chakra-ui/react';
+import { VStack, Box, HStack, Stack, ChakraProvider } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +11,7 @@ import Tweet from '../components/Tweet';
 import Marquee from 'react-fast-marquee';
 import SuperButton from '../components/SuperButton';
 import JoinFuture from '../components/JoinFuture';
+import theme from '../theme';
 
 function LandingPage() {
   const { t } = useTranslation();
@@ -67,115 +68,98 @@ function LandingPage() {
   ];
 
   return (
-    <PageLayout>
-      <chakra.main>
-        <Button
-          zIndex={10}
-          borderWidth={2}
-          bottom="15"
-          right="10"
-          position="fixed"
-          size="md"
-          onClick={toggleColorMode}
-        >
-          {color === '#000' ? <FaMoon /> : <FaSun />}
-        </Button>
-        <VStack
-          color={color}
-          mx="auto"
-          px={0}
-          spacing={5}
-          textAlign="center"
-          mt={12}
-          w="full"
-          maxW="3xl"
-        >
-          <Text
-            fontFamily="poppins"
-            fontWeight="light"
-            mb={2}
-            fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
+    <>
+      <Button
+        zIndex={10}
+        borderWidth={2}
+        bottom="15"
+        right="10"
+        position="fixed"
+        size="md"
+        onClick={toggleColorMode}
+      >
+        {color === '#000' ? <FaMoon /> : <FaSun />}
+      </Button>
+      <PageLayout>
+        <VStack as="main" spacing={24} pt={12}>
+          <VStack
+            spacing={5}
+            color={color}
+            mx="auto"
+            textAlign="center"
+            w="full"
+            maxW="3xl"
           >
-            {t('heading')}
-          </Text>
-          <Text
-            px={4}
-            fontWeight="400"
-            fontSize={{ base: '14px', md: '18px', lg: '18px' }}
-            maxW={{ base: '90%', sm: '80%', md: '2xl' }}
-          >
-            {t('subHeading')}
-          </Text>
-
-          <Stack
-            direction={{ base: 'column', sm: 'row', md: 'row', lg: 'row' }}
-            spacing={{ base: 6, sm: 30, md: 40, lg: 60 }}
-          >
-            <Box>
-              <Box
-                display="flex"
-                mb={4}
-                flexDirection="column"
-                alignItems="center"
+            <Stack spacing={7} align="center">
+              <Text
+                fontFamily="poppins"
+                fontWeight="light"
+                fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
               >
-                <Text fontSize="4rem" fontFamily="poppins">
-                  120<sup style={{ fontSize: '1rem', top: -30 }}>/800</sup>
-                </Text>
-                <Text fontSize="1rem" color={secondaryColor}>
-                  {t('seats')}
-                </Text>
-              </Box>
-              <SuperButton
-                title={t('becomeMember')}
-                background={'#2128CA'}
-                leftIcon={<FaEthereum />}
-              />
-            </Box>
-            <Box>
-              <Box
-                display="flex"
-                mb={4}
-                flexDirection="column"
-                alignItems="center"
+                {t('heading')}
+              </Text>
+              <Text
+                px={4}
+                fontWeight="400"
+                fontSize={{ base: '14px', md: '18px', lg: '18px' }}
+                maxW={{ base: '90%', sm: '80%', md: '2xl' }}
               >
-                <Text fontFamily="poppins" fontSize="4rem">
-                  853
-                </Text>
-                <Text fontSize="1rem" color={secondaryColor}>
-                  {t('devsBuilding')}
-                </Text>
-              </Box>
-              <SuperButton
-                title={t('joinDiscord')}
-                background={'#3F46F3'}
-                leftIcon={<FaDiscord />}
-              />
-            </Box>
-          </Stack>
+                {t('subHeading')}
+              </Text>
+            </Stack>
+            <Stack
+              direction={{ base: 'column', sm: 'row', md: 'row', lg: 'row' }}
+              spacing={{ base: 6, sm: 30, md: 40, lg: 60 }}
+            >
+              <Stack spacing={5}>
+                <Box display="flex" flexDirection="column" alignItems="center">
+                  <Text fontSize="4rem" fontFamily="poppins">
+                    120<sup style={{ fontSize: '1rem', top: -30 }}>/800</sup>
+                  </Text>
+                  <Text fontSize="1rem" color={secondaryColor}>
+                    {t('seats')}
+                  </Text>
+                </Box>
+                <SuperButton
+                  title={t('becomeMember')}
+                  background="member"
+                  leftIcon={<FaEthereum />}
+                />
+              </Stack>
+              <Stack spacing={5}>
+                <Box display="flex" flexDirection="column" alignItems="center">
+                  <Text fontFamily="poppins" fontSize="4rem">
+                    853
+                  </Text>
+                  <Text fontSize="1rem" color={secondaryColor}>
+                    {t('devsBuilding')}
+                  </Text>
+                </Box>
+                <SuperButton
+                  title={t('joinDiscord')}
+                  background="discord"
+                  leftIcon={<FaDiscord />}
+                />
+              </Stack>
+            </Stack>
+          </VStack>
+          <HStack w="full" background={tweetBackground} gridGap="4">
+            <Marquee gradient={false} speed={60} pauseOnHover={true}>
+              {tweetData.map((twetter, index) => (
+                <Tweet
+                  key={index}
+                  tweet={twetter.tweet}
+                  name={twetter.name}
+                  userName={twetter.userName}
+                  profileSrc={twetter.profileImg}
+                />
+              ))}
+            </Marquee>
+          </HStack>
+          <JoinFuture />
         </VStack>
-        <HStack
-          marginTop="6rem"
-          w="full"
-          background={tweetBackground}
-          py={3}
-          gridGap="4"
-        >
-          <Marquee gradient={false} speed={60} pauseOnHover={true}>
-            {tweetData.map((twetter, index) => (
-              <Tweet
-                key={index}
-                tweet={twetter.tweet}
-                name={twetter.name}
-                userName={twetter.userName}
-                profileSrc={twetter.profileImg}
-              />
-            ))}
-          </Marquee>
-        </HStack>
-
-        <JoinFuture />
-      </chakra.main>
-    </PageLayout>
+      </PageLayout>
+    </>
   );
 }
 
