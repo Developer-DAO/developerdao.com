@@ -46,5 +46,7 @@
   "errorMinting": "Unable to Mint NFT",
   "disconnectWallet": "Disconnect Wallet",
   "etherscanMessage": "View your TX on Etherscan",
-  "testnet": "Testnet"
+  "testnet": "Testnet",
+  "glitterConfetti": "A man throwing glitter in a fabulous manner",
+  "soldOut": "DEV Tokens are now sold out to our {{count}} community members"
 }

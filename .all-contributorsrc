@@ -308,6 +308,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "erain9",
+      "name": "erain9",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77944593?v=4",
+      "profile": "https://github.com/erain9",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "carmen0208",
+      "name": "Carmen Liu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3668156?v=4",
+      "profile": "http://carmen0208.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "caiiiyua",
+      "name": "Cai Yuanqing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/536970?v=4",
+      "profile": "http://imogu.us",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "amazingandyyy",
+      "name": "Andy Chen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7886068?v=4",
+      "profile": "https://amazingandyyy.com",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,

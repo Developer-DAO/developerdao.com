@@ -23,4 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .next
+
+# editors
+.idea
 .vscode

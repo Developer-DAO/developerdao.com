@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Nav from './index';
 
 export default {
-  title: 'Developer DAO/00-components/Nav',
+  title: 'Nav',
   component: Nav,
 } as Meta;
 

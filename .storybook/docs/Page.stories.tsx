@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Page } from './Page';
 
 export default {
-  title: 'Developer DAO/01-pages/Page',
+  title: 'Getting started',
   component: Page,
 } as Meta;
 

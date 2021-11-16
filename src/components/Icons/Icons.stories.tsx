@@ -1,12 +1,29 @@
-import React from 'react';
+import * as React from 'react';
+import { VStack, Text, Grid } from '@chakra-ui/react';
+import * as AllIcons from '.';
+import { IconProps } from '@chakra-ui/icons';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IconGitHub } from './index';
 
 export default {
-  title: 'Developer DAO/00-components/Icons',
-  component: IconGitHub,
+  title: 'Icons',
 } as Meta;
 
-const Template: Story = (args) => <IconGitHub {...args} />;
+const Icons = () => (
+  <Grid gap="8" gridTemplateColumns={`repeat(auto-fill, minmax(8rem, 1fr))`}>
+    {Object.entries(AllIcons).map(([key, value]) => {
+      const IconComponent = value as React.FC<IconProps>;
+      return (
+        <React.Fragment key={key}>
+          <VStack spacing="3">
+            <IconComponent boxSize="40px" />
+            <Text>{key}</Text>
+          </VStack>
+        </React.Fragment>
+      );
+    })}
+  </Grid>
+);
 
-export const IconGithub = Template.bind({});
+const Template: Story = (args) => <Icons {...args} />;
+
+export const IconGrid = Template.bind({});

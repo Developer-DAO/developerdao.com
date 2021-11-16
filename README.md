@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -137,6 +137,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://nagmakapoor.com"><img src="https://avatars.githubusercontent.com/u/16668970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nagma</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=nagmak" title="Code">💻</a></td>
     <td align="center"><a href="http://www.ibby.dev"><img src="https://avatars.githubusercontent.com/u/23090443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Eter</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=Ibby-devv" title="Code">💻</a> <a href="https://github.com/Developer-DAO/developerdao.com/commits?author=Ibby-devv" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/theprojectcode"><img src="https://avatars.githubusercontent.com/u/88997637?v=4?s=100" width="100px;" alt=""/><br /><sub><b>theprojectcode</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=theprojectcode" title="Code">💻</a></td>
+<<<<<<< HEAD
+=======
+    <td align="center"><a href="https://embiem.me"><img src="https://avatars.githubusercontent.com/u/3866457?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Beierling-Mutz</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=embiem" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/erain9"><img src="https://avatars.githubusercontent.com/u/77944593?v=4?s=100" width="100px;" alt=""/><br /><sub><b>erain9</b></sub></a><br /><a href="#translation-erain9" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://carmen0208.github.io"><img src="https://avatars.githubusercontent.com/u/3668156?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carmen Liu</b></sub></a><br /><a href="#translation-carmen0208" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://imogu.us"><img src="https://avatars.githubusercontent.com/u/536970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cai Yuanqing</b></sub></a><br /><a href="#translation-caiiiyua" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://amazingandyyy.com"><img src="https://avatars.githubusercontent.com/u/7886068?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andy Chen</b></sub></a><br /><a href="#translation-amazingandyyy" title="Translation">🌍</a></td>
+>>>>>>> main
   </tr>
 </table>
 
