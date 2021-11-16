@@ -344,6 +344,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "G3root",
+      "name": "Nafees Nazik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/84864519?v=4",
+      "profile": "https://github.com/G3root",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
