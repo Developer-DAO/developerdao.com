@@ -9,6 +9,7 @@ import {
   Switch,
   Wrap,
   Heading,
+  VStack,
 } from '@chakra-ui/react';
 import PageLayout from '../layout/Page';
 import ResourceCard from '../components/ResourceCard';
@@ -27,7 +28,9 @@ function ResourceBase(props: { resources: Resource[] }) {
   const intermediateList = viewList.filter(
     (item) => item.fields.Level === 'Intermediate',
   );
-  const expertList = viewList.filter((item) => item.fields.Level === 'Expert');
+  const expertList = viewList.filter(
+    (item) => item.fields.Level === 'Advanced',
+  );
 
   return (
     <PageLayout>
@@ -36,7 +39,7 @@ function ResourceBase(props: { resources: Resource[] }) {
           {viewList.length === 0 ? (
             <Text>{t('noResources')}</Text>
           ) : (
-            <>
+            <VStack spacing="1em">
               <Heading align="center">
                 {t('beginner') + ' ' + t('resources')}
               </Heading>
@@ -56,14 +59,14 @@ function ResourceBase(props: { resources: Resource[] }) {
               </Wrap>
 
               <Heading align="center">
-                {t('expert') + ' ' + t('resources')}
+                {t('advanced') + ' ' + t('resources')}
               </Heading>
               <Wrap spacing={8} justify="center">
                 {expertList.map((item, index) => (
                   <ResourceCard key={index} data={item} />
                 ))}
               </Wrap>
-            </>
+            </VStack>
           )}
         </Box>
       </chakra.main>
