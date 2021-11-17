@@ -84,6 +84,7 @@ function JoinFuture() {
         ))}
       </Grid>
       <SuperButton
+        hoverColor="member.50"
         title={t('becomeMember')}
         background="member"
         leftIcon={<FaEthereum />}

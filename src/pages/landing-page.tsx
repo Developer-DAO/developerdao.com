@@ -1,17 +1,14 @@
-import { VStack, Box, HStack, Stack, ChakraProvider } from '@chakra-ui/react';
+import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
+import { Box, Button, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Logo from '../components/Logo';
-import PageLayout from '../layout/Page';
-import { Button, Text } from '@chakra-ui/react';
-import { FaEthereum, FaDiscord, FaMoon, FaSun } from 'react-icons/fa';
-import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
-import Tweet from '../components/Tweet';
 import Marquee from 'react-fast-marquee';
-import SuperButton from '../components/SuperButton';
+import { useTranslation } from 'react-i18next';
+import { FaDiscord, FaEthereum, FaMoon, FaSun } from 'react-icons/fa';
 import JoinFuture from '../components/JoinFuture';
-import theme from '../theme';
+import SuperButton from '../components/SuperButton';
+import Tweet from '../components/Tweet';
+import PageLayout from '../layout/Page';
 
 function LandingPage() {
   const { t } = useTranslation();
@@ -121,6 +118,7 @@ function LandingPage() {
                   </Text>
                 </Box>
                 <SuperButton
+                  hoverColor="member.50"
                   title={t('becomeMember')}
                   background="member"
                   leftIcon={<FaEthereum />}
@@ -136,6 +134,7 @@ function LandingPage() {
                   </Text>
                 </Box>
                 <SuperButton
+                  hoverColor="discord.50"
                   title={t('joinDiscord')}
                   background="discord"
                   leftIcon={<FaDiscord />}

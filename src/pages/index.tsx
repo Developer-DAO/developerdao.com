@@ -57,7 +57,14 @@ function App() {
   return (
     <PageLayout>
       <chakra.main>
-        <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
+        <VStack
+          color="gray.800"
+          mx="auto"
+          px={4}
+          spacing={5}
+          w="full"
+          maxW="lg"
+        >
           <Logo w={32} h={32} />
           <VStack w="full">
             <Text fontSize="xl">{t('searchId')}</Text>

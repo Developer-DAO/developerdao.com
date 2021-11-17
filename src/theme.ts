@@ -3,7 +3,6 @@ import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 // 2. Add your color mode config
 const config: ThemeConfig = {
   initialColorMode: 'light',
-  useSystemColorMode: true,
 };
 
 export const theme = extendTheme({
@@ -13,7 +12,7 @@ export const theme = extendTheme({
       200: '#2128CA',
     },
     discord: {
-      50: '#FFFFFF',
+      50: '#878bf7',
       200: '#3F46F3',
     },
   },
