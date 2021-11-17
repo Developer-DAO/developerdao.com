@@ -15,6 +15,6 @@ module.exports = {
       'zh-HK',
       'zh-TW',
     ],
+    localePath: path.resolve("./public/locales"),
   },
-  localePath: path.resolve("./public/locales"),
 };
