@@ -28,11 +28,14 @@ function Nav() {
           </HStack>
         </Link>
         <HStack
-          color={router.pathname === '/landing-page' ? color : 'gray.800'}
+          color={router.pathname === '/' ? color : 'gray.800'}
           spacing={{ base: 3, sm: 10 }}
         >
           <Link href="/developers" passHref>
             {t('developers')}
+          </Link>
+          <Link href="/token-viewer" passHref>
+            {t('viewToken')}
           </Link>
           <Link href="/mint" passHref>
             {t('mintTokenText')}
