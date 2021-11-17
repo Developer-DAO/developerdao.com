@@ -10,10 +10,12 @@ export const theme = extendTheme({
     member: {
       50: '#5E62CB',
       200: '#2128CA',
+      500: '#2128CA',
     },
     discord: {
       50: '#878bf7',
       200: '#3F46F3',
+      500: '#3F46F3',
     },
   },
   fonts: {

@@ -16,6 +16,7 @@ function Index() {
 
   const color = useColorModeValue('#000', '#fff');
   const tweetBackground = useColorModeValue('#fff', '#151718');
+  const memberButtonColor = useColorModeValue('member', 'member');
   const secondaryColor = useColorModeValue(
     'rgba(15, 15, 26, 0.48)',
     'rgba(255, 255, 255, 0.64)',
@@ -120,7 +121,7 @@ function Index() {
                 <SuperButton
                   hoverColor="member.50"
                   title={t('becomeMember')}
-                  background="member"
+                  background={memberButtonColor}
                   leftIcon={<FaEthereum />}
                 />
               </Stack>
