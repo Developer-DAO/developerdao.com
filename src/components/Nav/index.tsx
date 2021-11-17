@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
+import { useRouter } from 'next/router';
 
 function Nav() {
+  const router = useRouter();
   const { t } = useTranslation();
   const color = useColorModeValue('#000', '#fff');
 
@@ -25,9 +27,15 @@ function Nav() {
             <Logo h={10} w={10} />
           </HStack>
         </Link>
-        <HStack color={color} spacing={{ base: 3, sm: 10 }}>
+        <HStack
+          color={router.pathname === '/' ? color : 'gray.800'}
+          spacing={{ base: 3, sm: 10 }}
+        >
           <Link href="/developers" passHref>
             {t('developers')}
+          </Link>
+          <Link href="/token-viewer" passHref>
+            {t('viewToken')}
           </Link>
           <Link href="/mint" passHref>
             {t('mintTokenText')}

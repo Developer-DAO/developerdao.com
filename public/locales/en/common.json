@@ -52,5 +52,6 @@
   "seats": "seats left",
   "becomeMember": "Become a member",
   "devsBuilding": "devs building",
-  "joinDiscord": "Join us at Discord"
+  "joinDiscord": "Join us at Discord",
+  "viewToken": "View Token"
 }

@@ -42,43 +42,28 @@ function JoinFuture() {
   ];
 
   return (
-    <VStack
-      color={color}
-      mx="auto"
-      px={0}
-      textAlign="center"
-      mt={12}
-      w="full"
-      mb={4}
-    >
-      <Image
-        mt="5.4rem"
-        mb="0.5rem"
-        w={10}
-        h="auto"
-        src="/rocket.png"
-        alt="rocket"
-      />
-      <Text
-        fontFamily="poppins"
-        fontWeight="light"
-        mb={[0, '0rem !important']}
-        fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
-      >
-        {t('future')}
-      </Text>
-      <Text
-        px={4}
-        fontWeight="400"
-        color={secondaryColor}
-        fontFamily="inter"
-        fontSize={{ base: '14px', md: '18px', lg: '18px' }}
-        maxW={{ base: '90%', sm: '80%', md: '2xl' }}
-      >
-        {t('member')}
-      </Text>
+    <VStack spacing={6} color={color} mx="auto" textAlign="center" w="full">
+      <VStack>
+        <Image w={10} h="auto" src="/rocket.png" alt="rocket" />
+        <Text
+          fontFamily="poppins"
+          fontWeight="light"
+          fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
+        >
+          {t('future')}
+        </Text>
+        <Text
+          px={4}
+          fontWeight="400"
+          color={secondaryColor}
+          fontFamily="inter"
+          fontSize={{ base: '14px', md: '18px', lg: '18px' }}
+          maxW={{ base: '90%', sm: '80%', md: '2xl' }}
+        >
+          {t('member')}
+        </Text>
+      </VStack>
       <Grid
-        mt={[0, '2.5rem !important']}
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)',
@@ -86,9 +71,8 @@ function JoinFuture() {
         }}
         gap={4}
         w={{ base: 'full', md: '80%', lg: '90%' }}
+        justifyItems="center"
         mx="auto"
-        my={6}
-        gridGap={4}
       >
         {Features.map((feature, index) => (
           <Feature
@@ -100,8 +84,9 @@ function JoinFuture() {
         ))}
       </Grid>
       <SuperButton
+        hoverColor="member.50"
         title={t('becomeMember')}
-        background={'#2128CA'}
+        background="member"
         leftIcon={<FaEthereum />}
       />
     </VStack>

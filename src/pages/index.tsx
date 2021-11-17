@@ -1,170 +1,167 @@
-import React, { useCallback, useState } from 'react';
-import { getDefaultProvider, Contract, ethers } from 'ethers';
-import { NftProvider, useNft } from 'use-nft';
-import { useRouter } from 'next/router';
+import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
+import { Box, Button, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import {
-  DEVELOPER_DAO_CONTRACT,
-  DEVELOPER_DAO_CONTRACT_ABI,
-  ETHER_SCAN_LINK_PREFIX,
-  SITE_URL,
-} from '../utils/DeveloperDaoConstants';
-import {
-  chakra,
-  Input,
-  Text,
-  Button,
-  VStack,
-  useToast,
-} from '@chakra-ui/react';
-import { LinkIcon } from '@chakra-ui/icons';
-import Logo from '../components/Logo';
+import React from 'react';
+import Marquee from 'react-fast-marquee';
+import { useTranslation } from 'react-i18next';
+import { FaDiscord, FaEthereum, FaMoon, FaSun } from 'react-icons/fa';
+import JoinFuture from '../components/JoinFuture';
+import SuperButton from '../components/SuperButton';
+import Tweet from '../components/Tweet';
 import PageLayout from '../layout/Page';
-import DevName from '../components/Search/Dev/DevName';
-import { useNftImageContent } from '../utils/useNftImageContent';
-import OtherDevsByOwnerContainer from '../components/Search/OtherDevsByOwner/OtherDevsByOwner';
 
-function App() {
+function Index() {
   const { t } = useTranslation();
-  const router = useRouter();
-  const id = getSearchID();
-  const [developerId, setDeveloperId] = useState(id);
+  const { toggleColorMode } = useColorMode();
 
-  const ethersConfig = {
-    ethers: { Contract },
-    provider: getDefaultProvider('homestead'),
-  };
+  const color = useColorModeValue('#000', '#fff');
+  const tweetBackground = useColorModeValue('#fff', '#151718');
+  const memberButtonColor = useColorModeValue('member', 'member');
+  const secondaryColor = useColorModeValue(
+    'rgba(15, 15, 26, 0.48)',
+    'rgba(255, 255, 255, 0.64)',
+  );
 
-  const updateDeveloperId = useCallback(
-    (e) => {
-      if (e <= 8000) {
-        setDeveloperId(e);
-        router.replace({ query: { id: e } });
-      }
+  const tweetData = [
+    {
+      tweet:
+        'I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*.',
+      name: 'miralsuthar',
+      userName: 'miral182000',
+      profileImg:
+        'https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg',
     },
-    [router],
-  );
-
-  function getSearchID() {
-    if (process.browser) {
-      const search = window.location.search;
-      return new URLSearchParams(search).get('id') || 1;
-    }
-    return 1;
-  }
-
-  return (
-    <PageLayout>
-      <chakra.main>
-        <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
-          <Logo w={32} h={32} />
-          <VStack w="full">
-            <Text fontSize="xl">{t('searchId')}</Text>
-            <Input
-              aria-label="Search by developer ID"
-              placeholder="Search developer id"
-              value={developerId}
-              onChange={(e) => updateDeveloperId(e.target.value)}
-              id="hero-field"
-              name="hero-field"
-              bg="white"
-            />
-          </VStack>
-          {typeof window !== 'undefined' ? (
-            <NftProvider fetcher={['ethers', ethersConfig]}>
-              <Nft developerId={developerId.toString()} />
-            </NftProvider>
-          ) : (
-            <Text>{t('loading')}</Text>
-          )}
-        </VStack>
-      </chakra.main>
-    </PageLayout>
-  );
-}
-
-function Nft({ developerId }: { developerId: string }) {
-  const { t } = useTranslation();
-  const toast = useToast();
-
-  const copyLinkToNFT = useCallback(() => {
-    navigator.clipboard.writeText(`${SITE_URL}/?id=${developerId}`);
-    toast({
-      title: t('linkCopied'),
-      isClosable: true,
-    });
-  }, [toast, t, developerId]);
-
-  const { loading, error, nft } = useNft(DEVELOPER_DAO_CONTRACT, developerId);
-
-  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
-
-  if (loading) return <Text>{t('loading')}</Text>;
-
-  if (!developerId) return <Text>{t('enterDeveloperId')}</Text>;
-
-  if (error || !nft) return <Text>{t('error')}.</Text>;
+    {
+      tweet:
+        'I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*.',
+      name: 'miralsuthar',
+      userName: 'miral182000',
+      profileImg:
+        'https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg',
+    },
+    {
+      tweet:
+        'I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*.',
+      name: 'miralsuthar',
+      userName: 'miral182000',
+      profileImg:
+        'https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg',
+    },
+    {
+      tweet:
+        'I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*.',
+      name: 'miralsuthar',
+      userName: 'miral182000',
+      profileImg:
+        'https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg',
+    },
+    {
+      tweet:
+        'I think netlify might just be the very best SaaS I have ever had the privilege to use. It is just *amazing*.',
+      name: 'miralsuthar',
+      userName: 'miral182000',
+      profileImg:
+        'https://pbs.twimg.com/profile_images/1410618356441391114/OzlL3qo7_400x400.jpg',
+    },
+  ];
 
   return (
-    <VStack w="full" spacing={5}>
-      <chakra.img
-        alt={nftAltText!}
-        src={nftImage!}
-        border={4}
-        borderStyle="solid"
-        borderColor="gray.200"
-        w="full"
-        objectFit="cover"
-        objectPosition="center"
-        rounded="md"
-      />
-      <VStack>
-        <DevName nft={nft} developerId={developerId} />
-        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
-          {t('copyLinkToNFT')}
-        </Button>
-        {nft.owner ? (
-          <Button
-            as="a"
-            href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
-            target="_blank"
-            rel="noreferrer"
-            title={t('viewOwnerEtherscan')}
-            fontSize={{ base: 'xs', sm: 'md' }}
+    <>
+      <Button
+        zIndex={10}
+        borderWidth={2}
+        bottom="15"
+        right="10"
+        position="fixed"
+        size="md"
+        onClick={toggleColorMode}
+      >
+        {color === '#000' ? <FaMoon /> : <FaSun />}
+      </Button>
+      <PageLayout>
+        <VStack as="main" spacing={24} pt={12}>
+          <VStack
+            spacing={5}
+            color={color}
+            mx="auto"
+            textAlign="center"
+            w="full"
+            maxW="3xl"
           >
-            {t('owner')}&nbsp;
-            <chakra.span maxW="xs">{nft.owner.slice(0, 30)}</chakra.span>...
-            {nft.owner.slice(-4)}
-          </Button>
-        ) : (
-          <Button isDisabled>
-            {t('owner')}&nbsp;{t('unclaimed')}
-          </Button>
-        )}
-        <OtherDevsByOwnerContainer
-          nft={nft}
-          contract={
-            new ethers.Contract(
-              DEVELOPER_DAO_CONTRACT,
-              DEVELOPER_DAO_CONTRACT_ABI,
-              getDefaultProvider('homestead'),
-            )
-          }
-        ></OtherDevsByOwnerContainer>
-      </VStack>
-    </VStack>
+            <Stack spacing={7} align="center">
+              <Text
+                fontFamily="poppins"
+                fontWeight="light"
+                fontSize={{ base: '3xl', md: '6xl', lg: '6xl' }}
+              >
+                {t('heading')}
+              </Text>
+              <Text
+                px={4}
+                fontWeight="400"
+                fontSize={{ base: '14px', md: '18px', lg: '18px' }}
+                maxW={{ base: '90%', sm: '80%', md: '2xl' }}
+              >
+                {t('subHeading')}
+              </Text>
+            </Stack>
+            <Stack
+              direction={{ base: 'column', sm: 'row', md: 'row', lg: 'row' }}
+              spacing={{ base: 6, sm: 30, md: 40, lg: 60 }}
+            >
+              <Stack spacing={5}>
+                <Box display="flex" flexDirection="column" alignItems="center">
+                  <Text fontSize="4rem" fontFamily="poppins">
+                    120<sup style={{ fontSize: '1rem', top: -30 }}>/800</sup>
+                  </Text>
+                  <Text fontSize="1rem" color={secondaryColor}>
+                    {t('seats')}
+                  </Text>
+                </Box>
+                <SuperButton
+                  hoverColor="member.50"
+                  title={t('becomeMember')}
+                  background={memberButtonColor}
+                  leftIcon={<FaEthereum />}
+                />
+              </Stack>
+              <Stack spacing={5}>
+                <Box display="flex" flexDirection="column" alignItems="center">
+                  <Text fontFamily="poppins" fontSize="4rem">
+                    853
+                  </Text>
+                  <Text fontSize="1rem" color={secondaryColor}>
+                    {t('devsBuilding')}
+                  </Text>
+                </Box>
+                <SuperButton
+                  hoverColor="discord.50"
+                  title={t('joinDiscord')}
+                  background="discord"
+                  leftIcon={<FaDiscord />}
+                />
+              </Stack>
+            </Stack>
+          </VStack>
+          <HStack w="full" background={tweetBackground} gridGap="4">
+            <Marquee gradient={false} speed={60} pauseOnHover={true}>
+              {tweetData.map((twetter, index) => (
+                <Tweet
+                  key={index}
+                  tweet={twetter.tweet}
+                  name={twetter.name}
+                  userName={twetter.userName}
+                  profileSrc={twetter.profileImg}
+                />
+              ))}
+            </Marquee>
+          </HStack>
+          <JoinFuture />
+        </VStack>
+      </PageLayout>
+    </>
   );
 }
-
-const processBase64Img = (imgStr: string) => {
-  const [formatInfo, base64Str] = imgStr.split(',');
-
-  // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
-
-  return formatInfo + ',' + btoa(processedStr);
-};
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -172,4 +169,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default App;
+export default Index;
