@@ -31,9 +31,6 @@ function Nav() {
           color={router.pathname === '/' ? color : 'gray.800'}
           spacing={{ base: 3, sm: 10 }}
         >
-          <Link href="/developers" passHref>
-            {t('developers')}
-          </Link>
           <Link href="/token-viewer" passHref>
             {t('viewToken')}
           </Link>
