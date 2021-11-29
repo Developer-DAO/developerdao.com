@@ -353,6 +353,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "mbuxmann",
+      "name": "Martin Buxmann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21178318?v=4",
+      "profile": "http://buxmann.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -81,6 +81,25 @@ function Projects() {
                 Raz
               </Link>
             </ListItem>
+            <ListItem>
+              <Link
+                href="https://pixel-avatars.developerdao.com/"
+                textDecoration="underline"
+                isExternal
+                mr={1}
+              >
+                {t('ddaoPixelAvatars')}
+              </Link>
+              - {t('by')}
+              <Link
+                href="https://github.com/Developer-DAO/"
+                textDecoration="underline"
+                isExternal
+                ml={1}
+              >
+                Developer DAO
+              </Link>
+            </ListItem>
           </UnorderedList>
         </Box>
       </chakra.main>
