@@ -1,53 +1,46 @@
 {
   "title": "Developer DAO",
-  "home": "Home",
-  "projects": "Projects",
-  "searchId": "Search $t(title) id",
-  "description": "A $t(community) of builders who believe in collective ownership of the internet.",
-  "loading": "Loading...",
-  "error": "Error",
-  "viewNftOpenSea": "View NFT on OpenSea",
-  "viewOwnerEtherscan": "View owner on Etherscan",
-  "developerTraits": "Developer traits",
-  "failedLoadTraits": "Failed to load traits",
-  "madeBy": "Made by the $t(title) $t(community): ",
-  "organization": "organization",
-  "repository": "Repository",
-  "community": "community",
-  "daoGithubOrg": "$t(title) GitHub $t(organization)",
-  "daoGithubRepo": "$t(title) GitHub $t(repository)",
-  "owner": "Owner:",
-  "unclaimed": "Unclaimed",
-  "enterDeveloperId": "Please enter a $t(title) id",
-  "hosting": "Hosting by:",
-  "copyLinkToNFT": "Copy link to NFT",
-  "linkCopied": "Link copied to clipboard",
-  "tokenUnavailable": "Token ID may not be available",
-  "NFTMintSuccess": "Your NFT should now be in your wallet!",
-  "TokenMintMessage": "Token Minted",
-  "tokenIDPlaceholder": "Enter Token ID",
-  "mintTokenText": "Mint your Token",
-  "connectWalletText": "Connect Wallet",
-  "ethereumDevNetworkPrompt": "Please Connect to the Ethereum Rinkeby Testnet",
-  "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
-  "availableTokensText": "View the available Token IDs",
-  "remainingTokensText": "{{remainingTokens}} tokens left / {{uniqueAddressCount}} devs joined",
-  "mintPageHeader": "DEVS Token Minter",
-  "projectsList": "A list of community projects created by the Developer DAO community.",
-  "ddaoTokenSearch": "DDAO Token Search",
-  "ddaoUnofficalFrontend": "Developer DAO Unofficial Frontend",
-  "ddaoTokenVisualizer": "Developer DAO Token Visualizer",
-  "ddaoPixelAvatars": "Developer DAO Pixel Avatars",
-  "by": "by",
-  "otherTokensOwnedByThisAddress": "Other Tokens owned by this address",
-  "noOtherTokens": "No other tokens owned by this address",
-  "userCancelTransaction": "Transaction Cancelled by User",
-  "transactionSending": "Transaction Being Sent",
-  "here": "here",
-  "errorMinting": "Unable to Mint NFT",
-  "disconnectWallet": "Disconnect Wallet",
-  "etherscanMessage": "View your TX on Etherscan",
-  "testnet": "Testnet",
-  "glitterConfetti": "A man throwing glitter in a fabulous manner",
-  "soldOut": "DEV Tokens are now sold out to our {{count}} community members"
+  "currentStatus": "Current Status",
+  "season": "Season",
+  "callout": "We're forming guilds, creating culture, strengthening our community, teaching & learning, and building cool shit together.",
+  "calloutButton": "Read our Snapshot",
+  "mission": {
+    "title":  "Mission",
+    "body": "Developer DAO exists to accelerate the education and impact of a new wave of web3 builders."
+  },
+  "values": {
+    "title": "Values",
+    "transparency": {
+      "title": "Transparency",
+      "body": "open source everything, conversations in public, document and share journey"
+    },
+    "diversity": {
+      "title": "Diversity and Inclusion",
+      "body": "seek to foster as diverse a membership as possible and support everyone to contribute"
+    },
+    "responsibility": {
+      "title": "Responsibility",
+      "body": "as a self-governed community we rely on members to be personally responsible for their actions and commitments to the community"
+    },
+    "kindness": {
+      "title": "Kindness and Empathy",
+      "body": "we know that we are living in a complex, stressful, and diverse world and go out of our way to make people’s lives and days better through our interactions"
+    }
+  },
+  "goals": {
+    "title": "Goals",
+    "body1": "Onboard, Educate & Support Web3 Developers",
+    "body2": "Foster & Build Web3 Tools & Public Goods"
+  },
+  "membership": {
+    "title": "How do I join?",
+    "body": "Membership is temporarily closed but will be open again soon. Follow us on Twitter for updates!"
+  },
+  "links": {
+    "title": "Useful links",
+    "wiki": "Wiki",
+    "forum": "Forum",
+    "snapshot": "Snapshot"
+  },
+  "socialLinkLabel": "Opens the Developer DAO {{platform}} in the current tab"
 }

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('NFT Search', () => {
+describe.skip('NFT Search', () => {
   it('Shows first token when loading, can search for another token', () => {
     cy.visit('/');
 
