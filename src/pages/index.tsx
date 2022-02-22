@@ -23,6 +23,7 @@ import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import DeveloperDaoLogo from '../components/Logo';
 
 export default function IndexPage() {
   const { t } = useTranslation();
@@ -42,7 +43,7 @@ export default function IndexPage() {
         }
       >
         <Heading as="h1" fontSize="xl">
-          {t('title')}
+          <DeveloperDaoLogo />
         </Heading>
 
         <Stack spacing={{ base: 10, md: 12 }}>
