@@ -55,31 +55,54 @@ const Footer = () => {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Useful Links</ListHeader>
-            <Link href={'#'} isExternal>
+            <Link
+              href={
+                'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e'
+              }
+              isExternal
+            >
               Wiki
             </Link>
-            <Link href={'#'} isExternal>
+            <Link href={'https://forum.developerdao.com/'} isExternal>
               Forum
             </Link>
-            <Link href={'#'} isExternal>
+            <Link
+              href={
+                'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff'
+              }
+              isExternal
+            >
               Snapshot
             </Link>
             <Link href={'#'} isExternal>
               Podcast
             </Link>
-            <Link href={'#'} isExternal>
+            <Link
+              href={
+                'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9'
+              }
+              isExternal
+            >
               Newsletter
             </Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Discover</ListHeader>
-            <Link href={'#'} isExternal>
+            <Link href={'https://devdao.mirror.xyz/'} isExternal>
               Blog
             </Link>
-            <Link href={'#'} isExternal>
+            <Link
+              href={'https://airtable.com/shrzgqiMiHE18Iy9O/tbljejdzelezqT0W7'}
+              isExternal
+            >
               Learning Resources
             </Link>
-            <Link href={'#'} isExternal>
+            <Link
+              href={
+                'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db'
+              }
+              isExternal
+            >
               Projects
             </Link>
             <Link href={'#'} isExternal>
@@ -89,15 +112,15 @@ const Footer = () => {
           <Stack align={'flex-start'}>
             <ListHeader>Social</ListHeader>
             <ButtonGroup>
-              <button>
-                <FaTwitter href="#" aria-label="Twitter" />
-              </button>
-              <button>
-                <FaDiscord href="#" aria-label="Discord" />
-              </button>
-              <button>
-                <FaGithub href="#" aria-label="Github" />
-              </button>
+              <a href="https://twitter.com/developer_dao">
+                <FaTwitter aria-label="Twitter" />
+              </a>
+              <a href="https://t.co/k407RuG8eV">
+                <FaDiscord aria-label="Discord" />
+              </a>
+              <a href="https://github.com/Developer-DAO">
+                <FaGithub aria-label="Github" />
+              </a>
             </ButtonGroup>
           </Stack>
         </SimpleGrid>
