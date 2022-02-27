@@ -33,6 +33,13 @@ export const theme = extendTheme({
           fontStyle: 'normal',
           lineHeight: '1.81rem',
         },
+        normalMobile: {
+          fontFamily: 'Inter',
+          fontSize: '1.125rem',
+          fontWeight: '500',
+          fontStyle: 'normal',
+          lineHeight: '1.5rem',
+        },
         large: {
           fontFamily: 'Inter',
           fontSize: '1.5rem',
@@ -65,6 +72,13 @@ export const theme = extendTheme({
           fontStyle: 'normal',
           lineHeight: '4.311rem',
         },
+        mediumMobile: {
+          fontFamily: 'Inter',
+          fontSize: '1.875rem',
+          fontWeight: '800',
+          fontStyle: 'normal',
+          lineHeight: '2.25rem',
+        },
         normal: {
           fontFamily: 'Inter',
           fontSize: '3.375rem',
@@ -92,6 +106,12 @@ export const theme = extendTheme({
         fontSize: { base: 'sm', md: 'md' },
         py: 10,
         px: { base: 2, sm: 4, md: 8 },
+      },
+      '.box-border': {
+        border: `1px solid ${mode('black', 'white')(props)}`,
+        borderRadius: 10,
+        padding: '1.5rem',
+        margin: '0.75rem',
       },
     }),
   },
