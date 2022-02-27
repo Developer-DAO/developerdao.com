@@ -23,63 +23,65 @@ export const theme = extendTheme({
     '5xl': '6rem',
     '6xl': '8rem',
   },
-  Text: {
-    variants: {
-      normal: {
-        fontFamily: 'Inter',
-        fontSize: '1.25rem',
-        fontWeight: '500',
-        fontStyle: 'normal',
-        lineHeight: '1.81rem',
-      },
-      large: {
-        fontFamily: 'Inter',
-        fontSize: '1.5rem',
-        fontWeight: '700',
-        fontStyle: 'normal',
-        lineHeight: '2rem',
-      },
-      medium: {
-        fontFamily: 'Inter',
-        fontSize: '1rem',
-        fontWeight: '500',
-        fontStyle: 'normal',
-        lineHeight: '1.21rem',
-      },
-    },
-  },
-  Heading: {
-    variants: {
-      large: {
-        fontFamily: 'Inter',
-        fontSize: '5.375rem',
-        fontWeight: '800',
-        fontStyle: 'normal',
-        lineHeight: '6.5rem',
-      },
-      medium: {
-        fontFamily: 'Inter',
-        fontSize: '3.5625rem',
-        fontWeight: '800',
-        fontStyle: 'normal',
-        lineHeight: '4.311rem',
-      },
-      normal: {
-        fontFamily: 'Inter',
-        fontSize: '3.375rem',
-        fontWeight: '800',
-        fontStyle: 'normal',
-        lineHeight: '3.96rem',
+  components: {
+    Text: {
+      variants: {
+        normal: {
+          fontFamily: 'Inter',
+          fontSize: '1.25rem',
+          fontWeight: '500',
+          fontStyle: 'normal',
+          lineHeight: '1.81rem',
+        },
+        large: {
+          fontFamily: 'Inter',
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          fontStyle: 'normal',
+          lineHeight: '2rem',
+        },
+        medium: {
+          fontFamily: 'Inter',
+          fontSize: '1rem',
+          fontWeight: '500',
+          fontStyle: 'normal',
+          lineHeight: '1.21rem',
+        },
       },
     },
-  },
-  Link: {
-    variants: {
-      fontFamily: 'Inter',
-      fontWeight: '500',
-      fontSize: '1.375rem',
-      fontStyle: 'normal',
-      lineHeight: '1.66rem',
+    Heading: {
+      variants: {
+        large: {
+          fontFamily: 'Inter',
+          fontSize: '5.375rem',
+          fontWeight: '800',
+          fontStyle: 'normal',
+          lineHeight: '6.5rem',
+        },
+        medium: {
+          fontFamily: 'Inter',
+          fontSize: '3.5625rem',
+          fontWeight: '800',
+          fontStyle: 'normal',
+          lineHeight: '4.311rem',
+        },
+        normal: {
+          fontFamily: 'Inter',
+          fontSize: '3.375rem',
+          fontWeight: '800',
+          fontStyle: 'normal',
+          lineHeight: '3.96rem',
+        },
+      },
+    },
+    Link: {
+      variants: {
+        fontFamily: 'Inter',
+        fontWeight: '500',
+        fontSize: '1.375rem',
+        fontStyle: 'normal',
+        lineHeight: '1.66rem',
+      },
     },
   },
   styles: {
