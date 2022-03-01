@@ -8,11 +8,17 @@ import {
   GridItem,
   Center,
 } from '@chakra-ui/react';
+import { BsFillLightningChargeFill } from 'react-icons/bs';
 
 const IntroComponent = () => {
   return (
     <Box>
-      <Flex direction="row" flexWrap="wrap" justifyContent="space-between">
+      <Flex
+        direction="row"
+        width="100%"
+        flexWrap="wrap"
+        justifyContent="space-between"
+      >
         <Box
           w={{ base: '100%', lg: '30%' }}
           border="1px solid"
@@ -51,7 +57,7 @@ const IntroComponent = () => {
               borderRadius="11px"
               color="black"
             >
-              <Image src="/lightning_1.svg" alt="snapshot" />
+              <Box as={BsFillLightningChargeFill} />
               Read our snapshot
             </Button>
           </Box>
