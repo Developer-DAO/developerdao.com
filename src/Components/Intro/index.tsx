@@ -7,37 +7,55 @@ import {
   Grid,
   GridItem,
   Center,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { BsFillLightningChargeFill, BsDiscord } from 'react-icons/bs';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
 
 const beforeCODELaunch = false;
 
 const IntroComponent = () => {
+  const isMobile = useBreakpointValue({ base: true, lg: false });
   return (
-    <Box>
-      <Flex
-        direction="row"
-        width="100%"
-        flexWrap="wrap"
-        justifyContent="space-between"
-      >
+    <Box w={'100vw'}>
+      <Flex direction="row" justify="space-around" flexWrap="wrap">
         {beforeCODELaunch && (
           <Box
-            w={{ base: '100%', lg: '30%' }}
+            w={{ base: '90vw', lg: '31rem' }}
             border="1px solid"
             borderRadius="11px"
-            p="6"
+            p="2rem"
           >
-            <Text fontSize="54" fontFamily="Inter" fontWeight="800">
+            <Text
+              fontSize={isMobile ? '43px' : '54px'}
+              fontFamily="Inter"
+              fontWeight="800"
+              lineHeight={isMobile ? '43px' : '65px'}
+              mr="2rem"
+            >
               Build web3 with friends.
             </Text>
-            <Text fontSize="24" fontFamily="Inter" fontWeight="500">
+            <Text
+              fontSize={isMobile ? '16px' : '24px'}
+              fontFamily="Inter"
+              fontWeight="500"
+              lineHeight={isMobile ? '20px' : '30px'}
+              mt="2rem"
+            >
               Developer DAO is a community of thousand of web3 builders creating
               a better internet. Join us and create the future.
             </Text>
-            <Box border="1px solid" borderRadius="11px" bg="white" p="6" mt="6">
+            <Box
+              border="1px solid"
+              borderRadius="11px"
+              bg="white"
+              p="1rem"
+              mt="2rem"
+            >
               <Text
-                fontSize="24"
+                fontSize={isMobile ? '16px' : '24px'}
                 fontFamily="Inter"
                 fontWeight="700"
                 color="black"
@@ -45,21 +63,24 @@ const IntroComponent = () => {
                 Current Status: Season 0
               </Text>
               <Text
-                fontSize="20"
+                fontSize={isMobile ? '13px' : '20px'}
                 fontFamily="Inter"
                 fontWeight="500"
                 color="black"
+                lineHeight={isMobile ? '18px' : '27px'}
+                mt="1rem"
               >
                 We&rsquo;re forming guilds, creating culture, strengthening our
                 community, teaching & learning, and building cool things
                 together.
               </Text>
               <Button
-                mt="6"
-                p="6"
+                mt="1rem"
+                p={isMobile ? '1rem' : '1.5rem'}
                 border="1px solid black"
-                borderRadius="11px"
-                color="black"
+                borderRadius={isMobile ? '7px' : '11px'}
+                fontSize={isMobile ? '13px' : '20px'}
+                color={'black'}
               >
                 <Box as={BsFillLightningChargeFill} />
                 Read our snapshot
@@ -69,41 +90,50 @@ const IntroComponent = () => {
         )}
 
         {!beforeCODELaunch && (
-          <Box w={{ base: '100%', lg: '35%' }}>
-            <Text fontSize="86" fontFamily="Inter" fontWeight="800">
+          <Box w={{ base: '90vw', lg: '35rem' }}>
+            <Text
+              fontSize={isMobile ? '57px' : '86px'}
+              fontFamily="Inter"
+              fontWeight="800"
+              lineHeight={isMobile ? '70px' : '104px'}
+            >
               Build web3 with friends.
             </Text>
-            <Text fontSize="24" fontFamily="Inter" fontWeight="500">
+            <Text
+              fontSize={isMobile ? '19px' : '24px'}
+              fontFamily="Inter"
+              fontWeight="500"
+              lineHeight={isMobile ? '28px' : '29px'}
+              mt="2rem"
+            >
               Developer DAO is a community of thousand of web3 builders creating
               a better internet. Join us and create the future.
             </Text>
 
-            <Flex justifyContent="center" w="100">
+            <Flex justifyContent="center" w="100" mt="2rem">
               <Button
-                mt="6"
-                p="6"
+                p="1.5rem"
                 border="1px solid black"
                 borderRadius="10px"
                 bg="white"
                 color="black"
-                fontSize="20"
+                fontSize={isMobile ? '14px' : '20px'}
                 flexGrow="1"
               >
                 Claim $CODE
               </Button>
 
               <Button
-                mt="6"
-                p="6"
-                ml="6"
+                p="1.5rem"
+                ml="1rem"
                 border="1px solid white"
                 borderRadius="10px"
                 bg="black"
                 color="white"
-                fontSize="20"
+                fontSize={isMobile ? '14px' : '20px'}
                 flexGrow="1"
               >
-                <Box as={BsDiscord} mr="3" />
+                <Box as={BsDiscord} mr="1rem" />
                 Join Discord
               </Button>
             </Flex>
@@ -111,7 +141,7 @@ const IntroComponent = () => {
         )}
         <Flex
           direction="column"
-          w={{ base: '100%', lg: '30%' }}
+          w={{ base: '90vw', lg: '40rem' }}
           mt={{ base: '10vh', lg: '0vh' }}
         >
           <Image
