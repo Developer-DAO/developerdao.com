@@ -54,6 +54,8 @@ const Footer = () => {
         <Stack align={'flex-start'}>
           <ListHeader>Useful Links</ListHeader>
           <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
             href={
               'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e'
             }
@@ -61,10 +63,17 @@ const Footer = () => {
           >
             Wiki
           </Link>
-          <Link href={'https://forum.developerdao.com/'} isExternal>
+          <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
+            href={'https://forum.developerdao.com/'}
+            isExternal
+          >
             Forum
           </Link>
           <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
             href={
               'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff'
             }
@@ -72,10 +81,17 @@ const Footer = () => {
           >
             Snapshot
           </Link>
-          <Link href={'#'} isExternal>
+          <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
+            href={'#'}
+            isExternal
+          >
             Podcast
           </Link>
           <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
             href={
               'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9'
             }
@@ -86,16 +102,25 @@ const Footer = () => {
         </Stack>
         <Stack align={'flex-start'}>
           <ListHeader>Discover</ListHeader>
-          <Link href={'https://devdao.mirror.xyz/'} isExternal>
+          <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
+            href={'https://devdao.mirror.xyz/'}
+            isExternal
+          >
             Blog
           </Link>
           <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
             href={'https://airtable.com/shrzgqiMiHE18Iy9O/tbljejdzelezqT0W7'}
             isExternal
           >
             Learning Resources
           </Link>
           <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
             href={
               'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db'
             }
@@ -103,7 +128,12 @@ const Footer = () => {
           >
             Projects
           </Link>
-          <Link href={'#'} isExternal>
+          <Link
+            textDecoration="underline"
+            _hover={{ textDecoration: 'none' }}
+            href={'#'}
+            isExternal
+          >
             Partners
           </Link>
         </Stack>
