@@ -23,13 +23,13 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 const Footer = () => {
   const { colorMode } = useColorMode();
   return (
-    <Box pt={16}>
+    <Box pt={{ base: 8, lg: 16 }}>
       <SimpleGrid
         templateColumns={{
           sm: '2fr 1fr',
           md: '4fr 1fr 1fr 1fr',
         }}
-        spacing={16}
+        spacing={{ base: 10, md: 16 }}
       >
         <Stack>
           <Flex alignItems="center">
@@ -41,7 +41,7 @@ const Footer = () => {
             />
             <Text
               ml={'1.25rem'}
-              mr={'3rem'}
+              mr={{ base: '0', md: '3rem' }}
               fontWeight="bold"
               variant="medium"
               color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
