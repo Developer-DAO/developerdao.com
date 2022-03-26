@@ -14,7 +14,7 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 
-const beforeCODELaunch = false;
+const beforeCODELaunch = true;
 
 const IntroComponent = () => {
   const isMobile = useBreakpointValue({ base: true, xl: false });
