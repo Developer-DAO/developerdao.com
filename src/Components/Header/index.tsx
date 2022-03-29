@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from 'react';
 import {
   Link,
   Box,
@@ -9,7 +9,8 @@ import {
   Stack,
   useColorMode,
   HStack,
-} from "@chakra-ui/react";
+  BoxProps,
+} from '@chakra-ui/react';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
@@ -21,29 +22,32 @@ const NavBar = () => {
       <Box>
         <Flex alignItems="center">
           <Image
-            width="4rem"
+            w="4rem"
             h="4rem"
-            src={`/D_D_logo-${colorMode === "dark" ? "dark" : "light"}.svg`}
+            src={`/D_D_logo-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
             alt="logo"
           />
           <Text
-            ml={"1.25rem"}
-            mr={"3rem"}
+            ml={'1.25rem'}
+            mr={{ base: '1rem', sm: '3rem' }}
             fontWeight="bold"
             variant="medium"
-            color={colorMode === "dark" ? "#FFFFFF" : "#000000"}
+            color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
+            display={{ base: 'block', md: 'none', lg: 'block' }}
           >
             Developer DAO
           </Text>
         </Flex>
       </Box>
-
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <HStack spacing={10}>
+      <HStack
+        spacing={4}
+        display={{ base: isOpen ? 'flex' : 'none', md: 'flex' }}
+      >
         <MenuLinks isOpen={isOpen} />
         <Switch
           size="md"
-          display={{ base: "none", md: "block" }}
+          display={{ base: 'none', md: 'block' }}
           onChange={toggleColorMode}
           colorScheme="blackAlpha"
         />
@@ -74,31 +78,48 @@ const MenuIcon = () => (
   </svg>
 );
 
-const MenuToggle = ({ toggle, isOpen } : {toggle : () => void, isOpen : boolean}) => {
+const MenuToggle = ({
+  toggle,
+  isOpen,
+}: {
+  toggle: () => void;
+  isOpen: boolean;
+}) => {
   return (
-    <Box display={{ base: "auto", md: "none" }} onClick={toggle}>
+    <Box
+      display={{ base: 'auto', md: 'none' }}
+      onClick={toggle}
+      cursor="pointer"
+    >
       {isOpen ? <CloseIcon /> : <MenuIcon />}
     </Box>
   );
 };
 
-const MenuItem = ({ children, to = "/", ...rest } : {children : ReactNode, to : string }) => {
+const MenuItem = ({
+  children,
+  to = '/',
+  ...rest
+}: {
+  children: ReactNode;
+  to: string;
+}) => {
   return (
     <Link href={to}>
-      <Text display="block" {...rest}>
+      <Text display="block" fontSize={'20px'} {...rest}>
         {children}
       </Text>
     </Link>
   );
 };
 
-const MenuLinks = ({ isOpen } : { isOpen : boolean}) => {
+const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
   return (
-    <Box display={{ base: isOpen ? "block" : "none", md: "block" }}>
+    <Box display={{ base: isOpen ? 'block' : 'none', md: 'block' }}>
       <Stack
-        spacing={{ base: '6', md: '24'}}
-        justify={["space-between", "space-between", "flex-end", "flex-end"]}
-        direction={["column", "row", "row", "row"]}
+        spacing={[0, '16px', null, '24px', '44px']}
+        justify={{ base: 'space-between', md: 'flex-end' }}
+        direction={{ base: 'column', md: 'row' }}
         pt={[8, 4, 0, 0]}
       >
         <MenuItem to="/">Latest Updates</MenuItem>
@@ -111,12 +132,12 @@ const MenuLinks = ({ isOpen } : { isOpen : boolean}) => {
   );
 };
 
-const NavBarContainer = ({ children } : {children : ReactNode}) => {
+const NavBarContainer = ({ children }: { children: ReactNode }) => {
   return (
     <Flex
       as="nav"
       align="center"
-      justify={{ base: "none", md: "space-between" }}
+      justify="space-between"
       wrap="wrap"
       w="100%"
       mb={8}
