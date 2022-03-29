@@ -48,7 +48,7 @@ const NavBar = () => {
         <MenuToggle toggle={toggle} isOpen={isOpen} />
       </Flex>
       <HStack
-        spacing={4}
+        spacing={{ base: 4, xl: 10 }}
         display={{ base: isOpen ? 'flex' : 'none', md: 'flex' }}
         flexShrink={1}
         width={{ base: '100%', md: 'auto' }}
