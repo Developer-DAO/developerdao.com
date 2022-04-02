@@ -35,8 +35,8 @@ function Page({ children }: { children?: object }) {
         </Flex>
       </Marquee>
       <Stack
-        paddingY={'2.06rem'}
-        paddingX={{ base: '1rem', md: '5rem' }}
+        paddingY="2.06rem"
+        paddingX={{ base: '16px', md: '4px', lg: '48px' }}
         spacing={10}
       >
         <Header />
