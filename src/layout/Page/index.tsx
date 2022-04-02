@@ -17,7 +17,7 @@ function Page({ children }: { children?: object }) {
           position: 'fixed',
         }}
         gradient={false}
-        loop={1}
+        loop={0}
         speed={60}
       >
         <Flex>
@@ -52,7 +52,7 @@ function Page({ children }: { children?: object }) {
           position: 'fixed',
         }}
         gradient={false}
-        loop={1}
+        loop={0}
         speed={60}
       >
         <Flex>

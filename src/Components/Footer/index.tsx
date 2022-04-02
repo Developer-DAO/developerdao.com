@@ -152,23 +152,6 @@ const Footer = () => {
           </ButtonGroup>
         </Stack>
       </SimpleGrid>
-
-      <Stack
-        pt="8"
-        justify="space-between"
-        direction={{ base: 'column-reverse', md: 'row' }}
-        align="center"
-      >
-        <Flex>
-          <Image
-            src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-            alt="Blur"
-          />
-          <Text fontSize="sm" ml={2}>
-            {new Date().getFullYear()} @ Developer DAO
-          </Text>
-        </Flex>
-      </Stack>
     </Box>
   );
 };
