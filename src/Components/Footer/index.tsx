@@ -26,8 +26,8 @@ const Footer = () => {
     <Box pt={{ base: 8, lg: 16 }}>
       <SimpleGrid
         templateColumns={{
-          sm: '2fr 1fr',
-          md: '4fr 1fr 1fr 1fr',
+          sm: '4fr 2fr',
+          md: '1.5fr 1.5fr 1fr 1fr',
         }}
         spacing={{ base: 10, md: 16 }}
       >
