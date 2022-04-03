@@ -14,7 +14,7 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 
-const beforeCODELaunch = false;
+const codeLaunched = true;
 
 const IntroComponent = () => {
   const isMobile = useBreakpointValue({ base: true, xl: false });
@@ -26,7 +26,7 @@ const IntroComponent = () => {
       pt="4.5rem"
       w="100%"
     >
-      {beforeCODELaunch && (
+      {!codeLaunched && (
         <Box
           w={{ base: '24rem', xl: '36rem' }}
           border="1px solid"
@@ -99,7 +99,7 @@ const IntroComponent = () => {
         </Box>
       )}
 
-      {!beforeCODELaunch && (
+      {codeLaunched && (
         <Box w={{ base: '90vw', xl: '35rem' }}>
           <Text
             fontSize={isMobile ? '3.563rem' : '5.375rem'}
