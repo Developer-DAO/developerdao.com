@@ -130,6 +130,10 @@ const IntroComponent = () => {
               color="black"
               fontSize={isMobile ? '0.875rem' : '1.25rem'}
               flexGrow={1}
+              _hover={{
+                bg: 'black',
+                color: 'white',
+              }}
             >
               Claim $CODE
             </Button>
@@ -144,6 +148,11 @@ const IntroComponent = () => {
               color="white"
               fontSize={isMobile ? '0.875rem' : '1.25rem'}
               flexGrow={1}
+              _hover={{
+                bg: 'white',
+                color: 'black',
+                borderColor: 'black',
+              }}
             >
               <Box as={FaDiscord} mr=".75rem" fontSize="2rem" />
               Join Discord
