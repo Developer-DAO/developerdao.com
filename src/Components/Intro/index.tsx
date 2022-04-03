@@ -163,7 +163,7 @@ const IntroComponent = () => {
         maxWidth={{ base: 'none', xl: '45%', '2xl': 'none' }}
         mr={{ base: 'auto', xl: '0' }}
         ml={{ base: 'auto', lg: '2rem' }}
-        mt={{ base: '10rem', lg: 0 }}
+        mt={{ base: '5rem', lg: 0 }}
         mb={{ base: '2rem', xl: 0 }}
         transform={{ base: 'translateY(0)', xl: 'translateY(-40px)' }}
       >
@@ -172,7 +172,7 @@ const IntroComponent = () => {
           alignSelf="end"
           src="/intro_person_top.svg"
           alt="intro_person_top"
-          mr={{ base: '5rem', xl: '7.75rem' }}
+          mr={{ base: '3rem', lg: '5rem', xl: '7.75rem' }}
         />
         <Grid
           templateRows="repeat(2, 1fr)"
