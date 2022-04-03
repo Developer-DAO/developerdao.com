@@ -32,30 +32,33 @@ const IntroComponent = () => {
             borderRadius="11px"
             p="2rem"
           >
-            <Text
-              fontSize={isMobile ? '2.625rem' : '3.375rem'}
-              fontFamily="Inter"
-              fontWeight="800"
-              lineHeight={isMobile ? '2.625rem' : '4rem'}
-              mr="2rem"
-            >
-              Build web3 with friends.
-            </Text>
-            <Text
-              fontSize={isMobile ? '1rem' : '1.5rem'}
-              fontFamily="Inter"
-              fontWeight="500"
-              lineHeight={isMobile ? '1.25rem' : '1.875rem'}
-              mt="2rem"
-            >
-              Developer DAO is a community of thousand of web3 builders creating
-              a better internet. Join us and create the future.
-            </Text>
+            <Box pr="4rem">
+              <Text
+                fontSize={isMobile ? '2.625rem' : '3.375rem'}
+                fontFamily="Inter"
+                fontWeight="800"
+                lineHeight={isMobile ? '2.625rem' : '4rem'}
+                mr="2rem"
+              >
+                Build web3 with friends.
+              </Text>
+              <Text
+                fontSize={isMobile ? '1rem' : '1.5rem'}
+                fontFamily="Inter"
+                fontWeight="500"
+                lineHeight={isMobile ? '1.25rem' : '1.875rem'}
+                mt="2rem"
+              >
+                Developer DAO is a community of thousand of web3 builders
+                creating a better internet. Join us and create the future.
+              </Text>
+            </Box>
             <Box
               border="1px solid"
               borderRadius="0.75rem"
               bg="white"
-              p="1rem"
+              py="1.25rem"
+              px="1.5rem"
               mt="2rem"
             >
               <Text
@@ -80,13 +83,15 @@ const IntroComponent = () => {
               </Text>
               <Button
                 mt="1rem"
-                p={isMobile ? '1rem' : '1.5rem'}
+                pl={isMobile ? '1rem' : '1rem'}
+                pr={isMobile ? '1rem' : '1.2rem'}
+                py={isMobile ? '1rem' : '1.5rem'}
                 border="1px solid black"
                 borderRadius={isMobile ? '0.438rem' : '0.688rem'}
                 fontSize={isMobile ? '0.75rem' : '1.25rem'}
                 color={'black'}
               >
-                <Box as={BsFillLightningChargeFill} />
+                <Box as={BsFillLightningChargeFill} mr=".5rem" />
                 Read our snapshot
               </Button>
             </Box>
