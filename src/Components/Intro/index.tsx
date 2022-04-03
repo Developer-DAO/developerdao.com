@@ -17,8 +17,6 @@ import '@fontsource/inter/800.css';
 const codeLaunched = true;
 
 const IntroComponent = () => {
-  const isMobile = useBreakpointValue({ base: true, xl: false });
-  const isXl = useBreakpointValue({ base: false, xl: false, '2xl': true });
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -35,20 +33,20 @@ const IntroComponent = () => {
         >
           <Box pr="4rem">
             <Text
-              fontSize={isMobile ? '2.625rem' : '3.375rem'}
               fontFamily="Inter"
               fontWeight="800"
-              lineHeight={isMobile ? '2.625rem' : '4rem'}
               mr="2rem"
+              fontSize={{ base: '2.625rem', xl: '3.375rem' }}
+              lineHeight={{ base: '2.625rem', xl: '4rem' }}
             >
               Build web3 with friends.
             </Text>
             <Text
-              fontSize={isMobile ? '1rem' : '1.5rem'}
               fontFamily="Inter"
               fontWeight="500"
-              lineHeight={isMobile ? '1.25rem' : '1.875rem'}
               mt="2rem"
+              fontSize={{ base: '1rem', xl: '1.5rem' }}
+              lineHeight={{ base: '1.25rem', xl: '1.875rem' }}
             >
               Developer DAO is a community of thousand of web3 builders creating
               a better internet. Join us and create the future.
@@ -63,34 +61,34 @@ const IntroComponent = () => {
             mt="2rem"
           >
             <Text
-              fontSize={isMobile ? '1rem' : '1.5rem'}
               fontFamily="Inter"
               fontWeight="700"
               color="black"
+              fontSize={{ base: '1rem', xl: '1.5rem' }}
             >
               Current Status: Season 0
             </Text>
             <Text
-              fontSize={isMobile ? '0.8rem' : '1.25rem'}
               fontFamily="Inter"
               fontWeight="500"
               color="black"
-              lineHeight={isMobile ? '1.125rem' : '1.75rem'}
               mt="1rem"
+              fontSize={{ base: '0.8rem', xl: '1.25rem' }}
+              lineHeight={{ base: '1.125rem', xl: '1.75rem' }}
             >
               We&rsquo;re forming guilds, creating culture, strengthening our
               community, teaching & learning, and building cool things together.
             </Text>
             <Button
               mt="1rem"
-              pl={isMobile ? '1rem' : '1rem'}
-              pr={isMobile ? '1rem' : '1.2rem'}
-              py={isMobile ? '1rem' : '1.5rem'}
+              pl="1rem"
               border="1px solid black"
-              borderRadius={isMobile ? '0.438rem' : '0.688rem'}
-              fontSize={isMobile ? '0.75rem' : '1.25rem'}
               fontWeight="bold"
-              color={'black'}
+              color="black"
+              pr={{ base: '1rem', xl: '1.2rem' }}
+              py={{ base: '1rem', xl: '1.5rem' }}
+              borderRadius={{ base: '.438rem', xl: '0.688rem' }}
+              fontSize={{ base: '0.75rem', xl: '1.25rem' }}
             >
               <Box as={BsFillLightningChargeFill} mr=".5rem" color="#FFD666" />
               Read our snapshot
@@ -102,19 +100,19 @@ const IntroComponent = () => {
       {codeLaunched && (
         <Box w={{ base: '100%', xl: '35rem' }}>
           <Text
-            fontSize={{ base: '3.3rem', lg: '4rem', xl: '5.375rem' }}
             fontFamily="Inter"
             fontWeight="800"
-            lineHeight={isMobile ? '4.375rem' : '6.5rem'}
+            fontSize={{ base: '3.3rem', lg: '4rem', xl: '5.375rem' }}
+            lineHeight={{ base: '4.375rem', xl: '6.5rem' }}
           >
             Build web3 with friends.
           </Text>
           <Text
-            fontSize={isMobile ? '1.25rem' : '1.5rem'}
             fontFamily="Inter"
             fontWeight="500"
-            lineHeight={isMobile ? '1.75rem' : '1.5'}
             mt="2.5rem"
+            lineHeight="1.5"
+            fontSize={{ base: '1.25rem', xl: '1.5rem' }}
           >
             Developer DAO is a community of thousand of web3 builders creating a
             better internet. Join us and create the future.
@@ -123,13 +121,13 @@ const IntroComponent = () => {
           <Flex justifyContent="center" w="100" mt="3rem">
             <Button
               px="1.5rem"
-              py={{ base: '1.75rem', xl: '2rem' }}
               border="1px solid black"
               borderRadius="0.625rem"
               bg="white"
               color="black"
-              fontSize={isMobile ? '0.875rem' : '1.25rem'}
               flexGrow={1}
+              fontSize={{ base: '0.875rem', xl: '1.25rem' }}
+              py={{ base: '1.75rem', xl: '2rem' }}
               _hover={{
                 bg: 'black',
                 color: 'white',
@@ -140,14 +138,14 @@ const IntroComponent = () => {
 
             <Button
               px="1.5rem"
-              py={{ base: '1.75rem', xl: '2rem' }}
-              ml={{ base: '1.25rem', xl: '2rem' }}
               border="1px solid white"
               borderRadius="0.625rem"
               bg="black"
               color="white"
-              fontSize={isMobile ? '0.875rem' : '1.25rem'}
               flexGrow={1}
+              py={{ base: '1.75rem', xl: '2rem' }}
+              ml={{ base: '1.25rem', xl: '2rem' }}
+              fontSize={{ base: '0.875rem', xl: '1.25rem' }}
               _hover={{
                 bg: 'white',
                 color: 'black',
@@ -167,9 +165,7 @@ const IntroComponent = () => {
         ml={{ base: 'auto', lg: '2rem' }}
         mt={{ base: '10rem', lg: 0 }}
         mb={{ base: '2rem', xl: 0 }}
-        style={{
-          transform: isMobile ? 'translateY(0)' : 'translateY(-20px)',
-        }}
+        transform={{ base: 'translateY(0)', xl: 'translateY(-40px)' }}
       >
         <Image
           h={{ base: '2rem', xl: '2.6875rem' }}
@@ -216,7 +212,8 @@ const IntroComponent = () => {
               transition=".3s"
               w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transform={{
-                base: 'translate(0)',
+                base: 'translate(40px)',
+                md: 'translate(0)',
                 lg: 'translateX(60px)',
                 xl: 'translate(0)',
               }}
