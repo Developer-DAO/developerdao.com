@@ -21,7 +21,7 @@ const IntroComponent = () => {
   const isXl = useBreakpointValue({ base: false, xl: false, '2xl': true });
   return (
     <Flex
-      direction={isMobile ? 'column' : 'row'}
+      direction={{ base: 'column', lg: 'row' }}
       justifyContent="space-between"
       pt="4.5rem"
       w="100%"
@@ -102,7 +102,7 @@ const IntroComponent = () => {
       {codeLaunched && (
         <Box w={{ base: '100%', xl: '35rem' }}>
           <Text
-            fontSize={isMobile ? '3.3rem' : '5.375rem'}
+            fontSize={{ base: '3.3rem', lg: '4rem', xl: '5.375rem' }}
             fontFamily="Inter"
             fontWeight="800"
             lineHeight={isMobile ? '4.375rem' : '6.5rem'}
@@ -163,8 +163,9 @@ const IntroComponent = () => {
       <Flex
         direction="column"
         maxWidth={{ base: 'none', xl: '45%', '2xl': 'none' }}
-        mx={{ base: 'auto', xl: '0' }}
-        mt={{ base: '10rem', xl: 0 }}
+        mr={{ base: 'auto', xl: '0' }}
+        ml={{ base: 'auto', lg: '2rem' }}
+        mt={{ base: '10rem', lg: 0 }}
         mb={{ base: '2rem', xl: 0 }}
         style={{
           transform: isMobile ? 'translateY(0)' : 'translateY(-20px)',
@@ -183,16 +184,17 @@ const IntroComponent = () => {
           columnGap={10}
           rowGap={20}
           mt="2rem"
-          w={{ base: '80vw', xl: 'auto' }}
+          w={{ base: '80vw', lg: '50vw', xl: 'auto' }}
         >
           <GridItem justifySelf="center">
             <Image
               src="/intro_person_1.svg"
               alt="intro_person_1"
-              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transition=".3s"
-              style={{
-                transform: isMobile ? 'translateX(0)' : 'translateX(-100px)',
+              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
+              transform={{
+                base: 'translateX(0)',
+                xl: 'translateX(-100px)',
               }}
             />
           </GridItem>
@@ -200,9 +202,11 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_2.svg"
               alt="intro_person_2"
-              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transition=".3s"
-              style={{ transform: 'translateY(30px)' }}
+              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
+              transform={{
+                base: 'translateY(30px)',
+              }}
             />
           </GridItem>
           <GridItem justifySelf="center">
@@ -211,6 +215,11 @@ const IntroComponent = () => {
               alt="intro_person_3"
               transition=".3s"
               w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
+              transform={{
+                base: 'translate(0)',
+                lg: 'translateX(60px)',
+                xl: 'translate(0)',
+              }}
             />
           </GridItem>
           <GridItem justifySelf="center">
@@ -218,7 +227,7 @@ const IntroComponent = () => {
               src="/intro_person_4.svg"
               alt="intro_person_4"
               transition=".3s"
-              w={{ base: '12rem', xl: '13rem', '2xl': '15.75rem' }}
+              w={{ base: '9rem', md: '12rem', lg: '13rem', '2xl': '15.75rem' }}
               style={{ transform: 'translate(-30px, 30px)' }}
             />
           </GridItem>
