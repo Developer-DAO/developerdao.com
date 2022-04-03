@@ -162,7 +162,7 @@ const IntroComponent = () => {
       )}
       <Flex
         direction="column"
-        maxWidth={{ base: 'none', md: '80%', xl: 'none' }}
+        maxWidth={{ base: 'none', xl: '45%', '2xl': 'none' }}
         mx={{ base: 'auto', xl: '0' }}
         mt={{ base: '10rem', xl: 0 }}
         mb={{ base: '2rem', xl: 0 }}
@@ -183,15 +183,16 @@ const IntroComponent = () => {
           columnGap={10}
           rowGap={20}
           mt="2rem"
+          w={{ base: '80vw', xl: 'auto' }}
         >
           <GridItem justifySelf="center">
             <Image
               src="/intro_person_1.svg"
               alt="intro_person_1"
-              w={isMobile ? '15rem' : '20rem'}
-              objectFit="fill"
+              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
+              transition=".3s"
               style={{
-                transform: isXl ? 'translateX(-100px)' : 'translateX(0)',
+                transform: isMobile ? 'translateX(0)' : 'translateX(-100px)',
               }}
             />
           </GridItem>
@@ -199,8 +200,8 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_2.svg"
               alt="intro_person_2"
-              w={isMobile ? '15rem' : '19.75rem'}
-              objectFit="fill"
+              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
+              transition=".3s"
               style={{ transform: 'translateY(30px)' }}
             />
           </GridItem>
@@ -208,16 +209,16 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_3.svg"
               alt="intro_person_3"
-              w={isMobile ? '15rem' : '19.75rem'}
-              objectFit="contain"
+              transition=".3s"
+              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
             />
           </GridItem>
           <GridItem justifySelf="center">
             <Image
               src="/intro_person_4.svg"
               alt="intro_person_4"
-              w={isMobile ? '12rem' : '15.75rem'}
-              objectFit="contain"
+              transition=".3s"
+              w={{ base: '12rem', xl: '13rem', '2xl': '15.75rem' }}
               style={{ transform: 'translate(-30px, 30px)' }}
             />
           </GridItem>
