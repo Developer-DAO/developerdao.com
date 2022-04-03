@@ -8,12 +8,13 @@ import {
   GridItem,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { BsFillLightningChargeFill, BsDiscord } from 'react-icons/bs';
+import { BsFillLightningChargeFill } from 'react-icons/bs';
+import { FaDiscord } from 'react-icons/fa';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 
-const beforeCODELaunch = true;
+const beforeCODELaunch = false;
 
 const IntroComponent = () => {
   const isMobile = useBreakpointValue({ base: true, xl: false });
@@ -112,37 +113,39 @@ const IntroComponent = () => {
             fontSize={isMobile ? '1.25rem' : '1.5rem'}
             fontFamily="Inter"
             fontWeight="500"
-            lineHeight={isMobile ? '1.75rem' : '1.813rem'}
-            mt="2rem"
+            lineHeight={isMobile ? '1.75rem' : '1.5'}
+            mt="2.5rem"
           >
             Developer DAO is a community of thousand of web3 builders creating a
             better internet. Join us and create the future.
           </Text>
 
-          <Flex justifyContent="center" w="100" mt="2rem">
+          <Flex justifyContent="center" w="100" mt="3rem">
             <Button
-              p="1.5rem"
+              px="1.5rem"
+              py="2rem"
               border="1px solid black"
               borderRadius="0.625rem"
               bg="white"
               color="black"
               fontSize={isMobile ? '0.875rem' : '1.25rem'}
-              flexGrow="1"
+              flexGrow={1}
             >
               Claim $CODE
             </Button>
 
             <Button
-              p="1.5rem"
-              ml="1rem"
+              px="1.5rem"
+              py="2rem"
+              ml="2rem"
               border="1px solid white"
               borderRadius="0.625rem"
               bg="black"
               color="white"
               fontSize={isMobile ? '0.875rem' : '1.25rem'}
-              flexGrow="1"
+              flexGrow={1}
             >
-              <Box as={BsDiscord} mr="1rem" />
+              <Box as={FaDiscord} mr=".75rem" fontSize="2rem" />
               Join Discord
             </Button>
           </Flex>
