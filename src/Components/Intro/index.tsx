@@ -18,11 +18,11 @@ const codeLaunched = true;
 
 const IntroComponent = () => {
   const isMobile = useBreakpointValue({ base: true, xl: false });
+  const isXl = useBreakpointValue({ base: false, xl: false, '2xl': true });
   return (
     <Flex
-      direction="row"
+      direction={isMobile ? 'column' : 'row'}
       justifyContent="space-between"
-      flexWrap={isMobile ? 'wrap' : 'nowrap'}
       pt="4.5rem"
       w="100%"
     >
@@ -100,9 +100,9 @@ const IntroComponent = () => {
       )}
 
       {codeLaunched && (
-        <Box w={{ base: '90vw', xl: '35rem' }}>
+        <Box w={{ base: '100%', xl: '35rem' }}>
           <Text
-            fontSize={isMobile ? '3.563rem' : '5.375rem'}
+            fontSize={isMobile ? '3.3rem' : '5.375rem'}
             fontFamily="Inter"
             fontWeight="800"
             lineHeight={isMobile ? '4.375rem' : '6.5rem'}
@@ -123,7 +123,7 @@ const IntroComponent = () => {
           <Flex justifyContent="center" w="100" mt="3rem">
             <Button
               px="1.5rem"
-              py="2rem"
+              py={{ base: '1.75rem', xl: '2rem' }}
               border="1px solid black"
               borderRadius="0.625rem"
               bg="white"
@@ -140,8 +140,8 @@ const IntroComponent = () => {
 
             <Button
               px="1.5rem"
-              py="2rem"
-              ml="2rem"
+              py={{ base: '1.75rem', xl: '2rem' }}
+              ml={{ base: '1.25rem', xl: '2rem' }}
               border="1px solid white"
               borderRadius="0.625rem"
               bg="black"
@@ -160,13 +160,22 @@ const IntroComponent = () => {
           </Flex>
         </Box>
       )}
-      <Flex direction="column" style={{ transform: 'translateY(-20px)' }}>
+      <Flex
+        direction="column"
+        maxWidth={{ base: 'none', md: '80%', xl: 'none' }}
+        mx={{ base: 'auto', xl: '0' }}
+        mt={{ base: '10rem', xl: 0 }}
+        mb={{ base: '2rem', xl: 0 }}
+        style={{
+          transform: isMobile ? 'translateY(0)' : 'translateY(-20px)',
+        }}
+      >
         <Image
-          h="2.6875rem"
+          h={{ base: '2rem', xl: '2.6875rem' }}
           alignSelf="end"
           src="/intro_person_top.svg"
           alt="intro_person_top"
-          mr="7.75rem"
+          mr={{ base: '5rem', xl: '7.75rem' }}
         />
         <Grid
           templateRows="repeat(2, 1fr)"
@@ -179,16 +188,18 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_1.svg"
               alt="intro_person_1"
-              w={isMobile ? '9.5rem' : '20rem'}
+              w={isMobile ? '15rem' : '20rem'}
               objectFit="fill"
-              style={{ transform: 'translateX(-100px)' }}
+              style={{
+                transform: isXl ? 'translateX(-100px)' : 'translateX(0)',
+              }}
             />
           </GridItem>
           <GridItem justifySelf="center">
             <Image
               src="/intro_person_2.svg"
               alt="intro_person_2"
-              w={isMobile ? '9.5rem' : '19.75rem'}
+              w={isMobile ? '15rem' : '19.75rem'}
               objectFit="fill"
               style={{ transform: 'translateY(30px)' }}
             />
@@ -197,7 +208,7 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_3.svg"
               alt="intro_person_3"
-              w={isMobile ? '9.5rem' : '19.75rem'}
+              w={isMobile ? '15rem' : '19.75rem'}
               objectFit="contain"
             />
           </GridItem>
@@ -205,7 +216,7 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_4.svg"
               alt="intro_person_4"
-              w={isMobile ? '7.8rem' : '15.75rem'}
+              w={isMobile ? '12rem' : '15.75rem'}
               objectFit="contain"
               style={{ transform: 'translate(-30px, 30px)' }}
             />
