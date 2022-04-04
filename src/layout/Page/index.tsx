@@ -15,6 +15,7 @@ function Page({ children }: { children?: object }) {
           top: '0',
           left: '0',
           position: 'fixed',
+          zIndex: 10,
         }}
         gradient={false}
         loop={0}
@@ -50,6 +51,7 @@ function Page({ children }: { children?: object }) {
           bottom: '0',
           left: '0',
           position: 'fixed',
+          zIndex: 10,
         }}
         gradient={false}
         loop={0}
