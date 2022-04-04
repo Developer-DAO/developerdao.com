@@ -26,7 +26,7 @@ const IntroComponent = () => {
     >
       {!codeLaunched && (
         <Box
-          w={{ base: '24rem', xl: '36rem' }}
+          w={{ base: '100%', xl: '34rem' }}
           border="1px solid"
           borderRadius="11px"
           p="2rem"
@@ -45,8 +45,8 @@ const IntroComponent = () => {
               fontFamily="Inter"
               fontWeight="500"
               mt="2rem"
-              fontSize={{ base: '1rem', xl: '1.5rem' }}
-              lineHeight={{ base: '1.25rem', xl: '1.875rem' }}
+              lineHeight="1.5"
+              fontSize={{ base: '1.25rem', xl: '1.5rem' }}
             >
               Developer DAO is a community of thousand of web3 builders creating
               a better internet. Join us and create the future.
