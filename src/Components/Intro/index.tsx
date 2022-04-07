@@ -21,7 +21,7 @@ const IntroComponent = () => {
     <Flex
       direction={{ base: 'column', lg: 'row' }}
       justifyContent="space-between"
-      pt="4.5rem"
+      pt={{ base: '0', lg: '4.5rem' }}
       w="100%"
     >
       {!codeLaunched && (
