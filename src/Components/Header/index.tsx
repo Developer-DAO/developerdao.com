@@ -37,7 +37,6 @@ const NavBar = () => {
               ml={'1.25rem'}
               mr={{ base: '1rem', sm: '3rem' }}
               fontWeight="bold"
-              variant="medium"
               color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
               display={{ base: 'block', md: 'none', lg: 'block' }}
             >

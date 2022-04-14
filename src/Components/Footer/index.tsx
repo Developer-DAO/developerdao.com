@@ -43,7 +43,6 @@ const Footer = () => {
               ml={'1.25rem'}
               mr={{ base: '0', md: '3rem' }}
               fontWeight="bold"
-              variant="medium"
               color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
             >
               Developer DAO
