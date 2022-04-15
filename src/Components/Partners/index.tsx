@@ -15,7 +15,7 @@ const Partners = () => {
         fontFamily="Inter"
         fontWeight="800"
         fontSize={{ base: '2.625rem', xl: '3.375rem' }}
-        mb={{ base: '6rem', xl: '9.175rem' }}
+        mb={{ base: '5rem', xl: '6.175rem' }}
         textAlign="center"
       >
         Our Partners
@@ -23,19 +23,19 @@ const Partners = () => {
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
         <Image
           src="/thirdweb.svg"
-          mb={{ base: '5rem', xl: '0' }}
+          mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           alt="third web"
         />
         <Image
           src="/gitcoin.svg"
-          mb={{ base: '5rem', xl: '0' }}
+          mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           alt="gitcoin"
         />
         <Image
           src="/polygon.svg"
-          mb={{ base: '5rem', xl: '0' }}
+          mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           alt="polygon"
         />
@@ -50,8 +50,9 @@ const Partners = () => {
         borderRadius="56px"
         paddingX={'1.5rem'}
         paddingY={'1.5rem'}
-        mt={{ base: '7rem', xl: '8.85rem' }}
+        mt={{ base: '5rem', xl: '6.85rem' }}
         alignSelf="center"
+        mb={'4rem'}
         onClick={handleButtonClick}
       >
         Become a partner{' '}
