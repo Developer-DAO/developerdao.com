@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Image, useCallbackRef } from '@chakra-ui/react';
+import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
 const Partners = () => {
@@ -9,17 +9,38 @@ const Partners = () => {
   }, []);
 
   return (
-    <Flex flexDir={'column'}>
+    <Flex flexDir={'column'} justifyContent="center">
       <Heading
         textTransform={'capitalize'}
         fontFamily="Inter"
         fontWeight="800"
         fontSize={{ base: '2.625rem', xl: '3.375rem' }}
         mb={{ base: '6rem', xl: '9.175rem' }}
+        textAlign="center"
       >
         Our Partners
       </Heading>
-      <Flex></Flex>
+      <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
+        <Image
+          src="/thirdweb.svg"
+          mb={{ base: '5rem', xl: '0' }}
+          mr={{ base: '0', xl: '6rem' }}
+          alt="third web"
+        />
+        <Image
+          src="/gitcoin.svg"
+          mb={{ base: '5rem', xl: '0' }}
+          mr={{ base: '0', xl: '6rem' }}
+          alt="gitcoin"
+        />
+        <Image
+          src="/polygon.svg"
+          mb={{ base: '5rem', xl: '0' }}
+          mr={{ base: '0', xl: '6rem' }}
+          alt="polygon"
+        />
+        <Image src="/the-graph.svg" alt="the graph" />
+      </Flex>
       <Button
         backgroundColor="white"
         textColor="black"
