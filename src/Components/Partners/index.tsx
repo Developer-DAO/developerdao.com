@@ -81,6 +81,7 @@ const Partners = () => {
         paddingX={'1.5rem'}
         paddingY={'1.5rem'}
         mt={{ base: '5rem', xl: '6.85rem' }}
+        _hover={{ color: 'black' }}
         alignSelf="center"
         mb={'4rem'}
         onClick={handleButtonClick}
