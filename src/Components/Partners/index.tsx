@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import { Button, Flex, Heading, Image, Link, Stack } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
 const Partners = () => {
@@ -21,25 +21,33 @@ const Partners = () => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        <Image
-          src="/thirdweb.svg"
+        <Link
+          href="https://thirdweb.com"
           mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
-          alt="third web"
-        />
-        <Image
-          src="/gitcoin.svg"
+          target="_blank"
+        >
+          <Image src="/thirdweb.svg" alt="third web" />
+        </Link>
+        <Link
+          href="https://gitcoin.co"
           mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
-          alt="gitcoin"
-        />
-        <Image
-          src="/polygon.svg"
+          target="_blank"
+        >
+          <Image src="/gitcoin.svg" alt="gitcoin" />
+        </Link>
+        <Link
           mb={{ base: '2.5rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
-          alt="polygon"
-        />
-        <Image src="/the-graph.svg" alt="the graph" />
+          href="https://polygon.technology"
+          target="_blank"
+        >
+          <Image src="/polygon.svg" alt="polygon" />
+        </Link>
+        <Link href="https://thegraph.com" target="_blank">
+          <Image src="/the-graph.svg" alt="the graph" />
+        </Link>
       </Flex>
       <Button
         backgroundColor="white"
