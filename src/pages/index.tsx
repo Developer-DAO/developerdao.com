@@ -1,37 +1,11 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  IconButton,
-  ListItem,
-  Stack,
-  StackDivider,
-  Text,
-  UnorderedList,
-  useBreakpointValue,
-  useColorMode,
-  VisuallyHidden,
-  VStack,
-} from '@chakra-ui/react';
+import { Divider, useColorMode, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { ReactElement } from 'react';
-import { BsLightningCharge } from 'react-icons/bs';
-import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
-import { GiCrownedHeart } from 'react-icons/gi';
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
-import IntroComponent from '../Components/Intro';
-import Values from '../Components/Values';
-import Partners from '../Components/Partners';
 import Footer from '../Components/Footer';
+import IntroComponent from '../Components/Intro';
+import Partners from '../Components/Partners';
+import Values from '../Components/Values';
 
 export default function IndexPage() {
-  const { t } = useTranslation();
   const { colorMode } = useColorMode();
 
   return (

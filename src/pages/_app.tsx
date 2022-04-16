@@ -1,18 +1,16 @@
-import React, { ReactNode } from 'react';
-import Head from 'next/head';
-import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
-import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
 import '@fontsource/source-code-pro/600.css';
-import { AppProps } from 'next/app';
-import '../styles/globals.css';
-
-import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
-import { theme } from '../theme';
+import { appWithTranslation, useTranslation } from 'next-i18next';
 import PlausibleProvider from 'next-plausible';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import React, { ReactNode } from 'react';
 import Page from '../layout/Page';
+import '../styles/globals.css';
+import { theme } from '../theme';
+import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 

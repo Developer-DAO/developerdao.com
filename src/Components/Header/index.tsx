@@ -1,16 +1,15 @@
-import React, { ReactNode, useState } from 'react';
 import {
-  Link,
   Box,
   Flex,
-  Text,
-  Switch,
-  Image,
-  Stack,
-  useColorMode,
   HStack,
-  BoxProps,
+  Image,
+  Link,
+  Stack,
+  Switch,
+  Text,
+  useColorMode,
 } from '@chakra-ui/react';
+import React, { ReactNode, useState } from 'react';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,7 +36,6 @@ const NavBar = () => {
               ml={'1.25rem'}
               mr={{ base: '1rem', sm: '3rem' }}
               fontWeight="bold"
-              variant="medium"
               color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
               display={{ base: 'block', md: 'none', lg: 'block' }}
             >

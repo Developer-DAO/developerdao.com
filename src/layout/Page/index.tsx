@@ -1,7 +1,7 @@
-import React from 'react';
 import { Box, Flex, Image, Stack, Text, useColorMode } from '@chakra-ui/react';
-import Header from '../../Components/Header';
+import React from 'react';
 import Marquee from 'react-fast-marquee';
+import Header from '../../Components/Header';
 
 function Page({ children }: { children?: object }) {
   const { colorMode } = useColorMode();
