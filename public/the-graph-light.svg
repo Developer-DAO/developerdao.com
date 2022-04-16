@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 68" width="255" height="68">
+	<title>the-graph-svg</title>
+	<defs>
+		<image  width="252" height="69" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPwAAABFAQMAAABUoBmZAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAAAAAApWe5zwAAAAJ0Uk5TAP9bkSK1AAACDklEQVR4nJXVMa7cIBAG4EEULrnB4yYmN8iFIsPqFa/MkUK0xbsGUYqUcUmBPJkBG/sp9jhBWmm9+60NP8MsANgZVILroXABnQUwIEYRWMQ0FAE4xCwCRCyD8AhFYJHmoAmgmq/BwCB8kkA0GIU5GqRpJAFYWqEMaAFemCO4ub2uQWp3uRyegBFB/Acg7pUPNwD/BuYUeEQb1o/6qqcV6A9AYZbBQFUsAoP436CuYoQV2OTDBXgL8IVAtEFHC/AC08shKALfkqa7u2CfvyOm0ceJfl6jzg3gTAUIDswTnziPmDxd9s1ikA0Vl+NSf8fscPZ02be7AroJz+wIesEQ+FncWwPL5x/FvWf/dd5LjsD34lQD2cTiHtnreS9azqGMKsOk8UkfEC4Tg63sK5hgA6o4qKAfnAo8NkCTr4CeSCsf6tH7CDSWcQMLctwHQEGloYN6/OEIOMlkOqgNBPZJwgrSNofagjoYoW1WMqEDbmIdOMrBRvea+P0jV8BtcAcPAjMSeBT32gA30g7sL04GdTLP4rABtZZgA1gXrnkVtJsVcDPve8H1QBlVQAUzre1P5Q1wqHRwdA0K4wb0VtVF8eNc0kmVMjrYwPnpHve35g7YO+DugD/tUQeAp31yBxe9egda7PbA2xVkYFD+HuxyA85jOIzzGA7jPIZ9yH9ZFcQ7EO6A/D2ouxjgLgZ5/AF4DbhAH9CgyAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Layer" href="#img1" x="0" y="0"/>
+</svg>

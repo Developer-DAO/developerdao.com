@@ -1,7 +1,15 @@
-import { Button, Flex, Heading, Image, Link, Stack } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  useColorMode,
+} from '@chakra-ui/react';
 import { useCallback } from 'react';
 
 const Partners = () => {
+  const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl =
       'https://docs.google.com/forms/d/14MpHciXifNUjB9NDvdYgnzV4IXJUtN3wp8EEeqP4gZo/viewform';
@@ -27,7 +35,10 @@ const Partners = () => {
           mr={{ base: '0', xl: '6rem' }}
           target="_blank"
         >
-          <Image src="/thirdweb.svg" alt="third web" />
+          <Image
+            src={colorMode === 'dark' ? '/thirdweb.svg' : '/thirdweb-light.svg'}
+            alt="third web"
+          />
         </Link>
         <Link
           href="https://gitcoin.co"
@@ -35,7 +46,10 @@ const Partners = () => {
           mr={{ base: '0', xl: '6rem' }}
           target="_blank"
         >
-          <Image src="/gitcoin.svg" alt="gitcoin" />
+          <Image
+            src={colorMode === 'dark' ? '/gitcoin.svg' : '/gitcoin-light.svg'}
+            alt="gitcoin"
+          />
         </Link>
         <Link
           mb={{ base: '2.5rem', xl: '0' }}
@@ -43,10 +57,18 @@ const Partners = () => {
           href="https://polygon.technology"
           target="_blank"
         >
-          <Image src="/polygon.svg" alt="polygon" />
+          <Image
+            src={colorMode === 'dark' ? '/polygon.svg' : '/polygon-light.svg'}
+            alt="polygon"
+          />
         </Link>
         <Link href="https://thegraph.com" target="_blank">
-          <Image src="/the-graph.svg" alt="the graph" />
+          <Image
+            src={
+              colorMode === 'dark' ? '/the-graph.svg' : '/the-graph-light.svg'
+            }
+            alt="the graph"
+          />
         </Link>
       </Flex>
       <Button
