@@ -172,7 +172,7 @@ const NavBarContainer = ({ children }: { children: ReactNode }) => {
       w="100%"
       mb={8}
       py={1}
-      px={3}
+      px={{ base: 0, lg: 3 }}
     >
       {children}
     </Flex>
