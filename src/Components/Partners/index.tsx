@@ -79,8 +79,8 @@ const Partners = () => {
         fontWeight="500"
         fontSize={{ base: '1rem', xl: '1.25rem' }}
         borderRadius="56px"
-        paddingX={'1.5rem'}
-        paddingY={'1.5rem'}
+        px="2rem"
+        py="2rem"
         mt={{ base: '5rem', xl: '6.85rem' }}
         alignSelf="center"
         onClick={handleButtonClick}
