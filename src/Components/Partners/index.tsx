@@ -18,7 +18,7 @@ const Partners = () => {
   }, []);
 
   return (
-    <Flex flexDir={'column'} justifyContent="center">
+    <Flex flexDir="column" justifyContent="center" pt="5.5rem" pb="5.5rem">
       <Heading
         textTransform={'capitalize'}
         fontFamily="Inter"
@@ -83,7 +83,6 @@ const Partners = () => {
         paddingY={'1.5rem'}
         mt={{ base: '5rem', xl: '6.85rem' }}
         alignSelf="center"
-        mb={'4rem'}
         onClick={handleButtonClick}
       >
         Become a partner <ArrowForwardIcon w="1.5rem" h={'22px'} ml="8px" />
