@@ -23,7 +23,7 @@ const Partners = () => {
         textTransform={'capitalize'}
         fontFamily="Inter"
         fontWeight="800"
-        fontSize={{ base: '2.625rem', xl: '3.375rem' }}
+        fontSize="3.375rem"
         mb={{ base: '5rem', xl: '6.175rem' }}
         textAlign="center"
       >
@@ -32,7 +32,7 @@ const Partners = () => {
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
         <Link
           href="https://thirdweb.com"
-          mb={{ base: '2.5rem', xl: '0' }}
+          mb={{ base: '4rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           target="_blank"
         >
@@ -43,7 +43,7 @@ const Partners = () => {
         </Link>
         <Link
           href="https://gitcoin.co"
-          mb={{ base: '2.5rem', xl: '0' }}
+          mb={{ base: '4rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           target="_blank"
         >
@@ -53,7 +53,7 @@ const Partners = () => {
           />
         </Link>
         <Link
-          mb={{ base: '2.5rem', xl: '0' }}
+          mb={{ base: '4rem', xl: '0' }}
           mr={{ base: '0', xl: '6rem' }}
           href="https://polygon.technology"
           target="_blank"
