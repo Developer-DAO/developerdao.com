@@ -84,7 +84,7 @@ const Values = () => {
   );
 
   return (
-    <Flex justify="center" wrap="wrap-reverse" w={isMobile ? '95vw' : 'auto'}>
+    <Flex justify="center" wrap="wrap-reverse">
       <Box className="box-border" flex="3" minW={isMobile ? '100%' : '20rem'}>
         <Heading variant={isMobile ? 'mediumMobile' : 'medium'}>
           {t('values.title')}
