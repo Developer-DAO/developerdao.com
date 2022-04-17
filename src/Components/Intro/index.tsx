@@ -23,11 +23,14 @@ const IntroComponent = () => {
       flexDirection={{ base: 'column', lg: 'row' }}
       justifyContent="space-between"
       pt={{ base: '0', lg: '4.5rem' }}
+      pb="5rem"
       w="100%"
     >
       {!codeLaunched && (
         <Box
-          w={{ base: '100%', xl: '34rem' }}
+          w={{ base: '100%', xl: '40%' }}
+          minW={{ base: '0', xl: '34rem' }}
+          margin="0.75rem"
           border="1px solid"
           borderRadius="11px"
           p="2rem"
@@ -106,7 +109,11 @@ const IntroComponent = () => {
       )}
 
       {codeLaunched && (
-        <Box w={{ base: '100%', xl: '35rem' }}>
+        <Box
+          w={{ base: '100%', xl: '40%' }}
+          minW={{ base: '0', xl: '35rem' }}
+          margin="0.85rem"
+        >
           <Text
             fontFamily="Inter"
             fontWeight="800"
@@ -169,7 +176,7 @@ const IntroComponent = () => {
       <Flex
         direction="column"
         maxWidth={{ base: 'none', xl: '45%', '2xl': 'none' }}
-        mr={{ base: 'auto', xl: '0' }}
+        mr={{ base: 'auto', xl: '.75rem' }}
         ml={{ base: 'auto', lg: '2rem' }}
         mt={{ base: '5rem', lg: 0 }}
         mb={{ base: '2rem', xl: 0 }}
