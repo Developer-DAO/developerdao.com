@@ -20,22 +20,48 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   );
 };
 
+type link = {
+  href: string;
+  text: string;
+};
+
+const ListLinks = (links: link[]) => {
+  return (
+    <>
+      {links.map((link: link) => {
+        return (
+          <Link
+            textDecoration="underline"
+            fontSize="1.3rem"
+            color="#C3C3C3"
+            _hover={{ textDecoration: 'none' }}
+            href={link.href}
+            isExternal
+          >
+            {link.text}
+          </Link>
+        );
+      })}
+    </>
+  );
+};
+
 const Footer = () => {
   const { colorMode } = useColorMode();
   return (
-    <Box pt={{ base: 8, lg: 16 }}>
+    <Box pt={{ base: 8, lg: '6rem' }} pb="5.875rem">
       <SimpleGrid
         templateColumns={{
           sm: '4fr 2fr',
-          md: '1.5fr 1.5fr 1fr 1fr',
+          md: '3fr 1fr 1fr 1fr',
         }}
         spacing={{ base: 10, md: 16 }}
       >
         <Stack>
           <Flex alignItems="center">
             <Image
-              width="4rem"
-              h="4rem"
+              width="5rem"
+              h="5rem"
               src={`/D_D_logo-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
               alt="logo"
             />
@@ -43,6 +69,7 @@ const Footer = () => {
               ml={'1.25rem'}
               mr={{ base: '0', md: '3rem' }}
               fontWeight="bold"
+              fontSize="1.7rem"
               color={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
             >
               Developer DAO
@@ -50,93 +77,53 @@ const Footer = () => {
           </Flex>
         </Stack>
 
-        <Stack align={'flex-start'}>
+        <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Useful Links</ListHeader>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={
-              'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e'
-            }
-            isExternal
-          >
-            Wiki
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={'https://forum.developerdao.com/'}
-            isExternal
-          >
-            Forum
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={
-              'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff'
-            }
-            isExternal
-          >
-            Snapshot
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={'https://www.youtube.com/channel/UCoYk_C5So-Tec1OGzbGKhRw'}
-            isExternal
-          >
-            Podcast
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={
-              'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9'
-            }
-            isExternal
-          >
-            Newsletter
-          </Link>
+          {ListLinks([
+            {
+              href: 'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e',
+              text: 'Wiki',
+            },
+            {
+              href: 'https://forum.developerdao.com/',
+              text: 'Forum',
+            },
+            {
+              href: 'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff',
+              text: 'Snapshot',
+            },
+            {
+              href: 'https://www.youtube.com/channel/UCoYk_C5So-Tec1OGzbGKhRw',
+              text: 'Podcast',
+            },
+            {
+              href: 'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9',
+              text: 'Newsletter',
+            },
+          ])}
         </Stack>
-        <Stack align={'flex-start'}>
+        <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Discover</ListHeader>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={'https://devdao.mirror.xyz/'}
-            isExternal
-          >
-            Blog
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={'https://airtable.com/shrzgqiMiHE18Iy9O/tbljejdzelezqT0W7'}
-            isExternal
-          >
-            Learning Resources
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={
-              'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db'
-            }
-            isExternal
-          >
-            Projects
-          </Link>
-          <Link
-            textDecoration="underline"
-            _hover={{ textDecoration: 'none' }}
-            href={'#'}
-            isExternal
-          >
-            Partners
-          </Link>
+          {ListLinks([
+            {
+              href: 'https://devdao.mirror.xyz/',
+              text: 'Blog',
+            },
+            {
+              href: 'https://airtable.com/shrzgqiMiHE18Iy9O/tbljejdzelezqT0W7/',
+              text: 'Learning Resources',
+            },
+            {
+              href: 'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db',
+              text: 'Projects',
+            },
+            {
+              href: '#',
+              text: 'Partners',
+            },
+          ])}
         </Stack>
-        <Stack align={'flex-start'}>
+        <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Social</ListHeader>
           <ButtonGroup>
             <Link target={'_blank'} href="https://twitter.com/developer_dao">
