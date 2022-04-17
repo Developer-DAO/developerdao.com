@@ -28,9 +28,10 @@ type link = {
 const ListLinks = (links: link[]) => {
   return (
     <>
-      {links.map((link: link) => {
+      {links.map((link: link, key) => {
         return (
           <Link
+            key={key}
             textDecoration="underline"
             fontSize="1.3rem"
             color="#C3C3C3"
