@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -18,6 +19,14 @@ const codeLaunched = false;
 
 const IntroComponent = () => {
   const { colorMode } = useColorMode();
+  const [showImages, setShowImages] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowImages(true);
+    }, 1000);
+  }, []);
+
   return (
     <Flex
       flexDirection={{ base: 'column', lg: 'row' }}
@@ -185,6 +194,8 @@ const IntroComponent = () => {
         <Image
           h={{ base: '2rem', xl: '2.6875rem' }}
           alignSelf="end"
+          opacity={Number(showImages)}
+          transition=".3s"
           src="/intro_person_top.svg"
           alt="intro_person_top"
           mr={{ base: '3rem', lg: '5rem', xl: '7.75rem' }}
@@ -201,7 +212,9 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_1.svg"
               alt="intro_person_1"
+              opacity={Number(showImages)}
               transition=".3s"
+              transitionDelay=".2s"
               w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transform={{
                 base: 'translateX(0)',
@@ -213,7 +226,9 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_2.svg"
               alt="intro_person_2"
+              opacity={Number(showImages)}
               transition=".3s"
+              transitionDelay=".4s"
               w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transform={{
                 base: 'translateY(30px)',
@@ -224,7 +239,9 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_3.svg"
               alt="intro_person_3"
+              opacity={Number(showImages)}
               transition=".3s"
+              transitionDelay=".6s"
               w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
               transform={{
                 base: 'translate(40px)',
@@ -238,7 +255,9 @@ const IntroComponent = () => {
             <Image
               src="/intro_person_4.svg"
               alt="intro_person_4"
+              opacity={Number(showImages)}
               transition=".3s"
+              transitionDelay=".8s"
               w={{ base: '9rem', md: '12rem', lg: '13rem', '2xl': '15.75rem' }}
               style={{ transform: 'translate(-30px, 30px)' }}
             />
