@@ -49,11 +49,11 @@ const ListLinks = (links: link[]) => {
 const Footer = () => {
   const { colorMode } = useColorMode();
   return (
-    <Box pt={{ base: 8, lg: '6rem' }} pb="5.875rem">
+    <Box pt="6rem" pb="5.875rem" width="100%">
       <SimpleGrid
         templateColumns={{
-          sm: '4fr 2fr',
-          md: '3fr 1fr 1fr 1fr',
+          md: '1fr',
+          lg: '3fr 1fr 1fr 1fr',
         }}
         spacing={{ base: 10, md: 16 }}
       >
