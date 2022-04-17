@@ -30,7 +30,7 @@ const IntroComponent = () => {
         <Box
           w={{ base: '100%', xl: '40%' }}
           minW={{ base: '0', xl: '34rem' }}
-          margin="0.75rem"
+          margin={{ lg: '0.75rem' }}
           border="1px solid"
           borderRadius="11px"
           p="2rem"
