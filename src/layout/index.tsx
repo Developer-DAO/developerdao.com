@@ -108,6 +108,9 @@ function Page({ children }: { children?: object }) {
               MEMEBERSHIP OPEN!
             </Text>
           </Flex>
+          <Flex>
+            {/* equal spacing hack for first and last carousel items  */}
+          </Flex>
         </HStack>
       </Marquee>
       <Stack
@@ -223,6 +226,9 @@ function Page({ children }: { children?: object }) {
             >
               Current Status: Season 0
             </Text>
+          </Flex>
+          <Flex>
+            {/* equal spacing hack for first and last carousel items  */}
           </Flex>
         </HStack>
       </Marquee>

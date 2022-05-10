@@ -210,7 +210,7 @@ const IntroComponent = () => {
         >
           <GridItem justifySelf="center">
             <Image
-              src="/intro_person_1.svg"
+              src="/intro_person_1.png"
               alt="intro_person_1"
               opacity={Number(showImages)}
               transition=".3s"
@@ -224,7 +224,7 @@ const IntroComponent = () => {
           </GridItem>
           <GridItem justifySelf="center">
             <Image
-              src="/intro_person_2.svg"
+              src="/intro_person_2.png"
               alt="intro_person_2"
               opacity={Number(showImages)}
               transition=".3s"
@@ -237,7 +237,7 @@ const IntroComponent = () => {
           </GridItem>
           <GridItem justifySelf="center">
             <Image
-              src="/intro_person_3.svg"
+              src="/intro_person_3.png"
               alt="intro_person_3"
               opacity={Number(showImages)}
               transition=".3s"
@@ -253,7 +253,7 @@ const IntroComponent = () => {
           </GridItem>
           <GridItem justifySelf="center">
             <Image
-              src="/intro_person_4.svg"
+              src="/intro_person_4.png"
               alt="intro_person_4"
               opacity={Number(showImages)}
               transition=".3s"
