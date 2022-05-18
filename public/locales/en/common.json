@@ -41,13 +41,14 @@
   },
   "membership": {
     "title": "How do I join?",
-    "body": "Membership is temporarily closed but will be open again soon. Follow us on Twitter for updates!"
+    "body": "To gain access to Developer DAO you can acquire one of our genesis NFTs on the open market or from another DAO member."
   },
   "links": {
     "title": "Useful links",
     "wiki": "Wiki",
     "forum": "Forum",
-    "snapshot": "Snapshot"
+    "snapshot": "Snapshot",
+    "blog": "Blog"
   },
   "socialLinkLabel": "Opens the Developer DAO {{platform}} in the current tab"
 }

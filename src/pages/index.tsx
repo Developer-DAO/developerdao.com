@@ -1,5 +1,6 @@
 import { Divider, useColorMode, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import Footer from '../Components/Footer';
 import IntroComponent from '../Components/Intro';
 import Partners from '../Components/Partners';
@@ -9,6 +10,7 @@ export default function IndexPage() {
   const { colorMode } = useColorMode();
 
   return (
+
     <VStack w="full" justify="center" spacing={4}>
       <IntroComponent />
       <Values />
