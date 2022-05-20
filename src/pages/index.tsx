@@ -19,7 +19,7 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ReactElement } from 'react';
 import { BsLightningCharge } from 'react-icons/bs';
-import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
@@ -159,6 +159,17 @@ export default function IndexPage() {
                 <FaGithub />
                 <VisuallyHidden>
                   {t('socialLinkLabel', { platform: 'GitHub' })}
+                </VisuallyHidden>
+              </>
+            </SocialIconLink>
+            <SocialIconLink
+              href="https://www.linkedin.com/company/developer-dao/"
+              label="Linkedin"
+            >
+              <>
+                <FaLinkedin />
+                <VisuallyHidden>
+                  {t('socialLinkLabel', { platform: 'Linkedin' })}
                 </VisuallyHidden>
               </>
             </SocialIconLink>
