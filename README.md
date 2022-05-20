@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-40-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -164,6 +164,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/G3root"><img src="https://avatars.githubusercontent.com/u/84864519?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nafees Nazik</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=G3root" title="Code">💻</a></td>
     <td align="center"><a href="http://buxmann.dev"><img src="https://avatars.githubusercontent.com/u/21178318?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Buxmann</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=mbuxmann" title="Code">💻</a></td>
     <td align="center"><a href="http://raza.run"><img src="https://avatars.githubusercontent.com/u/42661870?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raza</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=AlmostEfficient" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/AurelienConte"><img src="https://avatars.githubusercontent.com/u/39769262?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aurelien C.</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=AurelienConte" title="Code">💻</a></td>
   </tr>
 </table>
 

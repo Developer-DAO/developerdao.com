@@ -371,6 +371,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AurelienConte",
+      "name": "Aurelien C.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39769262?v=4",
+      "profile": "https://github.com/AurelienConte",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
