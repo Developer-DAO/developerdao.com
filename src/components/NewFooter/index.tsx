@@ -10,6 +10,7 @@ import { ReactElement } from 'react';
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import { IconOpenSea } from '../../components/Icons';
 
 function Footer() {
   const { t } = useTranslation();
@@ -33,6 +34,17 @@ function Footer() {
             <FaDiscord />
             <VisuallyHidden>
               {t('socialLinkLabel', { platform: 'Discord' })}
+            </VisuallyHidden>
+          </>
+        </SocialIconLink>
+        <SocialIconLink
+          href="https://opensea.io/collection/devs-for-revolution"
+          label="OpenSea"
+        >
+          <>
+            <IconOpenSea />
+            <VisuallyHidden>
+              {t('socialLinkLabel', { platform: 'OpenSea' })}
             </VisuallyHidden>
           </>
         </SocialIconLink>
