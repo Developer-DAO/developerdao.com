@@ -1,0 +1,51 @@
+{
+  "id": "00-home-page",
+  "label": "homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "home": {
+      "developerDao": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Developer DAO",
+          "placeholder": "Developer DAO",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "slice_test": {
+              "type": "SharedSlice"
+            },
+            "values": {
+              "type": "SharedSlice"
+            },
+            "hero_text": {
+              "type": "SharedSlice"
+            },
+            "marquee_text": {
+              "type": "SharedSlice"
+            },
+            "mission_text": {
+              "type": "SharedSlice"
+            },
+            "partners": {
+              "type": "SharedSlice"
+            },
+            "nav_bar": {
+              "type": "SharedSlice"
+            },
+            "footer": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

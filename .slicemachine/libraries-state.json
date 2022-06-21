@@ -1,0 +1,936 @@
+{
+  "slices": {
+    "components": {
+      "footer": {
+        "library": "slices",
+        "id": "footer",
+        "name": "Footer",
+        "description": "Footer",
+        "model": {
+          "id": "footer",
+          "type": "SharedSlice",
+          "name": "Footer",
+          "description": "Footer",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Footer",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "linkHeadings": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Headings",
+                    "placeholder": ""
+                  }
+                },
+                "links": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Links",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "icons": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Icons",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "footer",
+            "items": [
+              {
+                "linkHeadings": "strategize customized e-markets",
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                },
+                "icons": "optimize cross-platform infrastructures"
+              },
+              {
+                "linkHeadings": "streamline sticky action-items",
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "icons": "monetize user-centric infomediaries"
+              },
+              {
+                "linkHeadings": "scale strategic experiences",
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                },
+                "icons": "facilitate dot-com experiences"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Whiteboard sexy niches",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Mollit nulla ad dolore do ullamco sit occaecat id minim. Reprehenderit esse fugiat nulla incididunt mollit officia. Sunt adipisicing id quis irure.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/Footer/default/preview.png",
+            "width": 800,
+            "height": 144
+          }
+        }
+      },
+      "hero_text": {
+        "library": "slices",
+        "id": "hero_text",
+        "name": "HeroText",
+        "description": "HeroText",
+        "model": {
+          "id": "hero_text",
+          "type": "SharedSlice",
+          "name": "HeroText",
+          "description": "HeroText",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeroText",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "seasonStatus": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Season Status",
+                    "placeholder": ""
+                  }
+                },
+                "seasonStatusText": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Season Status Text",
+                    "placeholder": ""
+                  }
+                },
+                "buttonText": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Text",
+                    "placeholder": ""
+                  }
+                },
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "heading",
+                    "placeholder": ""
+                  }
+                },
+                "subheading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subheading",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "hero_text",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Expedite intuitive platforms",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Dolor duis consectetur quis voluptate esse magna commodo. Ad magna consectetur adipisicing est mollit ipsum incididunt aliqua enim commodo. Quis proident incididunt tempor quis esse duis veniam cillum nisi officia do officia aliquip.",
+                  "spans": []
+                }
+              ],
+              "seasonStatus": "optimize B2C action-items",
+              "seasonStatusText": "transition best-of-breed content",
+              "buttonText": "expedite transparent schemas",
+              "heading": "engineer user-centric channels",
+              "subheading": "cultivate value-added architectures"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/HeroText/default/preview.png",
+            "width": 800,
+            "height": 216
+          }
+        }
+      },
+      "marquee_text": {
+        "library": "slices",
+        "id": "marquee_text",
+        "name": "MarqueeText",
+        "description": "MarqueeText",
+        "model": {
+          "id": "marquee_text",
+          "type": "SharedSlice",
+          "name": "MarqueeText",
+          "description": "MarqueeText",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "MarqueeText",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "marqueeItem": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Marquee Item",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "marquee_text",
+            "items": [
+              {
+                "marqueeItem": "engineer leading-edge communities"
+              },
+              {
+                "marqueeItem": "visualize back-end convergence"
+              },
+              {
+                "marqueeItem": "integrate bleeding-edge content"
+              },
+              {
+                "marqueeItem": "generate bricks-and-clicks architectures"
+              },
+              {
+                "marqueeItem": "drive customized markets"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Synergize one-to-one niches",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Reprehenderit ea deserunt laborum officia ad adipisicing ullamco eiusmod exercitation ullamco.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/MarqueeText/default/preview.png",
+            "width": 800,
+            "height": 108
+          }
+        }
+      },
+      "mission_text": {
+        "library": "slices",
+        "id": "mission_text",
+        "name": "MissionText",
+        "description": "MissionText",
+        "model": {
+          "id": "mission_text",
+          "type": "SharedSlice",
+          "name": "MissionText",
+          "description": "MissionText",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "MissionText",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "subHeading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "subHeading",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "goals": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Goals",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "mission_text",
+            "items": [
+              {
+                "goals": "synergize e-business deliverables"
+              },
+              {
+                "goals": "evolve enterprise vortals"
+              },
+              {
+                "goals": "incentivize dynamic systems"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Morph collaborative metrics",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Exercitation occaecat laborum veniam laboris ad qui occaecat nisi eiusmod excepteur qui fugiat ad. Anim fugiat duis cillum amet pariatur labore dolor ex officia aliqua.",
+                  "spans": []
+                }
+              ],
+              "subHeading": "morph sexy e-commerce"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/MissionText/default/preview.png",
+            "width": 800,
+            "height": 180
+          }
+        }
+      },
+      "nav_bar": {
+        "library": "slices",
+        "id": "nav_bar",
+        "name": "NavBar",
+        "description": "NavBar",
+        "model": {
+          "id": "nav_bar",
+          "type": "SharedSlice",
+          "name": "NavBar",
+          "description": "NavBar",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "NavBar",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "links": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Links",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "nav_bar",
+            "items": [
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              },
+              {
+                "links": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Disintermediate visionary applications",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Officia cupidatat esse in fugiat esse est aute enim nisi tempor qui est amet enim eu. Do anim do excepteur amet non enim.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/NavBar/default/preview.png",
+            "width": 800,
+            "height": 144
+          }
+        }
+      },
+      "partners": {
+        "library": "slices",
+        "id": "partners",
+        "name": "Partners",
+        "description": "Partners",
+        "model": {
+          "id": "partners",
+          "type": "SharedSlice",
+          "name": "Partners",
+          "description": "Partners",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Partners",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "PartnerButtonText": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Partner Button Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "partnerImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Partner Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "partners",
+            "items": [
+              {
+                "partnerImage": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "partnerImage": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "partnerImage": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Productize open-source e-business",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Laborum do exercitation nulla consectetur tempor mollit deserunt cillum reprehenderit Lorem in consectetur ut eiusmod culpa.",
+                  "spans": []
+                }
+              ],
+              "PartnerButtonText": "engineer cross-media e-commerce"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/Partners/default/preview.png",
+            "width": 800,
+            "height": 144
+          }
+        }
+      },
+      "slice_test": {
+        "library": "slices",
+        "id": "slice_test",
+        "name": "SliceTest",
+        "description": "SliceTest",
+        "model": {
+          "id": "slice_test",
+          "type": "SharedSlice",
+          "name": "SliceTest",
+          "description": "SliceTest",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "SliceTest",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "A nice description of your feature",
+                    "placeholder": "A nice description of your feature",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "slice_test",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Syndicate bleeding-edge metrics",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Monetize efficient paradigms",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Iterate sticky metrics",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Envisioneer enterprise synergies",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Matrix plug-and-play channels",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Morph strategic e-tailers",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Eu esse laborum commodo officia enim anim officia eiusmod amet quis ut.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/SliceTest/default/preview.png",
+            "width": 800,
+            "height": 288
+          }
+        }
+      },
+      "values": {
+        "library": "slices",
+        "id": "values",
+        "name": "Values",
+        "description": "Values",
+        "model": {
+          "id": "values",
+          "type": "SharedSlice",
+          "name": "Values",
+          "description": "Values",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Values",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "ValuesText": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Values Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "values",
+            "items": [
+              {
+                "title": "scale compelling e-markets",
+                "text": "monetize back-end models",
+                "description": "monetize robust technologies"
+              },
+              {
+                "title": "target collaborative methodologies",
+                "text": "morph cross-media e-tailers",
+                "description": "strategize B2C systems"
+              },
+              {
+                "title": "utilize intuitive supply-chains",
+                "text": "streamline e-business platforms",
+                "description": "drive leading-edge applications"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Maximize leading-edge technologies",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Sunt voluptate tempor aliqua ex eiusmod et id officia esse ipsum ipsum veniam occaecat pariatur.",
+                  "spans": []
+                }
+              ],
+              "ValuesText": [
+                {
+                  "type": "paragraph",
+                  "text": "Culpa aute amet adipisicing esse pariatur. Do do pariatur amet dolor et adipisicing ad. Adipisicing laborum cillum ex nostrud sint velit sint nulla irure fugiat.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alan/Projects/opensource/developerdao.com/.slicemachine/assets/slices/Values/default/preview.png",
+            "width": 800,
+            "height": 108
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,16 +5,36 @@ import Footer from '../Components/Footer';
 import IntroComponent from '../Components/Intro';
 import Partners from '../Components/Partners';
 import Values from '../Components/Values';
+import { createClient } from '../../prismicio';
 
-export default function IndexPage() {
+export default function IndexPage({ page }: { page: any }) {
   const { colorMode } = useColorMode();
+  console.log('page.data.slices', page.data.slices);
+  const [heroSlices] = page.data.slices
+    .map((slice: any) => slice)
+    .filter((slice: { slice_type: any }) => slice.slice_type === 'hero_text')
+    .map(({ primary }: { primary: any }) => primary);
+
+  const [valueSlices] = page.data.slices
+    .map((slice: any) => slice)
+    .filter((slice: { slice_type: any }) => slice.slice_type === 'values')
+    .map(({ items }: { items: any }) => items);
+
+  const [missionSlices] = page.data.slices
+    .map((slice: any) => slice)
+    .filter((slice: { slice_type: any }) => slice.slice_type === 'mission_text')
+    .map(({ items }: { items: any }) => items);
+
+  const [partnerSlices] = page.data.slices
+    .map((slice: any) => slice)
+    .filter((slice: { slice_type: any }) => slice.slice_type === 'partners')
+    .map(({ items }: { items: any }) => items);
 
   return (
-
     <VStack w="full" justify="center" spacing={4}>
-      <IntroComponent />
-      <Values />
-      <Partners />
+      <IntroComponent page={heroSlices} />
+      <Values page={valueSlices} />
+      <Partners page={partnerSlices} />
       <Divider
         w="full"
         size="1px"
@@ -25,8 +45,21 @@ export default function IndexPage() {
   );
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-});
+export async function getStaticProps({
+  previewData,
+  locale,
+}: {
+  previewData: string;
+  locale: string;
+}) {
+  const client = createClient({ previewData });
+
+  const page = await client.getSingle('00-home-page');
+
+  return {
+    props: {
+      page,
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

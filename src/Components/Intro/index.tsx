@@ -17,10 +17,11 @@ import { FaDiscord } from 'react-icons/fa';
 
 const codeLaunched = false;
 
-const IntroComponent = () => {
+const IntroComponent = ({ page }: any) => {
   const { colorMode } = useColorMode();
   const [showImages, setShowImages] = useState(false);
-
+  const { heading, subheading, seasonStatus, seasonStatusText, buttonText } =
+    page;
   useEffect(() => {
     setTimeout(() => {
       setShowImages(true);
@@ -52,7 +53,7 @@ const IntroComponent = () => {
               fontSize={{ base: '2.625rem', xl: '3.375rem' }}
               lineHeight={{ base: '2.625rem', xl: '4rem' }}
             >
-              Build web3 with friends.
+              {heading}
             </Text>
             <Text
               fontFamily="Inter"
@@ -61,8 +62,7 @@ const IntroComponent = () => {
               lineHeight="1.5"
               fontSize={{ base: '1.25rem', xl: '1.5rem' }}
             >
-              Developer DAO is a community of thousand of web3 builders creating
-              a better internet. Join us and create the future.
+              {subheading}
             </Text>
           </Box>
           <Box
@@ -79,7 +79,7 @@ const IntroComponent = () => {
               color="black"
               fontSize={{ base: '1rem', xl: '1.5rem' }}
             >
-              Current Status: Season 0
+              {seasonStatus}
             </Text>
             <Text
               fontFamily="Inter"
@@ -89,8 +89,7 @@ const IntroComponent = () => {
               fontSize={{ base: '0.8rem', xl: '1.25rem' }}
               lineHeight={{ base: '1.125rem', xl: '1.75rem' }}
             >
-              We&rsquo;re forming guilds, creating culture, strengthening our
-              community, teaching & learning, and building cool things together.
+              {seasonStatusText}
             </Text>
             <Button
               mt="1rem"
@@ -111,7 +110,7 @@ const IntroComponent = () => {
               }}
             >
               <Box as={BsFillLightningChargeFill} mr=".5rem" color="#FFD666" />
-              Read our snapshot
+              {buttonText}
             </Button>
           </Box>
         </Box>

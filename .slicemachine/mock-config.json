@@ -1,0 +1,52 @@
+{
+  "_cts": {
+    "00-home-page": {
+      "developerDao": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 2
+        }
+      }
+    }
+  },
+  "slices": {
+    "SliceTest": {
+      "default": {
+        "items": {},
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 6
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Values": {},
+    "HeroText": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "MissionText": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "MarqueeText": {},
+    "Partners": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Footer": {},
+    "NavBar": {}
+  }
+}

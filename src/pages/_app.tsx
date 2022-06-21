@@ -7,10 +7,14 @@ import PlausibleProvider from 'next-plausible';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
+import Link from 'next/link';
 import Page from '../layout';
 import '../styles/globals.css';
 import { theme } from '../theme';
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
+import { PrismicProvider } from '@prismicio/react';
+import { PrismicPreview } from '@prismicio/next';
+import { linkResolver, repositoryName } from '../../prismicio';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
@@ -21,6 +25,14 @@ const Plausible = ({ children }: { children: ReactNode }) => {
     <>{children}</>
   );
 };
+
+// const NextLinkShim = ({ href, children, locale, ...props }) => {
+//   return (
+//     <Link href={href} locale={locale}>
+//       <a {...props}>{children}</a>
+//     </Link>
+//   );
+// };
 
 function SEO() {
   const { t } = useTranslation();
@@ -140,14 +152,24 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
     </Head>
   );
 }
-
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
     <Plausible>
       <ChakraProvider theme={theme}>
         <Page>
-          <Component {...pageProps} />
+          <PrismicProvider
+            linkResolver={linkResolver}
+            internalLinkComponent={({ href, children, ...props }) => (
+              <Link href={href}>
+                <a {...props}>{children}</a>
+              </Link>
+            )}
+          >
+            <PrismicPreview repositoryName={repositoryName}>
+              <Component {...pageProps} />
+            </PrismicPreview>
+          </PrismicProvider>
         </Page>
       </ChakraProvider>
     </Plausible>

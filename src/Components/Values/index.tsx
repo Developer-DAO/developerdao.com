@@ -15,9 +15,10 @@ import { useTranslation } from 'react-i18next';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { DEVELOPER_DAO_WIKI } from '../../utils/DeveloperDaoConstants';
 
-const Values = () => {
+const Values = ({ page }: { page: any }) => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
   const { t } = useTranslation();
+
   const valuesListStyle = {
     counterReset: 'values',
     marginLeft: '2.3rem',
@@ -52,6 +53,7 @@ const Values = () => {
   const ValuesItem = (title: String, body: String) => {
     return (
       <Box flexDir="column">
+        {' '}
         <Text
           variant={isMobile ? 'normal' : 'large'}
           fontWeight="bold"
@@ -66,10 +68,7 @@ const Values = () => {
     );
   };
 
-  const transparency = ValuesItem(
-    t('values.transparency.title'),
-    t('values.transparency.body'),
-  );
+  const transparency = ValuesItem(t(page[0].title), t(page[0].text));
   const diversity = ValuesItem(
     t('values.diversity.title'),
     t('values.diversity.body'),
