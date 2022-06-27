@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { IconOpenSea } from '../OpenSea';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -133,6 +134,12 @@ const Footer = () => {
               href="hhttps://www.youtube.com/c/DeveloperDAO"
             >
               <FaYoutube aria-label="Youtube" />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://opensea.io/collection/devs-for-revolution"
+            >
+              <IconOpenSea color={colorMode === 'dark' ? 'white' : 'black'} />
             </Link>
           </ButtonGroup>
         </Stack>

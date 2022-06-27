@@ -19,6 +19,8 @@ const Values = ({ page }: { page: any }) => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
   const { t } = useTranslation();
 
+  console.log('prismatic data', page);
+
   const valuesListStyle = {
     counterReset: 'values',
     marginLeft: '2.3rem',
@@ -68,10 +70,6 @@ const Values = ({ page }: { page: any }) => {
     );
   };
 
-  // const transparency = ValuesItem(t(page.values.title), t(page.values.text));
-
-  // console.log('transparency', transparency);
-
   const diversity = ValuesItem(
     t('values.diversity.title'),
     t('values.diversity.body'),
@@ -85,6 +83,11 @@ const Values = ({ page }: { page: any }) => {
     t('values.kindness.body'),
   );
 
+  const transparency = ValuesItem(
+    t('values.transparency.title'),
+    t('values.transparency.body'),
+  );
+
   return (
     <Flex justify="center" wrap="wrap-reverse">
       <Box className="box-border" flex="3" minW={isMobile ? '100%' : '20rem'}>
@@ -92,7 +95,7 @@ const Values = ({ page }: { page: any }) => {
           {t('values.title')}
         </Heading>
         <OrderedList sx={valuesListStyle}>
-          {/* <ListItem>{transparency}</ListItem> */}
+          <ListItem>{transparency}</ListItem>
           <ListItem>{diversity}</ListItem>
           <ListItem>{responsibility}</ListItem>
           <ListItem>{kindness}</ListItem>
