@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
-const Partners = () => {
+const Partners = ({ page }) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl =
@@ -27,7 +27,7 @@ const Partners = () => {
         mb={{ base: '5rem', xl: '6.175rem' }}
         textAlign="center"
       >
-        Our Partners
+        Our Partners {page.partnerimage}
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
         <Link

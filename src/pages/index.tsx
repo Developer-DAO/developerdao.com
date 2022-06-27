@@ -30,10 +30,19 @@ export default function IndexPage({ page }: { page: any }) {
     .filter((slice: { slice_type: any }) => slice.slice_type === 'partners')
     .map(({ items }: { items: any }) => items);
 
+  const missionAnddvalues = {
+    mission: {
+      ...missionSlices,
+    },
+    values: {
+      ...valueSlices,
+    },
+  };
+
   return (
     <VStack w="full" justify="center" spacing={4}>
       <IntroComponent page={heroSlices} />
-      <Values page={valueSlices} />
+      <Values page={missionAnddvalues} />
       <Partners page={partnerSlices} />
       <Divider
         w="full"
@@ -54,7 +63,9 @@ export async function getStaticProps({
 }) {
   const client = createClient({ previewData });
 
-  const page = await client.getSingle('00-home-page');
+  const page = await client.getSingle('00-home-page', { lang: 'fr-fr' });
+  const all = await client.dangerouslyGetAll();
+  console.log('all', all);
 
   return {
     props: {

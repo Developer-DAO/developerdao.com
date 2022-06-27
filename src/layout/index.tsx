@@ -27,7 +27,7 @@ function Page({ children }: { children?: object }) {
         }}
         gradient={false}
         loop={0}
-        speed={60}
+        speed={0}
       >
         <HStack gridGap={10}>
           <Flex>
@@ -133,7 +133,7 @@ function Page({ children }: { children?: object }) {
         }}
         gradient={false}
         loop={0}
-        speed={60}
+        speed={0}
       >
         <HStack gridGap={10}>
           <Flex>

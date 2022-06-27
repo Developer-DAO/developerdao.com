@@ -68,7 +68,10 @@ const Values = ({ page }: { page: any }) => {
     );
   };
 
-  const transparency = ValuesItem(t(page[0].title), t(page[0].text));
+  // const transparency = ValuesItem(t(page.values.title), t(page.values.text));
+
+  // console.log('transparency', transparency);
+
   const diversity = ValuesItem(
     t('values.diversity.title'),
     t('values.diversity.body'),
@@ -89,7 +92,7 @@ const Values = ({ page }: { page: any }) => {
           {t('values.title')}
         </Heading>
         <OrderedList sx={valuesListStyle}>
-          <ListItem>{transparency}</ListItem>
+          {/* <ListItem>{transparency}</ListItem> */}
           <ListItem>{diversity}</ListItem>
           <ListItem>{responsibility}</ListItem>
           <ListItem>{kindness}</ListItem>
