@@ -90,7 +90,9 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
+    "storybook-addon-i18n": "^5.1.13",
     "storybook-addon-next-router": "^4.0.0",
+    "storybook-react-i18next": "^1.1.2",
     "typechain": "^6.0.2",
     "typescript": "^4.4.3"
   },

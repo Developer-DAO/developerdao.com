@@ -3,6 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../src/theme';
 import * as NextImage from 'next/image';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { i18n } from './i18next.js';
 
 const OriginalNextImage = NextImage.default;
 
@@ -27,6 +28,11 @@ export const parameters = {
   },
   options: {
     storySort: { order: ['Introduction'] },
+  },
+  i18n,
+  locale: 'en',
+  locales: {
+    en: 'English',
   },
   chakra: {
     theme,
