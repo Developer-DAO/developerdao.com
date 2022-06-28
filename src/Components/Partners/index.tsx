@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
-const Partners = ({ page }) => {
+const Partners = ({ page }: { page: any }) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl =
