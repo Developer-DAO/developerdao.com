@@ -95,7 +95,7 @@ const Footer = () => {
               text: 'Snapshot',
             },
             {
-              href: 'https://docs.google.com/forms/d/e/1FAIpQLSfEBUILgv1MVf6TP_LlIoA4BKJPA93A75Owz5NwDdfk6oX0IA/viewform',
+              href: 'https://airtable.com/shrYLrOrjhOHJUdVl',
               text: 'Become a partner',
             },
           ])}
