@@ -12,8 +12,7 @@ import { useCallback } from 'react';
 const Partners = () => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
-    const partnerFormUrl =
-      'https://docs.google.com/forms/d/14MpHciXifNUjB9NDvdYgnzV4IXJUtN3wp8EEeqP4gZo/viewform';
+    const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
     window.open(partnerFormUrl, '_blank');
   }, []);
 
