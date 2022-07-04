@@ -4,7 +4,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const ns = ['common'];
-const supportedLngs = ['en'];
+const supportedLngs = ['en', 'fr'];
 const resources = ns.reduce((acc, n) => {
   supportedLngs.forEach((lng) => {
     if (!acc[lng]) acc[lng] = {};
