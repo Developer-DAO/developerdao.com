@@ -2,28 +2,22 @@ import {
   Box,
   Button,
   Container,
-  Flex,
   Heading,
-  HStack,
   Icon,
-  IconButton,
   ListItem,
   Stack,
   StackDivider,
   Text,
   UnorderedList,
   useBreakpointValue,
-  VisuallyHidden,
-  VStack,
 } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { ReactElement } from 'react';
 import { BsLightningCharge } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import DeveloperDaoLogo from '../components/Logo';
+import Footer from '../components/NewFooter';
 
 export default function IndexPage() {
   const { t } = useTranslation();
@@ -129,7 +123,6 @@ export default function IndexPage() {
             </UnorderedList>
           </Stack>
         </Stack>
-
         <VStack spacing={4}>
           <HStack as="footer" justify="center">
             <SocialIconLink
@@ -191,6 +184,7 @@ export default function IndexPage() {
             </Flex>
           </HStack>
         </VStack>
+        <Footer />
       </Stack>
     </Container>
   );
@@ -246,27 +240,5 @@ const CurrentStatus = () => {
         </Box>
       </Stack>
     </Stack>
-  );
-};
-
-const SocialIconLink = ({
-  children,
-  href,
-  label,
-}: {
-  children: ReactElement;
-  href: string;
-  label: string;
-}) => {
-  return (
-    <IconButton
-      as="a"
-      aria-label={label}
-      cursor="pointer"
-      href={href}
-      icon={children}
-      size="lg"
-      variant="ghost"
-    />
   );
 };

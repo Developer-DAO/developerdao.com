@@ -1,30 +1,48 @@
 {
-  "title": "開發者 DAO",
-  "home": "首頁",
-  "projects": "項目",
-  "searchId": "搜尋$t(title)編號",
-  "description": "一個相信網絡共享所有權的開發者 $t(community)",
-  "loading": "下載中...",
-  "error": "錯誤",
-  "viewNftOpenSea": "在 OpenSea 上查看 NFT",
-  "viewOwnerEtherscan": "在 Etherscan 上查看擁有者",
-  "developerTraits": "開發者特征 (traits)",
-  "failedLoadTraits": "無法載入開發者特征 (traits)",
-  "madeBy": "由$t(title)所創建：",
-  "organization": "組織",
-  "repository": "Repository",
-  "community": "社群",
-  "daoGithubOrg": "$t(title) GitHub $t(organization)",
-  "daoGithubRepo": "$t(title) GitHub $t(repository)",
-  "owner": "擁有者",
-  "unclaimed": "尚未被擁有",
-  "enterDeveloperId": "請輸入$t(title)編號",
-  "hosting": "托管於:",
-  "copyLinkToNFT": "複製 NFT 鏈接",
-  "linkCopied": "鏈接已複製",
-  "projectsList": "$t(title) 創建的$t(community)$t(projects)列表",
-  "ddaoTokenSearch": "DDAO 代幣搜索",
-  "by": "作者：",
-  "otherTokensOwnedByThisAddress":"此地址擁有的其他代幣",
-  "noOtherTokens":"此地址没有其他代幣"
+  "title": "Developer DAO",
+  "description": "一個由相信網際網路為集體所有的建設者社群",
+  "currentStatus": "當前狀態",
+  "season": "季度",
+  "callout": "我們正在組建公會、創造文化、強化我們的社群、教導和學習，並一起建設很酷的產品！",
+  "calloutButton": "閱讀我們的鏈上治理提案(Snapshot)",
+  "mission": {
+    "title":  "使命",
+    "body": "Developer DAO 是為了加速新一波 Web3 建設者的教育和影響力而存在"
+  },
+  "values": {
+    "title": "價值觀",
+    "transparency": {
+      "title": "公開透明",
+      "body": "開源一切、公開對話、紀錄和分享歷程"
+    },
+    "diversity": {
+      "title": "多樣性與包容性",
+      "body": "盡可能培育各式各樣的成員，並支持每個人做出貢獻"
+    },
+    "responsibility": {
+      "title": "責任",
+      "body": "作為一個自治的社群，我們仰賴每個成員對自身的行為與社群的承諾負責"
+    },
+    "kindness": {
+      "title": "善良與同情心",
+			"body": "我們知道我們生活在一個複雜、有壓力和多樣化的世界中，並且透過我們不遺餘力的行動，讓人們的生活和日子變得更好"
+    }
+  },
+  "goals": {
+    "title": "目標",
+    "body1": "引導、教育和支持 Web3 開發者",
+    "body2": "孵化和建設 Web3 工具和公共產品"
+  },
+  "membership": {
+    "title": "如何加入？",
+    "body": "你能在二級市場或是其他 DAO 成員手中獲取我們的創世 NFT，以加入 Developer DAO。"
+  },
+  "links": {
+    "title": "常用連結",
+    "wiki": "維基百科",
+    "forum": "論壇",
+    "snapshot": "Snapshot",
+    "blog": "部落格"
+  },
+  "socialLinkLabel": "在此分頁開啟 Developer DAO的{{platform}}"
 }
