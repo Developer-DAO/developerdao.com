@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
-const Partners = () => {
+const Partners = ({ partnerData }: Record<string, any>) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
@@ -29,47 +29,26 @@ const Partners = () => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        <Link
-          href="https://thirdweb.com"
-          mb={{ base: '4rem', xl: '0' }}
-          mr={{ base: '0', xl: '6rem' }}
-          target="_blank"
-        >
-          <Image
-            src={colorMode === 'dark' ? '/thirdweb.svg' : '/thirdweb-light.svg'}
-            alt="third web"
-          />
-        </Link>
-        <Link
-          href="https://gitcoin.co"
-          mb={{ base: '4rem', xl: '0' }}
-          mr={{ base: '0', xl: '6rem' }}
-          target="_blank"
-        >
-          <Image
-            src={colorMode === 'dark' ? '/gitcoin.svg' : '/gitcoin-light.svg'}
-            alt="gitcoin"
-          />
-        </Link>
-        <Link
-          mb={{ base: '4rem', xl: '0' }}
-          mr={{ base: '0', xl: '6rem' }}
-          href="https://polygon.technology"
-          target="_blank"
-        >
-          <Image
-            src={colorMode === 'dark' ? '/polygon.svg' : '/polygon-light.svg'}
-            alt="polygon"
-          />
-        </Link>
-        <Link href="https://thegraph.com" target="_blank">
-          <Image
-            src={
-              colorMode === 'dark' ? '/the-graph.svg' : '/the-graph-light.svg'
-            }
-            alt="the graph"
-          />
-        </Link>
+        {partnerData.map((item: any, index: number) => {
+          console.log(item.attributes.logo_dark.data.attributes.url);
+          return (
+            <Link
+              href={item.attributes.website}
+              mb={{ base: '4rem', xl: '0' }}
+              mr={{ base: '0', xl: '6rem' }}
+              target="_blank"
+            >
+              <Image
+                src={
+                  colorMode === 'dark'
+                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data.attributes.url}`
+                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data.attributes.url}`
+                }
+                alt="third web"
+              />
+            </Link>
+          );
+        })}
       </Flex>
       <Button
         backgroundColor={colorMode === 'dark' ? 'white' : 'black'}
