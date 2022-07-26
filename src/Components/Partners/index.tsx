@@ -34,6 +34,7 @@ const Partners = ({ partnerData }: Record<string, any>) => {
           return (
             <Link
               href={item.attributes.website}
+              key={index}
               mb={{ base: '4rem', xl: '0' }}
               mr={{ base: '0', xl: '6rem' }}
               target="_blank"
