@@ -10,7 +10,6 @@ import {
 import { useCallback } from 'react';
 
 const Partners = ({ partnerData }: Record<string, any>) => {
-  console.log(partnerData);
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
