@@ -10,11 +10,16 @@ import {
 import { useCallback } from 'react';
 
 const Partners = ({ partnerData }: Record<string, any>) => {
+  console.log(partnerData);
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
     window.open(partnerFormUrl, '_blank');
   }, []);
+
+  if (typeof partnerData === 'undefined') {
+    return <></>;
+  }
 
   return (
     <Flex flexDir="column" justifyContent="center" pt="5.5rem" pb="5.5rem">
@@ -29,8 +34,7 @@ const Partners = ({ partnerData }: Record<string, any>) => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        {partnerData.map((item: any, index: number) => {
-          console.log(item.attributes.logo_dark.data.attributes.url);
+        {partnerData?.map((item: any, index: number) => {
           return (
             <Link
               href={item.attributes.website}
@@ -42,8 +46,8 @@ const Partners = ({ partnerData }: Record<string, any>) => {
               <Image
                 src={
                   colorMode === 'dark'
-                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data.attributes.url}`
-                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data.attributes.url}`
+                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark?.data?.attributes.url}`
+                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light?.data?.attributes.url}`
                 }
                 alt="third web"
               />

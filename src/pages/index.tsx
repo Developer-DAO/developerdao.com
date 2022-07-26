@@ -15,7 +15,7 @@ export default function IndexPage({ partnerData }: Record<string, any>) {
     <VStack w="full" justify="center" spacing={4}>
       <IntroComponent />
       <Values />
-      <Partners partnerData={partnerData} />
+      <Partners partnerData={partnerData.data} />
       <Divider
         w="full"
         size="1px"
@@ -32,7 +32,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query({
+  const partnerData = await client.query({
     query: gql`
       query HomePage {
         partners {
@@ -63,7 +63,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      partnerData: data.partners.data,
+      partnerData: partnerData ? partnerData.data.partners : [{}],
     },
   };
 };
