@@ -1,31 +1,54 @@
 {
-  "title": "开发者DAO",
-  "home": "首頁",
-  "projects": "项目",
-  "searchId": "搜索$t(title)编号",
-  "description": "相信 网络集体所有权 的开发者$t(community)",
-  "loading": "加载中...",
-  "error": "错误",
-  "viewNftOpenSea": "在 OpenSea 上查看 NFT",
-  "viewOwnerEtherscan": "在 Etherscan 上查看拥有者",
-  "developerTraits": "开发者特征 (traits)",
-  "failedLoadTraits": "无法加载开发者特征 (traits)",
-  "madeBy": "由$t(title)所创建:",
-  "organization": "组织",
-  "repository": "Repository",
-  "community": "社区",
-  "daoGithubOrg": "$t(title) GitHub $t(organization)",
-  "daoGithubRepo": "$t(title) GitHub $t(repository)",
-  "owner": "拥有者",
-  "unclaimed": "尚未被持有",
-  "enterDeveloperId": "请输入$t(title)编号",
-  "hosting": "托管于:",
-  "copyLinkToNFT": "复制NFT链接",
-  "linkCopied": "链接已复制到剪贴板",
-  "projectsList": "$t(title) 创建的$t(community)$t(projects)列表",
-  "ddaoTokenSearch": "DDAO 代币搜索",
-  "by": "作者:",
-  "otherTokensOwnedByThisAddress":"此 address 拥有的其他代币",
-  "noOtherTokens":"此 address 没有其他代币"
-
+  "title": "Developer DAO",
+  "description": "一个相信互联网集体所有权的开发者社区。",
+  "currentStatus": "当前状态",
+  "season": "季度",
+  "callout": "我们组建公会，创造文化，凝聚社区，教授学习知识，并一起建造很酷的产品。",
+  "calloutButton": "阅读我们的链上提案",
+  "mission": {
+    "title":  "使命",
+    "body": "Developer DAO的存在是为了促进新生web3开发者的教育并提高他们的影响。"
+  },
+  "values": {
+    "title": "价值观",
+    "transparency": {
+      "title": "开放",
+      "body": "开放一切源代码，公开的对话，记录和分享历程"
+    },
+    "diversity": {
+      "title": "多样性和包容性",
+      "body": "寻求和培养尽可能多的成员，并支持每个人做出贡献"
+    },
+    "responsibility": {
+      "title": "责任",
+      "body": "作为一个自我管理的社区，我们依靠的是成员个人对他们的行为和对社区的承诺负责"
+    },
+    "kindness": {
+      "title": "善良和同情心",
+      "body": "我们知道我们生活在一个复杂的、有压力的和多样化的世界中，并不遗余力地通过我们的行动使人们的生活和日子变得更好"
+    }
+  },
+  "goals": {
+    "title": "目标",
+    "body1": "引导、教育和支持Web3开发者",
+    "body2": "孵化和建设Web3工具和公共产品"
+  },
+  "callToAction": {
+    "wiki": {
+      "title": "DAO维基百科",
+      "body": "Take a look at what's going on"
+    }
+  },
+  "membership": {
+    "title": "如何加入？",
+    "body": "你可以从二级市场购买或者从其他DAO成员手中获得我们的创世NFT，来加入Developer DAO。"
+  },
+  "links": {
+    "title": "可用的链接",
+    "wiki": "维基百科",
+    "forum": "论坛",
+    "snapshot": "快照提案",
+    "blog": "博客"
+  },
+  "socialLinkLabel": "在当前标签页打开Developer DAO的{{platform}}"
 }

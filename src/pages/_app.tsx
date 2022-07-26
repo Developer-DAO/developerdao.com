@@ -1,26 +1,17 @@
-import React, { ReactNode } from 'react';
-import Head from 'next/head';
-import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
-import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
 import '@fontsource/source-code-pro/600.css';
-import { AppProps } from 'next/app';
+import { appWithTranslation, useTranslation } from 'next-i18next';
 
-import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import Page from '../layout';
+import '../styles/globals.css';
 import { theme } from '../theme';
-import PlausibleProvider from 'next-plausible';
+import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
-
-const Plausible = ({ children }: { children: ReactNode }) => {
-  return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? (
-    <PlausibleProvider domain="developerdao.com">{children}</PlausibleProvider>
-  ) : (
-    <>{children}</>
-  );
-};
 
 function SEO() {
   const { t } = useTranslation();
@@ -80,11 +71,11 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
-    <Plausible>
-      <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <Page>
         <Component {...pageProps} />
-      </ChakraProvider>
-    </Plausible>
+      </Page>
+    </ChakraProvider>
   </>
 );
 

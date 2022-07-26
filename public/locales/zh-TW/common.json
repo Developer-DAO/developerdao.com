@@ -33,6 +33,12 @@
     "body1": "引導、教育和支持 Web3 開發者",
     "body2": "孵化和建設 Web3 工具和公共產品"
   },
+  "callToAction": {
+    "wiki": {
+      "title": "DAO維基百科",
+      "body": "看看DAO發生了什麼"
+    }
+  },
   "membership": {
     "title": "如何加入？",
     "body": "你能在二級市場或是其他 DAO 成員手中獲取我們的創世 NFT，以加入 Developer DAO。"
