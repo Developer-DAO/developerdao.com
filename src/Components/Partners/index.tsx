@@ -9,14 +9,18 @@ import {
 } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
-const Partners = ({ partnerData }: Record<string, any>) => {
+interface Props {
+  partnerData: Array<Record<string, any>>;
+}
+
+const Partners = ({ partnerData }: Props) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
     window.open(partnerFormUrl, '_blank');
   }, []);
 
-  if (typeof partnerData === 'undefined') {
+  if (partnerData === null || typeof partnerData === 'undefined') {
     return <></>;
   }
 
@@ -45,8 +49,8 @@ const Partners = ({ partnerData }: Record<string, any>) => {
               <Image
                 src={
                   colorMode === 'dark'
-                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark?.data?.attributes.url}`
-                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light?.data?.attributes.url}`
+                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data.attributes.url}`
+                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data.attributes.url}`
                 }
                 alt="third web"
               />

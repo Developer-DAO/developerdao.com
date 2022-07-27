@@ -1,6 +1,7 @@
 import { Divider, useColorMode, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import nextI18nextConfig from '../../next-i18next.config';
 
 // COMPONENTS
 import Footer from '../Components/Footer';
@@ -8,14 +9,19 @@ import IntroComponent from '../Components/Intro';
 import Partners from '../Components/Partners';
 import Values from '../Components/Values';
 
-export default function IndexPage({ partnerData }: Record<string, any>) {
+interface Props {
+  partnerData: Array<Record<string, any>>;
+}
+
+export default function IndexPage({ partnerData }: Props) {
   const { colorMode } = useColorMode();
 
   return (
     <VStack w="full" justify="center" spacing={4}>
       <IntroComponent />
       <Values />
-      <Partners partnerData={partnerData.data} />
+      <Partners partnerData={partnerData} />
+
       <Divider
         w="full"
         size="1px"
@@ -62,8 +68,8 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      partnerData: partnerData ? partnerData.data.partners : [{}],
+      ...(await serverSideTranslations(locale, ['common'], nextI18nextConfig)),
+      partnerData: partnerData.data ? partnerData.data.partners.data : null,
     },
   };
 };
