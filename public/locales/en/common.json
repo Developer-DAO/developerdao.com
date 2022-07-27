@@ -33,6 +33,12 @@
     "body1": "Onboard, Educate & Support Web3 Developers",
     "body2": "Foster & Build Web3 Tools & Public Goods"
   },
+  "callToAction": {
+    "wiki": {
+      "title": "DAO WIKI",
+      "body": "Take a look at what's going on"
+    }
+  },
   "membership": {
     "title": "How do I join?",
     "body": "To gain access to Developer DAO you can acquire one of our genesis NFTs on the open market or from another DAO member."

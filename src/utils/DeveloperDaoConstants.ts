@@ -6,6 +6,8 @@ export const DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER = process.env
   .NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT_NETWORK as string;
 export const NETWORK_ID = process.env.NEXT_PUBLIC_NETWORK_ID;
 export const DEVELOPER_DAO_WEBSITE = 'https://www.developerdao.com';
+export const DEVELOPER_DAO_WIKI =
+  'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e';
 export const OPENSEA_DIRECT_LINK_PREFIX = process.env
   .NEXT_PUBLIC_OPENSEA_DIRECT_LINK_PREFIX as string;
 export const OPENSEA_COLLECTION_LINK = process.env
