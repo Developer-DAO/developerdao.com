@@ -351,7 +351,7 @@ export default function TermsPage() {
                       settlement of transactions between users of the Services.
                     </ListItem>
                     <ListItem>
-                      In no event will the Indemnitees' aggregate liability
+                      In no event will the Indemnitees&apos; aggregate liability
                       arising out of or in connection with the Sites and the
                       Services (and any of their content and functionality), any
                       performance or nonperformance of the Services, Your
