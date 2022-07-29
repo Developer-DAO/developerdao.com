@@ -52,7 +52,7 @@ const Partners = ({ partnerData }: Props) => {
                     ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data.attributes.url}`
                     : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data.attributes.url}`
                 }
-                alt="third web"
+                alt={item.attributes?.name || 'partner image'}
               />
             </Link>
           );
