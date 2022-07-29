@@ -20,10 +20,6 @@ const Partners = ({ partnerData }: Props) => {
     window.open(partnerFormUrl, '_blank');
   }, []);
 
-  if (partnerData === null || typeof partnerData === 'undefined') {
-    return <></>;
-  }
-
   return (
     <Flex flexDir="column" justifyContent="center" pt="5.5rem" pb="5.5rem">
       <Heading
@@ -37,26 +33,31 @@ const Partners = ({ partnerData }: Props) => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        {partnerData?.map((item: any, index: number) => {
-          return (
-            <Link
-              href={item.attributes.website}
-              key={index}
-              mb={{ base: '4rem', xl: '0' }}
-              mr={{ base: '0', xl: '6rem' }}
-              target="_blank"
-            >
-              <Image
-                src={
-                  colorMode === 'dark'
-                    ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data.attributes.url}`
-                    : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data.attributes.url}`
-                }
-                alt="third web"
-              />
-            </Link>
-          );
-        })}
+        {console.log(partnerData)}
+        {partnerData ? (
+          partnerData?.map((item: any, index: number) => {
+            return (
+              <Link
+                href={item.attributes.website}
+                key={index}
+                mb={{ base: '4rem', xl: '0' }}
+                mr={{ base: '0', xl: '6rem' }}
+                target="_blank"
+              >
+                <Image
+                  src={
+                    colorMode === 'dark'
+                      ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data?.attributes.url}`
+                      : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data?.attributes.url}`
+                  }
+                  alt={item.attributes?.name || 'partner image'}
+                />
+              </Link>
+            );
+          })
+        ) : (
+          <></>
+        )}
       </Flex>
       <Button
         backgroundColor={colorMode === 'dark' ? 'white' : 'black'}
